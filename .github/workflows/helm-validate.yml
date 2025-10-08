@@ -1,0 +1,223 @@
+name: Helm Validate
+
+on:
+  pull_request:
+    paths:
+      - Chart.yaml
+      - values.yaml
+      - ext-values.yaml
+      - ext-values-profiles-only.yaml
+      - values.schema.json
+      - templates/**
+      - files/**
+      - hack/verify-deterministic.sh
+      - .github/workflows/helm-validate.yml
+  push:
+    branches: [main]
+    paths:
+      - Chart.yaml
+      - values.yaml
+      - ext-values.yaml
+      - ext-values-profiles-only.yaml
+      - values.schema.json
+      - templates/**
+      - files/**
+      - hack/verify-deterministic.sh
+      - .github/workflows/helm-validate.yml
+  workflow_dispatch:
+    inputs:
+      ci_image_tag:
+        description: "CI image tag for RuleHub charts image (e.g., 2025.10.03-a1b2c3d4 or v1.2.3). Falls back to repo variable CI_IMAGE_TAG or latest."
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rulehub-charts-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  guard:
+    name: Require CI image tag (no drift)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce non-latest CI image tag
+        shell: bash
+        run: |
+          input_tag="${{ inputs.ci_image_tag }}"
+          if [ "$input_tag" = "latest" ]; then
+            echo "Workflow input ci_image_tag must not be 'latest'. Use an immutable tag (e.g., 2025.10.03-<sha> or vX.Y.Z)." >&2
+            exit 1
+          fi
+          if [ -z "$input_tag" ]; then
+            echo "Note: ci_image_tag input not provided. Ensure repository variable CI_IMAGE_TAG is set to a pinned tag to avoid drift." >&2
+          fi
+  lint:
+    needs: guard
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
+      options: --user 0:0
+    env:
+      IS_ACT: "false"
+    strategy:
+      matrix:
+        kubeVersion: ["1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.31.0"]
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          fi
+      # Helm preinstalled in ci-charts image
+      - name: Helm version
+        run: helm version --short
+      - name: Helm lint
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "ACT detected; running helm lint only (no uploads)."
+            helm lint .
+          else
+            helm lint .
+          fi
+      - name: Validate sample values (ext-values.yaml)
+        run: |
+          # Schema + render for ext-values.yaml
+          helm lint . -f ext-values.yaml
+          helm template rulehub . -f ext-values.yaml --kube-version ${{ matrix.kubeVersion }} >/dev/null
+      - name: Validate sample values (ext-values-profiles-only.yaml)
+        run: |
+          # Schema + render for ext-values-profiles-only.yaml
+          helm lint . -f ext-values-profiles-only.yaml
+          helm template rulehub . -f ext-values-profiles-only.yaml --kube-version ${{ matrix.kubeVersion }} >/dev/null
+      - name: Template render (${{ matrix.kubeVersion }})
+        run: |
+          helm template rulehub . --debug --values values.yaml --kube-version ${{ matrix.kubeVersion }} > rendered-${{ matrix.kubeVersion }}.yaml
+      - name: Upload rendered manifest (${{ matrix.kubeVersion }})
+        if: ${{ env.IS_ACT != 'true' }}
+        continue-on-error: true
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: rendered-${{ matrix.kubeVersion }}.yaml
+          path: rendered-${{ matrix.kubeVersion }}.yaml
+
+  kubeconform:
+    needs: [guard, lint]
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
+      options: --user 0:0
+    env:
+      IS_ACT: "false"
+    strategy:
+      matrix:
+        kubeVersion: ["1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.31.0"]
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          fi
+      # Helm and kubeconform preinstalled in ci-charts image
+      - name: kubeconform version
+        run: kubeconform -v || true
+      - name: Render manifests (${{ matrix.kubeVersion }})
+        run: helm template rulehub . --values values.yaml --kube-version ${{ matrix.kubeVersion }} > rendered-${{ matrix.kubeVersion }}.yaml
+      - name: Validate manifests (${{ matrix.kubeVersion }})
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "Skipping kubeconform under ACT to reduce network dependencies." && exit 0
+          fi
+          kubeconform -strict -ignore-missing-schemas -summary -output json -schema-location default -schema-location 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{ .Group }}/{{ .ResourceKind }}_{{ .ResourceAPIVersion }}.json' rendered-${{ matrix.kubeVersion }}.yaml | tee kubeconform-${{ matrix.kubeVersion }}.json
+      - name: Upload kubeconform results (${{ matrix.kubeVersion }})
+        if: ${{ env.IS_ACT != 'true' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: kubeconform-${{ matrix.kubeVersion }}.json
+          path: kubeconform-${{ matrix.kubeVersion }}.json
+
+  helm-unittest:
+    needs: guard
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
+      options: --user 0:0
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      # Helm & helm-unittest preinstalled in ci-charts image
+      - name: Helm version
+        run: helm version --short
+      - name: Run unit tests
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "Skipping helm unittest under ACT (plugin setup often diverges)." && exit 0
+          fi
+          helm unittest -3 -f tests/*.yaml .
+
+  ct:
+    name: Chart Testing (lint + install)
+    needs: guard
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
+      options: --user 0:0
+    env:
+      IS_ACT: "false"
+    strategy:
+      matrix:
+        kubeVersion: ["1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.31.0"]
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          fi
+      - name: Verify ct available
+        run: |
+          set -e
+          command -v ct >/dev/null 2>&1 || { echo 'ct not found in ci-charts image'; exit 1; }
+      - name: Create kind cluster (${{ matrix.kubeVersion }})
+        if: ${{ env.IS_ACT != 'true' }}
+        uses: helm/kind-action@99576bfa6ddf9a8e612d83b513da5a75875caced
+        with:
+          version: v0.22.0
+          node_image: kindest/node:v${{ matrix.kubeVersion }}
+      - name: ct lint
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "Skipping ct lint under ACT." && exit 0
+          fi
+          ct lint --config .ct.yaml
+      - name: ct install (smoke)
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "Skipping ct install under ACT." && exit 0
+          fi
+          ct install --config .ct.yaml --helm-extra-args "--timeout 2m" --debug
+      - name: Collect ct results summary
+        if: always()
+        run: |
+          echo "Chart Testing completed for Kubernetes ${{ matrix.kubeVersion }}" >> $GITHUB_STEP_SUMMARY
+
+  determinism:
+    name: Determinism Gate
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
+      options: --user 0:0
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Verify deterministic rendering (default values)
+        run: bash hack/verify-deterministic.sh values.yaml
+      - name: Summary
+        if: always()
+        run: |
+          echo 'Determinism verification completed.' >> $GITHUB_STEP_SUMMARY

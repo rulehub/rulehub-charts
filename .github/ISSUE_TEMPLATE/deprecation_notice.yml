@@ -1,0 +1,58 @@
+name: Deprecation Notice
+description: Propose deprecation of legacy (underscore) policy keys.
+title: "Deprecate legacy policy keys: <keys>"
+labels: ["deprecation", "governance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template to propose deprecating one or more legacy (underscore) policy keys. A generator script exists: `hack/gen-deprecation-issue.sh`.
+  - type: input
+    id: keys
+    attributes:
+      label: Legacy Keys (comma separated)
+      description: List of underscore-form keys to deprecate.
+      placeholder: betting-affordability_checks_uk-policy,medtech-fda_part11_system_validation-policy
+    validations:
+      required: true
+  - type: input
+    id: since
+    attributes:
+      label: Deprecated Since (version)
+      placeholder: 0.2.0
+    validations:
+      required: true
+  - type: input
+    id: window
+    attributes:
+      label: Window (minor releases)
+      placeholder: "2"
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: Why these keys are deprecated (normalization, consolidation, rename, etc.)
+    validations:
+      required: true
+  - type: textarea
+    id: migration
+    attributes:
+      label: Migration Guidance
+      description: Explicit steps for users to switch to dash variant / new key.
+      placeholder: Update values to use betting-affordability-checks-uk-policy ...
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-merge Checklist
+      options:
+        - label: Added deprecated_since to each legacy key in values.yaml
+        - label: Added replaced_by pointing to dash variant
+        - label: Dash variant keys exist (mirroring enabled state)
+        - label: MIGRATION.md updated
+        - label: README Legacy Keys section updated
+        - label: Stub YAML (if rename) added and not enforced
+        - label: VALUES_TABLE.md regenerated
+        - label: make verify passes (labels/integrity/deterministic)
+        - label: Follow-up removal issue scheduled for correct version

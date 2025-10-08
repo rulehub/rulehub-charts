@@ -1,0 +1,112 @@
+{{- if and .Values.opentelemetryCollector .Values.opentelemetryCollector.enabled }}
+{{- $c := .Values.opentelemetryCollector -}}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ $c.name }}-config
+  labels:
+    app.kubernetes.io/name: {{ $c.name }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+  annotations:
+    policy-sets/chart.version: {{ .Chart.Version | quote }}
+    {{- with $.Values.build.commitSha }}
+    policy-sets/build.commit: {{ . | quote }}
+    {{- end }}
+data:
+  collector.yaml: |
+    receivers:
+{{ toYaml ($c.receivers | default (dict)) | indent 6 }}
+    processors:
+{{ toYaml ($c.processors | default (dict)) | indent 6 }}
+    exporters:
+{{ toYaml ($c.exporters | default (dict)) | indent 6 }}
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [logging]
+        metrics:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [logging]
+{{- if $c.extraConfig }}
+{{ toYaml $c.extraConfig | indent 4 }}
+{{- end }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $c.name }}
+  labels:
+    app.kubernetes.io/name: {{ $c.name }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+  annotations:
+    policy-sets/chart.version: {{ .Chart.Version | quote }}
+    {{- with $.Values.build.commitSha }}
+    policy-sets/build.commit: {{ . | quote }}
+    {{- end }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ $c.name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ $c.name }}
+        app.kubernetes.io/part-of: {{ .Chart.Name }}
+      annotations:
+        policy-sets/chart.version: {{ .Chart.Version | quote }}
+        {{- with $.Values.build.commitSha }}
+        policy-sets/build.commit: {{ . | quote }}
+        {{- end }}
+        {{- range $k,$v := $c.podAnnotations }}
+        {{ $k }}: {{ $v | quote }}
+        {{- end }}
+    spec:
+      containers:
+        - name: collector
+          image: {{ $c.image.repository }}:{{ $c.image.tag }}
+          imagePullPolicy: {{ $c.image.pullPolicy | default "IfNotPresent" }}
+          args: ["--config=/etc/otel/collector.yaml"]
+          ports:
+            - name: otlp-grpc
+              containerPort: {{ $c.service.ports.grpc }}
+            - name: otlp-http
+              containerPort: {{ $c.service.ports.http }}
+          volumeMounts:
+            - name: config
+              mountPath: /etc/otel
+          resources:
+{{ toYaml ($c.resources | default (dict)) | indent 12 }}
+      volumes:
+        - name: config
+          configMap:
+            name: {{ $c.name }}-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $c.name }}
+  labels:
+    app.kubernetes.io/name: {{ $c.name }}
+    app.kubernetes.io/part-of: {{ .Chart.Name }}
+  annotations:
+    policy-sets/chart.version: {{ .Chart.Version | quote }}
+    {{- with $.Values.build.commitSha }}
+    policy-sets/build.commit: {{ . | quote }}
+    {{- end }}
+spec:
+  type: {{ $c.service.type }}
+  selector:
+    app.kubernetes.io/name: {{ $c.name }}
+  ports:
+    - name: otlp-grpc
+      port: {{ $c.service.ports.grpc }}
+      targetPort: otlp-grpc
+    - name: otlp-http
+      port: {{ $c.service.ports.http }}
+      targetPort: otlp-http
+{{- end }}

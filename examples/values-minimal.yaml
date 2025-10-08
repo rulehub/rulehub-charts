@@ -1,0 +1,10 @@
+# Minimal values for the policy-sets chart
+# Goal: disable all policy sets so the render produces zero resources.
+
+gatekeeper:
+  # Fully disable Gatekeeper policies (ConstraintTemplates/Constraints won't be generated)
+  enabled: false
+
+kyverno:
+  # Fully disable Kyverno policies (ClusterPolicies won't be generated)
+  enabled: false

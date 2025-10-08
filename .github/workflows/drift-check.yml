@@ -1,0 +1,114 @@
+name: Drift Check
+
+on:
+  pull_request:
+    paths:
+      - "files/**"
+      - "hack/drift/**"
+      - ".github/workflows/drift-check.yml"
+  # Temporary: also run on push to main for visibility; may adjust to tag-based in future
+  push:
+    branches: [main]
+    paths:
+      - "files/**"
+      - "hack/drift/**"
+      - ".github/workflows/drift-check.yml"
+  workflow_dispatch:
+    inputs:
+      ci_image_tag:
+        description: "CI image tag for RuleHub charts image (e.g., 2025.10.03-<sha> or vX.Y.Z). Falls back to repo var CI_IMAGE_TAG or latest."
+        required: false
+        default: ""
+
+jobs:
+  guard:
+    name: Require CI image tag (no drift)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Enforce pinned CI image tag
+        shell: bash
+        env:
+          INPUT_CI_TAG: ${{ inputs.ci_image_tag }}
+          VARS_CI_TAG: ${{ vars.CI_IMAGE_TAG }}
+        run: bash hack/ci/enforce-pinned-ci-image-tag.sh
+  drift:
+    needs: guard
+    name: Compare with RuleHub catalog
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-base-rulehub:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
+      options: --user 0:0
+    permissions:
+      contents: read
+      pull-requests: read
+    env:
+      IS_ACT: "false"
+      RULEHUB_REPO: rulehub/rulehub
+    steps:
+      - name: Checkout charts
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "Detected ACT environment via env variable"
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          else
+            echo "Not running under ACT"
+          fi
+      - name: Fetch rulehub repository
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -n "${ACT:-}" ]]; then
+            echo "Detected ACT environment; cloning public repo without token"
+            git clone --depth 1 "https://github.com/${RULEHUB_REPO}.git" rulehub
+          else
+            echo "GitHub Actions environment; cloning with github.token"
+            git clone --depth 1 "https://${{ github.token }}@github.com/${RULEHUB_REPO}.git" rulehub
+          fi
+      - name: Install deps
+        if: ${{ env.IS_ACT != 'true' }}
+        run: |
+          echo "Dependencies are preinstalled in ci-base-rulehub image; skipping."
+      - name: Generate RuleHub catalog
+        if: ${{ env.IS_ACT != 'true' }}
+        working-directory: rulehub
+        run: make catalog
+      - name: Assert jq present
+        if: ${{ env.IS_ACT != 'true' }}
+        run: |
+          set -e
+          command -v jq >/dev/null 2>&1 || { echo 'jq not found in ci-charts image'; exit 1; }
+      - name: Drift check (charts vs rulehub/dist/index.json)
+        if: ${{ env.IS_ACT != 'true' }}
+        working-directory: rulehub
+        shell: bash
+        run: |
+          set -euo pipefail
+          ../hack/ci/drift-compare-filter.sh --charts-dir ../files --allowed '["betting.","edtech.","medtech.","igaming."]' --fail-on-drift | tee /tmp/drift-summary.txt
+          echo 'Filtered drift summary:' >> $GITHUB_STEP_SUMMARY
+          cat /tmp/drift-summary.txt >> $GITHUB_STEP_SUMMARY || true
+          # Prepare top-n lists for summary
+          echo '\nTop missing (up to 20):' >> $GITHUB_STEP_SUMMARY
+          jq -r '.filtered_missing[:20][]? // empty' charts-drift.filtered.json >> $GITHUB_STEP_SUMMARY || true
+          echo '\nTop extra (up to 20):' >> $GITHUB_STEP_SUMMARY
+          jq -r '.filtered_extra[:20][]? // empty' charts-drift.filtered.json >> $GITHUB_STEP_SUMMARY || true
+      - name: Upload drift artifacts (always)
+        if: ${{ always() && env.IS_ACT != 'true' }}
+        continue-on-error: true
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: charts-drift-output
+          path: |
+            rulehub/dist/index.json
+            rulehub/charts-drift.json
+            rulehub/charts-drift.filtered.json
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Summary (ACT)
+        if: ${{ env.IS_ACT == 'true' }}
+        run: |
+          echo 'Drift check skipped under ACT (local emulation).' >> $GITHUB_STEP_SUMMARY

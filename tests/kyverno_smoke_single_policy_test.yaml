@@ -1,0 +1,21 @@
+---
+suite: Kyverno single policy smoke
+
+templates:
+  - templates/policy-sets.yaml
+
+tests:
+  - it: Only block-hostpath policy enabled => others absent
+    set:
+      kyverno:
+        enabled: true
+        policies:
+          block-hostpath:
+            enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.kyverno.policies.block-hostpath
+      - isNull: # another common policy should NOT appear
+          path: spec.kyverno.policies.disallow-latest
+      - isNull: # and another
+          path: spec.kyverno.policies.require-resources

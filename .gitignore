@@ -1,0 +1,77 @@
+# Helm chart build artifacts
+*.tgz
+
+# Rendered outputs
+rendered-*.yaml
+
+# SBOM / security / provenance artifacts
+sbom*.json
+cosign-verify.json
+slsa-provenance.json
+manifest.json.aggregate
+
+# Temp workspace
+tmp/
+tmp-*.sh
+/tmp-*.sh
+
+# OS / IDE clutter
+.DS_Store
+.idea/
+.vscode/
+
+# Python virtual env & packaging leftovers
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+.python-version
+
+# General build / runtime artifacts
+dist/
+build/
+coverage/
+.coverage
+htmlcov/
+tmp-*
+
+# Logs, temp files, backups
+*.log
+*.tmp
+*.bak
+*~
+*.swp
+*.swo
+
+# OS specific
+Thumbs.db
+
+# Editor / IDE (add common extras)
+.vscode/
+.idea/
+
+# Secrets & local env files (do not commit credentials)
+.env
+.env.*
+secrets.yml
+*.pem
+*.key
+*.crt
+id_rsa
+id_rsa.pub
+
+# Kubernetes / kubeconfig local files
+.kube/
+kubeconfig
+KUBECONFIG
+
+# Node (if any transient node modules appear)
+node_modules/
+
+# Terraform (if ever used locally)
+.terraform/
+.terraform.lock.hcl

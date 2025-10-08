@@ -1,0 +1,75 @@
+name: Values Table Verify
+
+on:
+  pull_request:
+    paths:
+      - "values.yaml"
+      - "values.schema.json"
+      - "hack/gen-values-table.sh"
+      - "VALUES_TABLE.md"
+      - ".github/workflows/values-table-verify.yml"
+  # Temporary: run on push to main for visibility; may be adjusted later
+  push:
+    branches: [main]
+    paths:
+      - "values.yaml"
+      - "values.schema.json"
+      - "hack/gen-values-table.sh"
+      - "VALUES_TABLE.md"
+  workflow_dispatch:
+    inputs:
+      ci_image_tag:
+        description: "Optional explicit CI image tag; otherwise repository variable CI_IMAGE_TAG must be set."
+        required: false
+        default: ""
+
+jobs:
+  check-tag:
+    name: Ensure CI image tag
+    runs-on: ubuntu-latest
+    outputs:
+      resolved_tag: ${{ steps.ctag.outputs.resolved_tag }}
+    steps:
+      - name: Checkout repository (required for local actions)
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+      - name: Resolve CI image tag
+        id: ctag
+        env:
+          CI_IMAGE_TAG: ${{ vars.CI_IMAGE_TAG }}
+        run: bash hack/ci-tag-resolve.sh '${{ inputs.ci_image_tag }}'
+
+  verify:
+    needs: [check-tag]
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ needs.check-tag.outputs.resolved_tag }}"
+      options: --user 0:0
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+      - name: Show git status (pre)
+        run: git status --short || true
+      - name: Generate fresh VALUES_TABLE.md
+        run: |
+          bash hack/gen-values-table.sh
+      - name: Diff VALUES_TABLE.md
+        shell: bash
+        run: |
+          if ! git diff --exit-code -- VALUES_TABLE.md; then
+            if [ "${GITHUB_ACTOR:-}" = "nektos/act" ]; then
+              echo 'ACT mode: VALUES_TABLE.md diff detected; reporting only (no failure).' >&2
+              git --no-pager diff -- VALUES_TABLE.md || true
+            else
+              echo 'VALUES_TABLE.md is out of date. Regenerate via make values-table and commit.' >&2
+              exit 1
+            fi
+          fi
+      - name: Summary
+        if: always()
+        shell: bash
+        run: |
+          echo 'VALUES_TABLE.md verification completed.' >> $GITHUB_STEP_SUMMARY
+          if git diff --name-only | grep -q VALUES_TABLE.md; then
+            echo 'Out of date: failing.' >> $GITHUB_STEP_SUMMARY
+          else
+            echo 'Up to date.' >> $GITHUB_STEP_SUMMARY
+          fi

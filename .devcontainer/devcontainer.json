@@ -1,0 +1,37 @@
+{
+  "name": "rulehub-charts-dev",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {}
+  },
+  "mounts": [
+    "source=devcache-helm,type=volume,target=/home/vscode/.cache/helm",
+    "source=devcache-ct,type=volume,target=/home/vscode/.cache/ct"
+  ],
+  "onCreateCommand": "chmod +x .devcontainer/scripts/setup.sh",
+  "postCreateCommand": "bash .devcontainer/scripts/setup.sh",
+  "postStartCommand": "bash -c 'if [ $(helm repo list 2>/dev/null | wc -l) -gt 1 ]; then echo \"[devcontainer] Updating existing Helm repos...\"; helm repo update; else echo \"[devcontainer] No Helm repos configured yet (skipping helm repo update). Add one with: helm repo add <name> <url>\"; fi'",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "redhat.vscode-yaml",
+        "hashicorp.terraform",
+        "eamodio.gitlens",
+        "tamasfe.even-better-toml",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "yaml.schemas": {
+          "./values.schema.json": ["values.yaml", "examples/*.yaml"]
+        },
+        "yaml.validate": true,
+        "yaml.format.enable": true,
+        "editor.formatOnSave": true,
+        "files.trimTrailingWhitespace": true
+      }
+    }
+  },
+  "remoteUser": "vscode",
+  "updateContentCommand": "make lint || true"
+}

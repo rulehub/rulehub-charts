@@ -1,0 +1,27 @@
+# NOTE: placeholders quoted for Helm parse stability
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-resources
+  annotations:
+    rulehub.id: require.resources
+spec:
+  validationFailureAction: enforce
+  background: true
+  rules:
+    - name: require-requests-limits
+      match:
+        resources:
+          kinds: ["Pod"]
+      validate:
+        message: "CPU/Memory requests & limits are required"
+        pattern:
+          spec:
+            containers:
+              - resources:
+                  requests:
+                    cpu: "?*"
+                    memory: "?*"
+                  limits:
+                    cpu: "?*"
+                    memory: "?*"

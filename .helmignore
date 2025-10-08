@@ -1,0 +1,11 @@
+# Exclude CI/config
+.github/
+# Tests not needed in packaged chart
+tests/
+# Examples / dev artefacts
+examples/
+# Local junk
+*.swp
+*.tmp
+*.log
+.DS_Store

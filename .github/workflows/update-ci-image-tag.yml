@@ -1,0 +1,55 @@
+name: Update CI Image Tag
+
+on:
+    workflow_dispatch:
+        inputs:
+            tag:
+                description: "Immutable ci image tag to set (e.g., 2025.10.13-deadbeef or vX.Y.Z)"
+                required: false
+    repository_dispatch:
+        types: [ci-image-published]
+
+permissions:
+    contents: read
+    actions: write
+
+jobs:
+    set-var:
+        runs-on: ubuntu-latest
+        container:
+            image: ghcr.io/${{ github.repository_owner }}/ci-base:latest
+            options: --user 0:0
+        steps:
+            - name: Checkout
+              uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+            - name: Resolve tag
+              id: params
+              shell: bash
+              env:
+                  TAG_INPUT: ${{ inputs.tag }}
+                  GITHUB_EVENT_JSON: ${{ toJson(github.event) }}
+              run: |
+                  set -euo pipefail
+                  tag="$(bash hack/ci/resolve-ci-tag.sh || true)"
+                  echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+            - name: Skipped (no tag provided)
+              if: ${{ steps.params.outputs.tag == '' }}
+              run: echo "No tag provided; skipping variable update (ACT/local runs may omit tag)." >> "$GITHUB_STEP_SUMMARY"
+            - name: Update repository variable CI_IMAGE_TAG
+              if: ${{ steps.params.outputs.tag != '' }}
+              uses: actions/github-script@v7
+              env:
+                  TAG: ${{ steps.params.outputs.tag }}
+              with:
+                  script: |
+                      const tag = process.env.TAG;
+                      core.info(`Setting CI_IMAGE_TAG=${tag}`);
+                      await github.rest.actions.createOrUpdateRepoVariable({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        name: 'CI_IMAGE_TAG',
+                        value: tag,
+                      });
+            - name: Summary
+              if: ${{ steps.params.outputs.tag != '' }}
+              run: echo "CI_IMAGE_TAG set to '${{ steps.params.outputs.tag }}'" >> "$GITHUB_STEP_SUMMARY"

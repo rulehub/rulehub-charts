@@ -1,0 +1,25 @@
+Thank you for installing policy-sets!
+
+Included sets:
+- Gatekeeper: {{ ternary "enabled" "disabled" .Values.gatekeeper.enabled }}
+- Kyverno:    {{ ternary "enabled" "disabled" .Values.kyverno.enabled }}
+
+Per-policy toggles (values examples):
+  gatekeeper:
+    policies:
+      ban-hostnetwork:
+        enabled: false
+  kyverno:
+    policies:
+      disallow-latest:
+        enabled: false
+
+Normalization / Aliases:
+  Policy keys with underscores are deprecated. Replace '_' with '-'.
+  Chart performs on-the-fly normalization; conflicting duplicates prefer dash form.
+  Example:
+    gatekeeper:
+      policies:
+        betting-deposit_limit_controls-constraint: { enabled: true } # deprecated form
+        betting-deposit-limit-controls-constraint: { enabled: false } # canonical
+  Result: canonical key takes precedence (enabled=false); a deprecation note is added to rendered manifests.

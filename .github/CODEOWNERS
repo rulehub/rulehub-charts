@@ -1,0 +1,19 @@
+# CODEOWNERS
+# NOTE: MAINTAINERS.md currently contains placeholders. Replace @example with real GitHub handles
+# to enable automatic review requests and protected-branch ownership.
+
+# Global owners (fallback)
+* @dev404ai
+
+# Area owners (replace placeholders):
+# Charts and templates
+ /templates/ @dev404ai
+ /files/ @dev404ai
+
+# Values & schema
+ /values.yaml @dev404ai
+ /values.schema.json @dev404ai
+
+# CI and release
+ /.github/workflows/ @dev404ai
+ Chart.yaml @dev404ai

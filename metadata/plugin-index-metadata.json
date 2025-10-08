@@ -1,0 +1,172 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "packages": [
+    {
+      "id": "ban.hostnetwork",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "ban.hostnetwork.template",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "betting.constraint.placeholder",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "gambling"
+    },
+    {
+      "id": "betting.constraint.template.placeholder",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "gambling"
+    },
+    {
+      "id": "betting.policy.placeholder",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "gambling"
+    },
+    {
+      "id": "block.hostpath",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "disallow.latest",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "limit.capabilities",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "limit.capabilities.template",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "no.privileged",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "no.run.as.root",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "no.run.as.root.template",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "require.imagepullpolicy.always",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "require.imagepullpolicy.always.template",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "require.resources",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "platform"
+    },
+    {
+      "id": "betting.aml_high_risk_country_restrictions",
+      "industry": ["gambling", "fintech", "banking"]
+    },
+    {
+      "id": "betting.aml_sar_reporting_uk",
+      "industry": ["gambling", "fintech", "banking"]
+    },
+    {
+      "id": "betting.sanctions_screening_global",
+      "industry": ["gambling", "fintech", "banking"]
+    },
+    {
+      "id": "betting.source_of_funds_checks",
+      "industry": ["gambling", "fintech", "banking"]
+    },
+    {
+      "id": "betting.source_of_funds_thresholds",
+      "industry": ["gambling", "fintech", "banking"]
+    },
+    {
+      "id": "betting.txn_monitoring_anomalies",
+      "industry": ["gambling", "fintech", "banking"]
+    },
+    {
+      "id": "betting.kyc_onboarding",
+      "industry": ["gambling", "fintech", "banking"]
+    },
+    {
+      "id": "betting.kyc_on_withdrawal",
+      "industry": ["gambling", "fintech", "banking"]
+    }
+  ]
+}

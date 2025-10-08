@@ -1,0 +1,16 @@
+apiVersion: v1
+entries:
+  rulehub-policies:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-09-05T17:38:43.91414621Z"
+    description: RuleHub curated Gatekeeper & Kyverno policy collection for Kubernetes
+      clusters
+    digest: abb1aa3887a178fd7a40086bc87650d54018eb8a3bfa65f8f3cc18142cb04216
+    icon: https://raw.githubusercontent.com/cncf/artwork/refs/heads/master/projects/kyverno/kyverno-icon-color.png
+    name: rulehub-policies
+    type: application
+    urls:
+    - https://example.com/charts/rulehub-policies-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-09-05T17:38:43.847850376Z"

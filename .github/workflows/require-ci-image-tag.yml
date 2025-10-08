@@ -1,0 +1,46 @@
+name: Require CI Image Tag
+
+on:
+    workflow_call:
+        inputs:
+            ci_image_tag:
+                description: "Optional explicit CI image tag to use; otherwise repository variable CI_IMAGE_TAG must be set."
+                required: false
+                type: string
+                default: ""
+        outputs:
+            resolved_tag:
+                description: "Resolved CI image tag"
+                value: ${{ jobs.compute.outputs.resolved_tag }}
+
+jobs:
+    compute:
+        name: Resolve CI image tag
+        runs-on: ubuntu-latest
+        outputs:
+            resolved_tag: ${{ steps.resolve.outputs.resolved_tag }}
+        steps:
+            - name: Resolve tag
+              id: resolve
+              shell: bash
+              run: |
+                  set -euo pipefail
+                  tag_input='${{ inputs.ci_image_tag }}'
+                  tag_var='${{ vars.CI_IMAGE_TAG }}'
+                  if [ -n "${tag_input}" ]; then
+                    resolved="${tag_input}"
+                  elif [ -n "${tag_var}" ]; then
+                    resolved="${tag_var}"
+                  else
+                    echo "Error: CI image tag is not provided." >&2
+                    echo "❌ CI image tag is required." >> "$GITHUB_STEP_SUMMARY"
+                    echo "Set inputs.ci_image_tag (workflow_dispatch) or repository variable CI_IMAGE_TAG to a valid immutable tag (e.g., 2025.10.03-<sha>)." >> "$GITHUB_STEP_SUMMARY"
+                    exit 1
+                  fi
+                  # Basic sanity check to avoid accidental whitespace or illegal characters in tag
+                  if ! [[ "$resolved" =~ ^[A-Za-z0-9._-]+$ ]]; then
+                    echo "Error: Resolved tag contains invalid characters: $resolved" >&2
+                    exit 1
+                  fi
+                  echo "resolved_tag=$resolved" >> "$GITHUB_OUTPUT"
+                  echo "✅ CI image tag detected: $resolved" >> "$GITHUB_STEP_SUMMARY"

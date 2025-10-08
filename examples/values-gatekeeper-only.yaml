@@ -1,0 +1,17 @@
+# Example: enable only Gatekeeper and a few specific policies
+
+kyverno:
+  # Fully disable the Kyverno set (ClusterPolicies won't be generated)
+  enabled: false
+
+gatekeeper:
+  enabled: true
+  policies:
+    ban-hostnetwork:
+      enabled: true
+    limit-capabilities:
+      enabled: false
+    no-run-as-root:
+      enabled: true
+    require-imagepullpolicy-always:
+      enabled: false

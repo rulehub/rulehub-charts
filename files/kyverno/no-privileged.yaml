@@ -1,0 +1,22 @@
+# NOTE: placeholders quoted for Helm parse stability
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: no-privileged
+  annotations:
+    rulehub.id: no.privileged
+spec:
+  validationFailureAction: enforce
+  background: true
+  rules:
+    - name: forbid-privileged
+      match:
+        resources:
+          kinds: ["Pod"]
+      validate:
+        message: "Privileged containers are forbidden"
+        pattern:
+          spec:
+            containers:
+              - =(securityContext):
+                  =(privileged): "false"

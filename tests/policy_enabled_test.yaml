@@ -1,0 +1,22 @@
+---
+# Test: specific policy enablement
+suite: Policy enabled
+
+templates:
+  - templates/policy-sets.yaml
+
+tests:
+  - it: Gatekeeper policy ban-hostnetwork enabled
+    set:
+      gatekeeper.enabled: true
+      gatekeeper.policies.ban-hostnetwork.enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.gatekeeper.policies.ban-hostnetwork
+  - it: Kyverno policy some-policy enabled
+    set:
+      kyverno.enabled: true
+      kyverno.policies.some-policy.enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.kyverno.policies.some-policy

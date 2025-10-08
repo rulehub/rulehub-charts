@@ -1,0 +1,14 @@
+---
+suite: Gatekeeper policy enabled
+
+templates:
+  - templates/policy-sets.yaml
+
+tests:
+  - it: Gatekeeper policy ban-hostnetwork enabled
+    set:
+      gatekeeper.enabled: true
+      gatekeeper.policies.ban-hostnetwork.enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.gatekeeper.policies.ban-hostnetwork

@@ -1,0 +1,18 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: betting-policy-placeholder
+  annotations:
+    rulehub.id: betting.policy.placeholder
+spec:
+  validationFailureAction: audit
+  background: true
+  rules:
+    - name: noop
+      match:
+        resources:
+          kinds: [Pod]
+      validate:
+        message: "placeholder – no enforcement"
+        pattern:
+          =(metadata): {}

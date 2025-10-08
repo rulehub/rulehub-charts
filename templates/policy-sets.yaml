@@ -1,0 +1,36 @@
+## Synthetic aggregation template for tests (not applied cluster-wide)
+{{- $kyEnabled := (default false .Values.kyverno.enabled) -}}
+{{- $gkEnabled := (default false .Values.gatekeeper.enabled) -}}
+{{- $kyPolicies := dict -}}
+{{- if and .Values.kyverno .Values.kyverno.policies -}}
+  {{- range $n, $c := .Values.kyverno.policies -}}
+    {{- if and $c (hasKey $c "enabled") (get $c "enabled") -}}{{- $_ := set $kyPolicies $n (dict) -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $gkPolicies := dict -}}
+{{- if and .Values.gatekeeper .Values.gatekeeper.policies -}}
+  {{- range $n, $c := .Values.gatekeeper.policies -}}
+    {{- if and $c (hasKey $c "enabled") (get $c "enabled") -}}{{- $_ := set $gkPolicies $n (dict) -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $kyBlock := dict "enabled" $kyEnabled -}}
+{{- if gt (len $kyPolicies) 0 -}}{{- $_ := set $kyBlock "policies" $kyPolicies -}}{{- end -}}
+{{- $gkBlock := dict "enabled" $gkEnabled -}}
+{{- if gt (len $gkPolicies) 0 -}}{{- $_ := set $gkBlock "policies" $gkPolicies -}}{{- end -}}
+{{- $meta := dict "name" "policy-sets-summary" -}}
+{{- $_ := set $meta "labels" (dict "chart/version" .Chart.Version) -}}
+{{- /* Inject build annotations when provided */ -}}
+{{- $anns := dict -}}
+{{- if and .Values.build .Values.build.integritySha256 (ne (.Values.build.integritySha256 | toString) "") -}}
+  {{- $_ := set $anns "policy-sets/build.integrity.sha256" (.Values.build.integritySha256 | toString) -}}
+{{- end -}}
+{{- if and .Values.build .Values.build.commitSha (ne (.Values.build.commitSha | toString) "") -}}
+  {{- $_ := set $anns "policy-sets/build.commit" (.Values.build.commitSha | toString) -}}
+{{- end -}}
+{{- if and .Values.build .Values.build.timestamp (ne (.Values.build.timestamp | toString) "") -}}
+  {{- $_ := set $anns "policy-sets/build.timestamp" (.Values.build.timestamp | toString) -}}
+{{- end -}}
+{{- if gt (len $anns) 0 -}}
+  {{- $_ := set $meta "annotations" $anns -}}
+{{- end -}}
+{{ toYaml (dict "apiVersion" "policy-sets.test/v1" "kind" "PolicySets" "metadata" $meta "spec" (dict "kyverno" $kyBlock "gatekeeper" $gkBlock)) }}

@@ -1,0 +1,27 @@
+---
+# Test: Kyverno/Gatekeeper enable/disable toggle
+
+suite: Kyverno/Gatekeeper toggle
+
+templates:
+  - templates/policy-sets.yaml
+
+tests:
+  - it: Kyverno enabled, Gatekeeper disabled
+    set:
+      kyverno.enabled: true
+      gatekeeper.enabled: false
+    asserts:
+      - isNotNull:
+          path: spec.kyverno
+      - isNull:
+          path: spec.gatekeeper
+  - it: Gatekeeper enabled, Kyverno disabled
+    set:
+      kyverno.enabled: false
+      gatekeeper.enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.gatekeeper
+      - isNull:
+          path: spec.kyverno

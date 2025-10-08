@@ -1,0 +1,80 @@
+name: Values Table Auto Update
+
+on:
+  pull_request:
+    paths:
+      - "values.yaml"
+      - "values.schema.json"
+      - "hack/gen-values-table.sh"
+      - "VALUES_TABLE.md"
+      - ".github/workflows/values-table-auto-update.yml"
+  # Temporary: also run on push to main for visibility; auto-update remains PR/label-gated
+  push:
+    branches: [main]
+    paths:
+      - "values.yaml"
+      - "values.schema.json"
+      - "hack/gen-values-table.sh"
+      - "VALUES_TABLE.md"
+      - ".github/workflows/values-table-auto-update.yml"
+  workflow_dispatch:
+    inputs:
+      ci_image_tag:
+        description: "Optional explicit CI image tag; otherwise repository variable CI_IMAGE_TAG must be set."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  check-tag:
+    name: Ensure CI image tag
+    runs-on: ubuntu-latest
+    outputs:
+      resolved_tag: ${{ steps.ctag.outputs.resolved_tag }}
+    steps:
+      - name: Checkout repository (required for local actions)
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+      - name: Resolve CI image tag
+        id: ctag
+        env:
+          CI_IMAGE_TAG: ${{ vars.CI_IMAGE_TAG }}
+        run: bash hack/ci-tag-resolve.sh '${{ inputs.ci_image_tag }}'
+
+  auto-update:
+    needs: [check-tag]
+    if: github.event.pull_request.head.repo.fork == false || contains(github.event.pull_request.labels.*.name, 'allow-auto-commit')
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ needs.check-tag.outputs.resolved_tag }}"
+      options: --user 0:0
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        with:
+          fetch-depth: 0
+      - name: Generate VALUES_TABLE.md
+        run: bash hack/gen-values-table.sh
+      - name: Commit changes if any
+        run: |
+          if ! git diff --quiet --exit-code -- VALUES_TABLE.md; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add VALUES_TABLE.md
+            git commit -m "chore: auto-update VALUES_TABLE.md" || true
+            git push || echo 'Push skipped (maybe permissions)' >&2
+            echo 'updated=1' >> $GITHUB_OUTPUT
+          else
+            echo 'updated=0' >> $GITHUB_OUTPUT
+          fi
+      - name: Summary
+        shell: bash
+        run: |
+          MSG=$(git log -1 --pretty=%B || true)
+          if echo "$MSG" | grep -q 'auto-update VALUES_TABLE.md'; then
+            echo 'VALUES_TABLE.md auto-updated.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'VALUES_TABLE.md already up to date.' >> "$GITHUB_STEP_SUMMARY"
+          fi

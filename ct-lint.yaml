@@ -1,0 +1,8 @@
+# Custom lint rules for chart-testing
+rules:
+  values:
+    required:
+      - name: replicaCount
+        path: replicaCount
+        message: "Top-level replicaCount should be present (even if unused)."
+        any: false

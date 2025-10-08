@@ -1,0 +1,264 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.org/rulehub/policy-sets/values.schema.json",
+  "title": "RuleHub policy-sets values",
+  "description": "Values for enabling/disabling Gatekeeper & Kyverno policy sets and tuning global / per‑policy behavior.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "const": 1,
+      "description": "Version of the values schema contract. Increment (and update values.yaml) only when making backward-incompatible structural changes."
+    },
+    "gatekeeper": {
+      "type": "object",
+      "description": "Gatekeeper (OPA) related configuration and toggle map of individual Constraints.",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Master switch: render Gatekeeper Constraints & required ConstraintTemplates."
+        },
+        "policies": {
+          "type": "object",
+          "description": "Map of Gatekeeper constraint entries keyed by filename stem; each entry may be disabled via enabled=false.",
+          "additionalProperties": {
+            "type": "object",
+            "description": "Gatekeeper constraint toggle entry.",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Render this specific Gatekeeper Constraint when true."
+              },
+              "deprecated_since": {
+                "type": "string",
+                "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+                "description": "(Optional) SemVer (chart version) when this key was first marked deprecated. Removal allowed after deprecation window (see verify-deprecation)."
+              }
+            },
+            "required": ["enabled"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["enabled"],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "enabled": {
+                "const": true
+              }
+            },
+            "required": ["enabled"]
+          },
+          "then": {
+            "required": ["policies"]
+          }
+        }
+      ]
+    },
+    "kyverno": {
+      "type": "object",
+      "description": "Kyverno related configuration including global and per‑policy validationFailureAction overrides.",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Master switch: render Kyverno ClusterPolicies."
+        },
+        "useProfilesOnly": {
+          "type": "boolean",
+          "description": "When true, ignore kyverno.policies map and render only policies enabled via activeProfiles (profile-driven render only)."
+        },
+        "validationFailureAction": {
+          "type": "string",
+          "enum": ["", "audit", "enforce", "dryrun"],
+          "description": "Optional global override for all rendered policies (empty string preserves original policy action)."
+        },
+        "policies": {
+          "type": "object",
+          "description": "Map of Kyverno policy entries keyed by filename stem; each entry can be disabled or have an action override.",
+          "additionalProperties": {
+            "type": "object",
+            "description": "Kyverno policy toggle / override entry.",
+            "properties": {
+              "enabled": {
+                "type": "boolean",
+                "description": "Render this specific Kyverno policy when true."
+              },
+              "validationFailureAction": {
+                "type": "string",
+                "enum": ["", "audit", "enforce", "dryrun"],
+                "description": "Optional per‑policy override taking precedence over global setting (empty string = preserve)."
+              },
+              "deprecated_since": {
+                "type": "string",
+                "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+                "description": "(Optional) SemVer (chart version) when this key was first marked deprecated. Removal allowed after deprecation window (see verify-deprecation)."
+              }
+            },
+            "required": ["enabled"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["enabled"],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "enabled": {
+                "const": true
+              }
+            },
+            "required": ["enabled"]
+          },
+          "then": {
+            "required": ["policies"]
+          }
+        }
+      ]
+    },
+    "build": {
+      "type": "object",
+      "description": "Build metadata used for injecting observability annotations.",
+      "additionalProperties": false,
+      "properties": {
+        "commitSha": {
+          "type": "string",
+          "description": "Git commit SHA (short or full) to annotate rendered resources (policy-sets/build.commit)."
+        },
+        "timestamp": {
+          "type": "string",
+          "description": "UTC RFC3339 timestamp of build to annotate (policy-sets/build.timestamp). Leave empty for reproducible renders.",
+          "pattern": "^$|^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"
+        },
+        "integritySha256": {
+          "type": "string",
+          "description": "Aggregate integrity sha256 to annotate (policy-sets/build.integrity.sha256).",
+          "pattern": "^$|^[A-Fa-f0-9]{64}$"
+        },
+        "exportIntegrityConfigMap": {
+          "type": "boolean",
+          "description": "When true and integritySha256 present, export a ConfigMap exposing the integrity hash (policy-sets-integrity)."
+        },
+        "integrityConfigMapName": {
+          "type": "string",
+          "description": "Optional override name for integrity ConfigMap (default: policy-sets-integrity)."
+        }
+      }
+    },
+    "opentelemetryCollector": {
+      "type": "object",
+      "description": "Optional lightweight OpenTelemetry Collector deployment for exporting policy engine metrics/traces.",
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "description": "Deploy the OpenTelemetry Collector when true."
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the Collector Deployment / related resources."
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "repository": {
+              "type": "string"
+            },
+            "tag": {
+              "type": "string"
+            },
+            "pullPolicy": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        },
+        "resources": {
+          "type": "object",
+          "description": "Kubernetes resource requests/limits map.",
+          "additionalProperties": true
+        },
+        "service": {
+          "type": "object",
+          "description": "Service configuration (type, ports).",
+          "additionalProperties": true
+        },
+        "exporters": {
+          "type": "object",
+          "description": "Collector exporters section (partial).",
+          "additionalProperties": true
+        },
+        "processors": {
+          "type": "object",
+          "description": "Collector processors section (partial).",
+          "additionalProperties": true
+        },
+        "receivers": {
+          "type": "object",
+          "description": "Collector receivers section (partial).",
+          "additionalProperties": true
+        },
+        "extraConfig": {
+          "type": "object",
+          "description": "Arbitrary extra config merged into generated collector config map root.",
+          "additionalProperties": true
+        },
+        "podAnnotations": {
+          "type": "object",
+          "description": "Extra annotations for the Collector Pod template.",
+          "additionalProperties": true
+        }
+      },
+      "required": ["enabled"],
+      "additionalProperties": true
+    },
+    "profiles": {
+      "type": "object",
+      "description": "Logical bundles of policy keys for simplified enablement (e.g. baseline, strict, extended). Keys under this object define profile descriptors.",
+      "patternProperties": {
+        "^[a-z0-9A-Z_-]+$": {
+          "type": "object",
+          "description": "Single profile definition using arbitrary key (DNS-ish).",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Human description of the profile's intent / scope."
+            },
+            "policies": {
+              "type": "array",
+              "description": "List of policy keys included when this profile is activated (kyverno.policies.* or gatekeeper.policies.*).",
+              "items": {
+                "type": "string"
+              }
+            },
+            "extends": {
+              "type": "array",
+              "description": "Optional list of other profile names this profile composes (processed in order).",
+              "items": {
+                "type": "string"
+              }
+            },
+            "overrides": {
+              "type": "object",
+              "description": "Optional map of policy key -> override object (structure aligned with respective policies entries).",
+              "additionalProperties": true
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "activeProfiles": {
+      "type": "array",
+      "description": "List of profile names from .profiles to activate. Policies listed in those profiles are auto-enabled unless explicitly disabled in their respective sections.",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

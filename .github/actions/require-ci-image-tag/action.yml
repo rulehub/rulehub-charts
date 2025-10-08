@@ -1,0 +1,48 @@
+name: "Require CI Image Tag"
+description: "Resolves CI image tag from input or repository variable CI_IMAGE_TAG; fails if none set."
+inputs:
+  ci_image_tag:
+    description: "Optional explicit CI image tag; otherwise repository variable CI_IMAGE_TAG must be set."
+    required: false
+    default: ""
+outputs:
+  resolved_tag:
+    description: "Resolved CI image tag"
+    value: ${{ steps.resolve.outputs.resolved_tag }}
+runs:
+  using: "composite"
+  steps:
+    - name: Resolve CI image tag
+      id: resolve
+      shell: bash
+      run: |
+        set -euo pipefail
+        tag_input='${{ inputs.ci_image_tag }}'
+        # Note: We intentionally read CI_IMAGE_TAG from the environment to maximize compatibility with
+        # local ACT runs, which don't fully support the GitHub 'vars' context in composite actions.
+        # In GitHub, set env.CI_IMAGE_TAG: ${{ vars.CI_IMAGE_TAG }} at the workflow/job/step level.
+        tag_var="${CI_IMAGE_TAG:-}"
+        # Detect ACT local runner to avoid hard failure when repository vars are unavailable.
+        # In GitHub-hosted runners, ACT is not set and logic below enforces a pinned tag.
+        is_act="${ACT:-}"
+        if [ -n "${tag_input}" ]; then
+          resolved="${tag_input}"
+        elif [ -n "${tag_var}" ]; then
+          resolved="${tag_var}"
+        elif [ -n "${is_act}" ] || [ "${GITHUB_ACTOR:-}" = "nektos/act" ]; then
+          # Local act runs: fall back to 'latest' to keep workflows runnable.
+          # Note: production workflows should use an immutable tag via CI_IMAGE_TAG or input.
+          resolved="latest"
+          echo "⚠️ ACT detected: falling back to ci-charts:latest (non-immutable)." >> "$GITHUB_STEP_SUMMARY"
+        else
+          echo "Error: CI image tag is not provided." >&2
+          echo "❌ CI image tag is required." >> "$GITHUB_STEP_SUMMARY"
+          echo "Set inputs.ci_image_tag (workflow_dispatch) or repository variable CI_IMAGE_TAG to a valid immutable tag (e.g., 2025.10.03-<sha>)." >> "$GITHUB_STEP_SUMMARY"
+          exit 1
+        fi
+        if ! [[ "$resolved" =~ ^[A-Za-z0-9._-]+$ ]]; then
+          echo "Error: Resolved tag contains invalid characters: $resolved" >&2
+          exit 1
+        fi
+        echo "resolved_tag=$resolved" >> "$GITHUB_OUTPUT"
+        echo "✅ CI image tag detected: $resolved" >> "$GITHUB_STEP_SUMMARY"

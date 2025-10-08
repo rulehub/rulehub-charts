@@ -1,0 +1,13 @@
+suite: Kyverno enabled
+values:
+  kyverno:
+    enabled: true
+  gatekeeper:
+    enabled: false
+assertions:
+  - equal:
+      path: spec.kyverno.enabled
+      value: true
+  - notEqual:
+      path: spec.gatekeeper.enabled
+      value: true

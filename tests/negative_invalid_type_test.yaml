@@ -1,0 +1,17 @@
+---
+# Negative test: supply invalid type for kyverno.enabled (string instead of boolean) expecting template failure.
+# This relies on Helm values schema validation (helm install --validate is not default). For helm-unittest, we can
+# assert that the rendered templates do NOT include kyverno resources when an incorrect type is provided.
+# Note: helm-unittest does not execute JSON Schema validation automatically. To enforce, we add a pre-render schema
+# check script (verify-values-table or schema-compare). Here we just assert absence to catch silent coercion.
+# If future helm-unittest adds schema validation, adjust to expect failure.
+values:
+  kyverno:
+    enabled: "true" # invalid type (string)
+  gatekeeper:
+    enabled: false
+assertions:
+  - notContains:
+      path: spec.kyverno
+      content:
+        enabled: true

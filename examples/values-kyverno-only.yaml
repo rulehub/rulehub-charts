@@ -1,0 +1,28 @@
+# Example: enable only Kyverno and a few specific policies
+
+gatekeeper:
+  # Fully disable the Gatekeeper set (ConstraintTemplates/Constraints will not be generated)
+  enabled: false
+
+kyverno:
+  # Enable the Kyverno set
+  enabled: true
+
+  # Optional global override for all policies below.
+  # Possible values: "audit", "enforce", or empty to keep the value from the policy source file.
+  validationFailureAction: audit
+
+  # Explicitly manage specific policies: enable only disallow-latest and no-privileged
+  policies:
+    block-hostpath:
+      # Disable this policy (it's enabled by default)
+      enabled: false
+    disallow-latest:
+      # Enable this policy
+      enabled: true
+      # Example of per-policy override; it takes precedence over the global value
+      # validationFailureAction: enforce
+    no-privileged:
+      enabled: true
+    require-resources:
+      enabled: false

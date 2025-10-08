@@ -1,0 +1,4 @@
+activeProfiles:
+- extended
+kyverno:
+  policies: {}

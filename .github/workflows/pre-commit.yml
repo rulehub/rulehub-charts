@@ -1,0 +1,71 @@
+name: Pre-commit
+
+on:
+  pull_request:
+    paths:
+      - "**/*.yaml"
+      - "**/*.yml"
+      - "**/*.md"
+      - ".pre-commit-config.yaml"
+      - ".yamllint"
+      - "hack/**"
+  push:
+    branches: [main]
+    paths:
+      - ".pre-commit-config.yaml"
+      - ".yamllint"
+      - "hack/**"
+  workflow_dispatch:
+    inputs:
+      ci_image_tag:
+        description: "CI image tag for RuleHub charts image (e.g., 2025.10.03-<sha> or vX.Y.Z). Falls back to repo var CI_IMAGE_TAG or latest."
+        required: false
+        default: ""
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
+      options: --user 0:0
+    steps:
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+      - name: Verify pre-commit available
+        run: |
+          set -e
+          command -v pre-commit >/dev/null 2>&1 || { echo 'pre-commit not found in ci-charts image'; exit 1; }
+      - name: Run pre-commit (all files)
+        id: precommit
+        shell: bash
+        continue-on-error: true
+        env:
+          PRE_COMMIT_COLOR: always
+        run: |
+          set -o pipefail
+          pre-commit run --all-files --show-diff-on-failure | tee pre-commit.log
+          code=${PIPESTATUS[0]:-0}
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+      - name: Upload pre-commit log (GitHub only)
+        if: ${{ always() && github.actor != 'nektos/act' }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pre-commit-log
+          path: pre-commit.log
+          if-no-files-found: ignore
+
+      - name: Show pre-commit log (ACT-friendly)
+        if: ${{ always() && github.actor == 'nektos/act' }}
+        shell: bash
+        run: |
+          echo "---- pre-commit exit code: ${{ steps.precommit.outputs.code }} ----"
+          echo "---- pre-commit.log (last 300 lines) ----"
+          if [ -f pre-commit.log ]; then
+            tail -n 300 pre-commit.log || true
+          else
+            echo "pre-commit.log not found"
+          fi
+      - name: Fail if pre-commit failed
+        if: ${{ steps.precommit.outputs.code != '0' }}
+        run: |
+          echo 'pre-commit found issues' >&2
+          exit 1

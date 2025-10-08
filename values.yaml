@@ -1,0 +1,676 @@
+schemaVersion: 1
+# Deprecation Policy:
+# - Mark a policy key as deprecated by adding deprecated_since: X.Y.Z alongside enabled.
+# - A key must remain (as a stub or disabled) for at least N minor releases (default window: 2 minors) before removal.
+# - Verification script: make deprecation-verify (fails if window not satisfied or deprecated key still enforce-enabled).
+gatekeeper:
+  enabled: true
+  policies:
+    ban-hostnetwork:
+      enabled: true
+    limit-capabilities:
+      enabled: true
+    no-run-as-root:
+      enabled: true
+    require-imagepullpolicy-always:
+      enabled: true
+    betting-adr_provider_listed_uk-constraint:
+      enabled: true
+    betting-ads_bonus_terms_fair_clear-constraint:
+      enabled: true
+    betting-ads_no_minors_targeting-constraint:
+      enabled: true
+    betting-affordability-checks-uk-constraint:
+      enabled: true
+    betting-age_verification_before_gambling_uk-constraint:
+      enabled: true
+    betting-aml_high_risk_country_restrictions-constraint:
+      enabled: true
+    betting-aml_sar_reporting_uk-constraint:
+      enabled: true
+    betting-au_iga_no_prohibited_services-constraint:
+      enabled: true
+    betting-complaints_process_published-constraint:
+      enabled: true
+    betting-credit_card_gambling_ban_uk-constraint:
+      enabled: true
+    betting-data-integrity-audits-constraint:
+      enabled: true
+    betting-deposit-limit-controls-constraint:
+      enabled: true
+    betting-game_rules_visible_before_play-constraint:
+      enabled: true
+    betting-geofencing-regulated-markets-constraint:
+      enabled: true
+    betting-in-play-delay-controls-constraint:
+      enabled: true
+    betting-kyc-onboarding-constraint:
+      enabled: true
+    betting-kyc_on_withdrawal-constraint:
+      enabled: true
+    betting-license-check-adm-it-constraint:
+      enabled: true
+    betting-license-check-anj-fr-constraint:
+      enabled: true
+    betting-license-check-dgoj-es-constraint:
+      enabled: true
+    betting-license-check-ukgc-constraint:
+      enabled: true
+    betting-license-check-us-co-division-constraint:
+      enabled: true
+    betting-license-check-us-nj-dge-constraint:
+      enabled: true
+    betting-license-check-us-nv-ngcb-constraint:
+      enabled: true
+    betting-license-check-us-pa-pgcb-constraint:
+      enabled: true
+    betting-loss_limit_controls-constraint:
+      enabled: true
+    betting-market-restrictions-youth-constraint:
+      enabled: true
+    betting-match-fixing-monitoring-constraint:
+      enabled: true
+    betting-no-bets-by-participants-constraint:
+      enabled: true
+    betting-official-data-only-constraint:
+      enabled: true
+    betting-ongoing_aml_monitoring-constraint:
+      enabled: true
+    betting-player_funds_segregation-constraint:
+      enabled: true
+    betting-reality_checks_elapsed_time-constraint:
+      enabled: true
+    betting-reverse_withdrawal_ban_uk-constraint:
+      enabled: true
+    betting-rng_certification_gli11-constraint:
+      enabled: true
+    betting-rtp_disclosure_to_players-constraint:
+      enabled: true
+    betting-safer_gambling_interactions-constraint:
+      enabled: true
+    betting-sanctions_screening_global-constraint:
+      enabled: true
+    betting-self-exclusion-uk-gamstop-constraint:
+      enabled: true
+    betting-self_exclusion_de_oasis-constraint:
+      enabled: true
+    edtech-au_app_11_security_edtech-constraint:
+      enabled: true
+    edtech-au_app_5_notice_edtech-constraint:
+      enabled: true
+    edtech-au_ndb_breach_notification_edtech-constraint:
+      enabled: true
+    edtech-br_lgpd_children_consent_best_interest-constraint:
+      enabled: true
+    edtech-ca_pipeda_consent_edtech-constraint:
+      enabled: true
+    edtech-ca_sopipa_no_sale_of_student_data-constraint:
+      enabled: true
+    edtech-ca_sopipa_no_targeted_advertising-constraint:
+      enabled: true
+    edtech-co_student_data_transparency-constraint:
+      enabled: true
+    edtech-coppa_data_minimization-constraint:
+      enabled: true
+    edtech-coppa_delete_on_parent_request-constraint:
+      enabled: true
+    edtech-coppa_parental_consent_under_13-constraint:
+      enabled: true
+    edtech-ct_student_data_privacy-constraint:
+      enabled: true
+    edtech-edtech_access_least_privilege-constraint:
+      enabled: true
+    edtech-edtech_audit_logs_student_record_access-constraint:
+      enabled: true
+    edtech-edtech_encryption_at_rest-constraint:
+      enabled: true
+    edtech-edtech_encryption_in_transit-constraint:
+      enabled: true
+    edtech-edtech_retention_after_course_completion-constraint:
+      enabled: true
+    edtech-eu_dpia_high_risk_edtech-constraint:
+      enabled: true
+    edtech-eu_eprivacy_cookie_consent_edtech-constraint:
+      enabled: true
+    edtech-eu_gdpr_minors_consent_education-constraint:
+      enabled: true
+    edtech-eu_scc_transfers_edplatform-constraint:
+      enabled: true
+    edtech-ferpa_consent_or_exception_for_disclosure-constraint:
+      enabled: true
+    edtech-ferpa_directory_info_optout_respected-constraint:
+      enabled: true
+    edtech-ferpa_parent_access_rights-constraint:
+      enabled: true
+    edtech-il_soppa_breach_notification-constraint:
+      enabled: true
+    edtech-in_dpdpa_children_verifiable_consent-constraint:
+      enabled: true
+    edtech-kr_pipa_guardian_consent_under_14-constraint:
+      enabled: true
+    edtech-ny_edlaw2d_encryption_and_contracts-constraint:
+      enabled: true
+    edtech-nz_notice_at_collection_edtech-constraint:
+      enabled: true
+    edtech-ppra_parental_consent_sensitive_surveys-constraint:
+      enabled: true
+    edtech-uk_aadc_privacy_by_default-constraint:
+      enabled: true
+    edtech-uk_aadc_profiling_and_geolocation_off-constraint:
+      enabled: true
+    medtech-au_myr_health_privacy-constraint:
+      enabled: true
+    medtech-backup_and_recovery_rto_rpo-constraint:
+      enabled: true
+    medtech-ca_phipa_health_data-constraint:
+      enabled: true
+    medtech-device_data_integrity_hashing-constraint:
+      enabled: true
+    medtech-dicom_network_security_basic-constraint:
+      enabled: true
+    medtech-eu_ivdr_clinical_performance-constraint:
+      enabled: true
+    medtech-eu_mdr_ce_marking_and_udi-constraint:
+      enabled: true
+    medtech-eu_mdr_clinical_evaluation-constraint:
+      enabled: true
+    medtech-eu_mdr_eudamed_registration-constraint:
+      enabled: true
+    medtech-eu_mdr_pms_psur-constraint:
+      enabled: true
+    medtech-eu_vigilance_incident_reporting-constraint:
+      enabled: true
+    medtech-fda_cybersecurity_524b_sbom-constraint:
+      enabled: true
+    medtech-fda_mdr_event_reporting-constraint:
+      enabled: true
+    medtech-fda_part11_audit_trail-constraint:
+      enabled: true
+    medtech-fda_part11_esign_linkage-constraint:
+      enabled: true
+    medtech-fda_part11_system_validation-constraint:
+      enabled: true
+    medtech-fhir_smart_app_authz-constraint:
+      enabled: true
+    medtech-gdpr_art9_special_category_safeguards-constraint:
+      enabled: true
+    medtech-health_data_cross_border_controls-constraint:
+      enabled: true
+    medtech-hipaa_access_audit_logging-constraint:
+      enabled: true
+    medtech-hipaa_baa_with_vendors-constraint:
+      enabled: true
+    medtech-hipaa_mfa_privileged_access-constraint:
+      enabled: true
+    medtech-hipaa_minimum_necessary-constraint:
+      enabled: true
+    medtech-hipaa_security_admin_safeguards-constraint:
+      enabled: true
+    medtech-hipaa_security_tech_encryption-constraint:
+      enabled: true
+    medtech-hitech_breach_notification_60d-constraint:
+      enabled: true
+    medtech-iec_62304_scm_prp_processes-constraint:
+      enabled: true
+    medtech-iec_62304_software_safety_class-constraint:
+      enabled: true
+    medtech-iec_62366_usability_summative_eval-constraint:
+      enabled: true
+    medtech-iso_13485_document_control-constraint:
+      enabled: true
+    medtech-iso_14971_risk_management_file-constraint:
+      enabled: true
+    medtech-iso_27001_isms_scope_and_controls-constraint:
+      enabled: true
+    medtech-log_retention_for_clinical_events-constraint:
+      enabled: true
+    medtech-onc_cures_api_fhir_r4-constraint:
+      enabled: true
+    medtech-onc_information_blocking_prohibited-constraint:
+      enabled: true
+    medtech-sg_hcsa_pdpa_health_data-constraint:
+      enabled: true
+    medtech-uk_dtac_compliance-constraint:
+      enabled: true
+    medtech-uk_mhra_post_market_surveillance-constraint:
+      enabled: true
+    # --- Inactive stubs to satisfy policy sync for existing files (kept disabled to avoid duplicate enforcement) ---
+    betting-constraint-placeholder:
+      enabled: false
+    betting-license_check_agco_on-constraint:
+      enabled: false
+    betting-license_check_ca_on_igaming-constraint:
+      enabled: false
+    betting-license_check_ggl_de-constraint:
+      enabled: false
+    betting-license_check_ksa_nl-constraint:
+      enabled: false
+    betting-license_check_mga-constraint:
+      enabled: false
+    betting-license_check_spelinspektionen_se-constraint:
+      enabled: false
+    betting-license_check_spillemyndigheden_dk-constraint:
+      enabled: false
+    betting-self_exclusion_dk_rofus-constraint:
+      enabled: false
+    betting-self_exclusion_es_rgiaj-constraint:
+      enabled: false
+    betting-self_exclusion_nl_cruks-constraint:
+      enabled: false
+    betting-self_exclusion_on_igaming-constraint:
+      enabled: false
+    betting-self_exclusion_se_spelpaus-constraint:
+      enabled: false
+    betting-session_time_limits_controls-constraint:
+      enabled: false
+    betting-slots_min_spin_speed_uk-constraint:
+      enabled: false
+    betting-slots_no_autoplay_uk-constraint:
+      enabled: false
+    betting-slots_no_losses_disguised_as_wins-constraint:
+      enabled: false
+    betting-source_of_funds_checks-constraint:
+      enabled: false
+    betting-source-of-funds-thresholds-constraint:
+      enabled: false
+    betting-suspicious-betting-reporting-uk-constraint:
+      enabled: false
+    betting-txn-monitoring-anomalies-constraint:
+      enabled: false
+build:
+  # Optional commit SHA injected into annotations policy-sets/build.commit (override at install: --set build.commitSha=$(git rev-parse HEAD))
+  commitSha: ""
+  # Optional UTC RFC3339 timestamp injected into annotations policy-sets/build.timestamp (leave empty for deterministic renders)
+  timestamp: ""
+  # Optional aggregate integrity sha256 (from `make aggregate-integrity`) injected into annotations policy-sets/build.integrity.sha256
+  # NOTE: Leave empty by default for reproducible/deterministic renders. Set at install time if you want to surface integrity metadata.
+  integritySha256: ""
+  # When true and integritySha256 is non-empty, export a ConfigMap with the integrity hash for runtime auditing
+  # Default is false to avoid emitting placeholder integrity objects in fresh installs.
+  exportIntegrityConfigMap: false
+  # Override name for integrity ConfigMap (defaults to policy-sets-integrity)
+  integrityConfigMapName: ""
+opentelemetryCollector:
+  enabled: false
+  # Deployment name
+  name: otel-collector
+  # Image details (kept minimal; override as needed)
+  image:
+    repository: otel/opentelemetry-collector-contrib
+    tag: 0.101.0
+    pullPolicy: IfNotPresent
+  # Resource requests/limits (lightweight default)
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+  # Service (OTLP gRPC + HTTP)
+  service:
+    type: ClusterIP
+    ports:
+      grpc: 4317
+      http: 4318
+  # Minimal config sections; extend via extraConfig
+  exporters:
+    logging: {}
+  processors:
+    batch: {}
+  receivers:
+    otlp:
+      protocols:
+        grpc: {}
+        http: {}
+  # Provide raw YAML fragment merged into generated config map (Helm toYaml on map)
+  extraConfig: {}
+  # Extra annotations for Deployment / Pod
+  podAnnotations: {}
+kyverno:
+  enabled: true
+  # Optional global default for all Kyverno policies below.
+  # When set (e.g., "audit" or "enforce"), it overrides the
+  # spec.validationFailureAction of each rendered Kyverno policy.
+  # Can be overridden per policy via kyverno.policies.<name>.validationFailureAction
+  validationFailureAction: ""
+  policies:
+    block-hostpath:
+      enabled: true
+    # rationale: Enforced to block hostPath mounts that risk node filesystem escape and privilege escalation.
+    # Optional per-policy override; takes precedence over the global value above
+    # validationFailureAction: audit
+    disallow-latest:
+      enabled: true
+    # rationale: Enforced to prevent drifting image tags (latest) that hinder provenance and rollback.
+    # validationFailureAction: enforce
+    no-privileged:
+      enabled: true
+    # rationale: Enforced to forbid privileged containers reducing attack surface and breakout vectors.
+    # validationFailureAction: audit
+    require-resources:
+      enabled: true
+    # rationale: Enforced so every container specifies cpu/memory requests & limits for scheduling stability.
+    # validationFailureAction: enforce
+    betting-adr_provider_listed_uk-policy:
+      enabled: true
+    betting-ads_bonus_terms_fair_clear-policy:
+      enabled: true
+    betting-ads_no_minors_targeting-policy:
+      enabled: true
+    betting-affordability_checks_uk-policy:
+      enabled: true
+    betting-age_verification_before_gambling_uk-policy:
+      enabled: true
+    betting-aml_high_risk_country_restrictions-policy:
+      enabled: true
+    betting-aml_sar_reporting_uk-policy:
+      enabled: true
+    betting-au_iga_no_prohibited_services-policy:
+      enabled: true
+    betting-complaints_process_published-policy:
+      enabled: true
+    betting-credit_card_gambling_ban_uk-policy:
+      enabled: true
+    betting-data_integrity_audits-policy:
+      enabled: true
+    betting-deposit_limit_controls-policy:
+      enabled: true
+    betting-game_rules_visible_before_play-policy:
+      enabled: true
+    betting-geofencing_regulated_markets-policy:
+      enabled: true
+    betting-in_play_delay_controls-policy:
+      enabled: true
+    betting-kyc_on_withdrawal-policy:
+      enabled: true
+    betting-kyc_onboarding-policy:
+      enabled: true
+    betting-license_check_adm_it-policy:
+      enabled: true
+    betting-license_check_agco_on-policy:
+      enabled: true
+    betting-license_check_anj_fr-policy:
+      enabled: true
+    betting-license_check_ca_on_igaming-policy:
+      enabled: true
+    betting-license_check_dgoj_es-policy:
+      enabled: true
+    betting-license_check_ggl_de-policy:
+      enabled: true
+    betting-license_check_ksa_nl-policy:
+      enabled: true
+    betting-license_check_mga-policy:
+      enabled: true
+    betting-license_check_spelinspektionen_se-policy:
+      enabled: true
+    betting-license_check_spillemyndigheden_dk-policy:
+      enabled: true
+    betting-license_check_ukgc-policy:
+      enabled: true
+    betting-license_check_us_co_division-policy:
+      enabled: true
+    betting-license_check_us_nj_dge-policy:
+      enabled: true
+    betting-license_check_us_nv_ngcb-policy:
+      enabled: true
+    betting-license_check_us_pa_pgcb-policy:
+      enabled: true
+    betting-loss_limit_controls-policy:
+      enabled: true
+    betting-market_restrictions_youth-policy:
+      enabled: true
+    betting-match_fixing_monitoring-policy:
+      enabled: true
+    betting-no_bets_by_participants-policy:
+      enabled: true
+    betting-official_data_only-policy:
+      enabled: true
+    betting-ongoing_aml_monitoring-policy:
+      enabled: true
+    betting-player_funds_segregation-policy:
+      enabled: true
+    betting-reality_checks_elapsed_time-policy:
+      enabled: true
+    betting-reverse_withdrawal_ban_uk-policy:
+      enabled: true
+    betting-rng_certification_gli11-policy:
+      enabled: true
+    betting-rtp_disclosure_to_players-policy:
+      enabled: true
+    betting-safer_gambling_interactions-policy:
+      enabled: true
+    betting-sanctions_screening_global-policy:
+      enabled: true
+    betting-self_exclusion_de_oasis-policy:
+      enabled: true
+    betting-self_exclusion_dk_rofus-policy:
+      enabled: true
+    betting-self_exclusion_es_rgiaj-policy:
+      enabled: true
+    betting-self_exclusion_nl_cruks-policy:
+      enabled: true
+    betting-self_exclusion_on_igaming-policy:
+      enabled: true
+    betting-self_exclusion_se_spelpaus-policy:
+      enabled: true
+    betting-self_exclusion_uk_gamstop-policy:
+      enabled: true
+    betting-session_time_limits_controls-policy:
+      enabled: true
+    betting-slots_min_spin_speed_uk-policy:
+      enabled: true
+    betting-slots_no_autoplay_uk-policy:
+      enabled: true
+    betting-slots_no_losses_disguised_as_wins-policy:
+      enabled: true
+    betting-source_of_funds_checks-policy:
+      enabled: true
+    betting-source_of_funds_thresholds-policy:
+      enabled: true
+    betting-suspicious_betting_reporting_uk-policy:
+      enabled: true
+    betting-txn_monitoring_anomalies-policy:
+      enabled: true
+    igaming-deposit_limit_controls-policy:
+      enabled: true
+    igaming-geofencing_regulated_markets-policy:
+      enabled: true
+    igaming-license_check_adm_it-policy:
+      enabled: true
+    igaming-license_check_anj_fr-policy:
+      enabled: true
+    igaming-license_check_dgoj_es-policy:
+      enabled: true
+    igaming-license_check_ukgc-policy:
+      enabled: true
+    igaming-license_check_us_nj_dge-policy:
+      enabled: true
+    igaming-license_check_us_nv_ngcb-policy:
+      enabled: true
+    igaming-license_check_us_pa_pgcb-policy:
+      enabled: true
+    igaming-self_exclusion_uk_gamstop-policy:
+      enabled: true
+    edtech-au_app_11_security_edtech-policy:
+      enabled: true
+    edtech-au_app_5_notice_edtech-policy:
+      enabled: true
+    edtech-au_ndb_breach_notification_edtech-policy:
+      enabled: true
+    edtech-br_lgpd_children_consent_best_interest-policy:
+      enabled: true
+    edtech-ca_pipeda_consent_edtech-policy:
+      enabled: true
+    edtech-ca_sopipa_no_sale_of_student_data-policy:
+      enabled: true
+    edtech-ca_sopipa_no_targeted_advertising-policy:
+      enabled: true
+    edtech-co_student_data_transparency-policy:
+      enabled: true
+    edtech-coppa_data_minimization-policy:
+      enabled: true
+    edtech-coppa_delete_on_parent_request-policy:
+      enabled: true
+    edtech-coppa_parental_consent_under_13-policy:
+      enabled: true
+    edtech-ct_student_data_privacy-policy:
+      enabled: true
+    edtech-edtech_access_least_privilege-policy:
+      enabled: true
+    edtech-edtech_audit_logs_student_record_access-policy:
+      enabled: true
+    edtech-edtech_encryption_at_rest-policy:
+      enabled: true
+    edtech-edtech_encryption_in_transit-policy:
+      enabled: true
+    edtech-edtech_retention_after_course_completion-policy:
+      enabled: true
+    edtech-eu_dpia_high_risk_edtech-policy:
+      enabled: true
+    edtech-eu_eprivacy_cookie_consent_edtech-policy:
+      enabled: true
+    edtech-eu_gdpr_minors_consent_education-policy:
+      enabled: true
+    edtech-eu_scc_transfers_edplatform-policy:
+      enabled: true
+    edtech-ferpa_consent_or_exception_for_disclosure-policy:
+      enabled: true
+    edtech-ferpa_directory_info_optout_respected-policy:
+      enabled: true
+    edtech-ferpa_parent_access_rights-policy:
+      enabled: true
+    edtech-il_soppa_breach_notification-policy:
+      enabled: true
+    edtech-in_dpdpa_children_verifiable_consent-policy:
+      enabled: true
+    edtech-kr_pipa_guardian_consent_under_14-policy:
+      enabled: true
+    edtech-ny_edlaw2d_encryption_and_contracts-policy:
+      enabled: true
+    edtech-nz_notice_at_collection_edtech-policy:
+      enabled: true
+    edtech-ppra_parental_consent_sensitive_surveys-policy:
+      enabled: true
+    edtech-uk_aadc_privacy_by_default-policy:
+      enabled: true
+    edtech-uk_aadc_profiling_and_geolocation_off-policy:
+      enabled: true
+    medtech-au_myr_health_privacy-policy:
+      enabled: true
+    medtech-backup_and_recovery_rto_rpo-policy:
+      enabled: true
+    medtech-ca_phipa_health_data-policy:
+      enabled: true
+    medtech-device_data_integrity_hashing-policy:
+      enabled: true
+    medtech-dicom_network_security_basic-policy:
+      enabled: true
+    medtech-eu_ivdr_clinical_performance-policy:
+      enabled: true
+    medtech-eu_mdr_ce_marking_and_udi-policy:
+      enabled: true
+    medtech-eu_mdr_clinical_evaluation-policy:
+      enabled: true
+    medtech-eu_mdr_eudamed_registration-policy:
+      enabled: true
+    medtech-eu_mdr_pms_psur-policy:
+      enabled: true
+    medtech-eu_vigilance_incident_reporting-policy:
+      enabled: true
+    medtech-fda_cybersecurity_524b_sbom-policy:
+      enabled: true
+    medtech-fda_mdr_event_reporting-policy:
+      enabled: true
+    medtech-fda_part11_audit_trail-policy:
+      enabled: true
+    medtech-fda_part11_esign_linkage-policy:
+      enabled: true
+    medtech-fda_part11_system_validation-policy:
+      enabled: true
+    medtech-fhir_smart_app_authz-policy:
+      enabled: true
+    medtech-gdpr_art9_special_category_safeguards-policy:
+      enabled: true
+    medtech-health_data_cross_border_controls-policy:
+      enabled: true
+    medtech-hipaa_access_audit_logging-policy:
+      enabled: true
+    medtech-hipaa_baa_with_vendors-policy:
+      enabled: true
+    medtech-hipaa_mfa_privileged_access-policy:
+      enabled: true
+    medtech-hipaa_minimum_necessary-policy:
+      enabled: true
+    medtech-hipaa_security_admin_safeguards-policy:
+      enabled: true
+    medtech-hipaa_security_tech_encryption-policy:
+      enabled: true
+    medtech-hitech_breach_notification_60d-policy:
+      enabled: true
+    medtech-iec_62304_scm_prp_processes-policy:
+      enabled: true
+    medtech-iec_62304_software_safety_class-policy:
+      enabled: true
+    medtech-iec_62366_usability_summative_eval-policy:
+      enabled: true
+    medtech-iso_13485_document_control-policy:
+      enabled: true
+    medtech-iso_14971_risk_management_file-policy:
+      enabled: true
+    medtech-iso_27001_isms_scope_and_controls-policy:
+      enabled: true
+    medtech-log_retention_for_clinical_events-policy:
+      enabled: true
+    medtech-onc_cures_api_fhir_r4-policy:
+      enabled: true
+    medtech-onc_information_blocking_prohibited-policy:
+      enabled: true
+    medtech-sg_hcsa_pdpa_health_data-policy:
+      enabled: true
+    medtech-uk_dtac_compliance-policy:
+      enabled: true
+    medtech-uk_mhra_post_market_surveillance-policy:
+      enabled: true
+    # Inactive stub to satisfy sync for placeholder file
+    betting-policy-placeholder:
+      enabled: false
+
+# Profile bundles (baseline / extended). Policies listed here can be toggled via activeProfiles.
+profiles:
+  baseline:
+    description: Minimal core safety & compliance baseline.
+    policies:
+      - block-hostpath
+      - disallow-latest
+      - no-privileged
+      - require-resources
+  strict:
+    description: Hardened baseline (baseline + selected extended/high-impact policies).
+    # Includes all baseline hardening plus a subset of extended / higher impact compliance policies.
+    # Rationale: provide an opinionated stronger posture without enabling every heavyweight policy.
+    policies:
+      # Baseline core hardening
+      - block-hostpath
+      - disallow-latest
+      - no-privileged
+      - require-resources
+      # Selected extended / compliance policies (keep list stable & deterministic)
+      - betting-affordability_checks_uk-policy
+      - betting-source_of_funds_checks-policy
+      - betting-txn_monitoring_anomalies-policy
+      - medtech-fda_part11_system_validation-policy
+      - medtech-iec_62304_software_safety_class-policy
+      - medtech-uk_mhra_post_market_surveillance-policy
+  extended:
+    description: Heavyweight or higher-cost policies grouped for optional enablement.
+    policies:
+      - betting-affordability_checks_uk-policy
+      - betting-source_of_funds_checks-policy
+      - betting-txn_monitoring_anomalies-policy
+      - medtech-fda_part11_system_validation-policy
+      - medtech-iec_62304_software_safety_class-policy
+      - medtech-uk_mhra_post_market_surveillance-policy
+
+# Activate one or more profiles by name (order matters for override resolution)
+activeProfiles: []

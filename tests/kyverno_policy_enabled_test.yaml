@@ -1,0 +1,14 @@
+---
+suite: Kyverno policy enabled
+
+templates:
+  - templates/policy-sets.yaml
+
+tests:
+  - it: Kyverno policy kyc_basic_cdd enabled
+    set:
+      kyverno.enabled: true
+      kyverno.policies.kyc_basic_cdd.enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.kyverno.policies.kyc_basic_cdd

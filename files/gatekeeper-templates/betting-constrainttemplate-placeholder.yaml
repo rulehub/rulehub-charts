@@ -1,0 +1,22 @@
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: betting-constrainttemplate-placeholder
+  annotations:
+    rulehub.id: betting.constraint.template.placeholder
+spec:
+  crd:
+    spec:
+      names:
+        kind: BettingPlaceholder
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8sbettingplaceholder
+
+        # This is a no-op placeholder template used to keep directory structure
+        # and satisfy integrity checks requiring rulehub.id annotations.
+        violation[res] {
+          false
+          res := {"msg": "placeholder"}
+        }

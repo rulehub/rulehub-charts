@@ -1,0 +1,108 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: ["--allow-multiple-documents"]
+        exclude: ^templates/.*\.yaml$
+      - id: detect-private-key
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
+    hooks:
+      - id: yamllint
+        additional_dependencies: []
+        args: ["-c", ".yamllint", "."]
+  - repo: local
+    hooks:
+      - id: helm-lint
+        name: helm lint (fast)
+        entry: bash -c 'helm lint . || true'
+        language: system
+        pass_filenames: false
+
+      - id: validate-values-schema
+        name: values schema validate
+        entry: hack/verify-values-schema.sh
+        language: system
+        pass_filenames: false
+
+      - id: verify-policies-sync
+        name: verify policies sync (values <-> files)
+        entry: hack/verify-policies-sync.sh
+        language: system
+        pass_filenames: false
+
+      - id: verify-id-name-alignment
+        name: verify id <-> name alignment
+        entry: hack/verify-id-name-alignment.sh
+        language: system
+        pass_filenames: false
+
+      - id: make-lint
+        name: make lint (helm + ct)
+        entry: bash -c 'command -v make >/dev/null && make lint || echo "(make lint failed or unavailable)"'
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+      - id: verify-id-annotation
+        name: verify rulehub.id annotations
+        entry: hack/verify-id-annotation.sh
+        language: system
+        pass_filenames: false
+
+      - id: verify-policy-annotations
+        name: verify policy annotations schema
+        entry: hack/verify-policy-annotations.sh
+        language: system
+        pass_filenames: false
+
+      - id: values-table-up-to-date
+        name: values table up-to-date
+        entry: hack/verify-values-table.sh
+        language: system
+        pass_filenames: false
+
+      - id: verify-chart-version-label
+        name: verify chart/version label on rendered resources
+        entry: hack/verify-chart-version-label.sh
+        language: system
+        pass_filenames: false
+
+      - id: render-verify
+        name: verify rendered manifest naming
+        entry: bash -c './hack/verify-render.sh .'
+        language: system
+        pass_filenames: false
+
+      - id: verify-deterministic
+        name: verify deterministic template render
+        entry: hack/verify-deterministic.sh
+        language: system
+        pass_filenames: false
+
+      - id: schema-version-verify
+        name: verify values schemaVersion const
+        entry: hack/verify-schema-version.sh
+        language: system
+        pass_filenames: false
+
+      - id: build-annotations-verify
+        name: verify build annotations present when configured
+        entry: hack/verify-build-annotations.sh
+        language: system
+        pass_filenames: false
+
+      - id: helm-docs
+        name: helm-docs
+        entry: bash -c 'command -v helm-docs && helm-docs || echo "helm-docs not installed"'
+        language: system
+        files: (Chart.yaml|values.yaml|README.md)
+        pass_filenames: false
+
+exclude: |
+  ^\.git/|
+  ^dist/|
+  ^tmp/

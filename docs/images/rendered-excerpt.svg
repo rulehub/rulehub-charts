@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1000" height="420" viewBox="0 0 1000 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="1000" height="420" fill="#F8FAFC"/>
+  <text x="40" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="16" fill="#0F172A"># helm template rulehub-policies . --values values.yaml</text>
+  <rect x="40" y="84" width="920" height="300" rx="8" fill="#0B1021"/>
+  <text xml:space="preserve" x="56" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="13" fill="#E2E8F0">
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: disallow-privileged-containers
+spec:
+  validationFailureAction: audit
+  background: true
+  rules:
+  - name: privileged-containers
+    match:
+      resources:
+        kinds: [Pod]
+    validate:
+      message: "Privileged containers are not allowed"
+      pattern:
+        spec:
+          containers:
+          - =(securityContext):
+              =(privileged): false</text>
+</svg>

@@ -1,0 +1,9 @@
+{{- if .Values.gatekeeper.enabled }}
+{{- $pol := .Values.gatekeeper.policies }}
+
+{{- /* ConstraintTemplates */ -}}
+{{ include "policy-sets.gk.loop" (dict "glob" "files/gatekeeper-templates/*.yaml" "pol" $pol "root" .) }}
+
+{{- /* Constraints */ -}}
+{{ include "policy-sets.gk.loop" (dict "glob" "files/gatekeeper/*.yaml" "pol" $pol "root" .) }}
+{{- end }}

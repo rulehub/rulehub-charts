@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://example.com/policy-annotations.schema.json",
+    "title": "Rulehub Policy Annotations",
+    "description": "JSON Schema fragment describing required rulehub.* annotations for policy YAML metadata.annotations.",
+    "type": "object",
+    "properties": {
+        "rulehub.id": {
+            "type": "string",
+            "description": "Stable dotted identifier of the policy (lowercase, segments separated by dots).",
+            "pattern": "^[a-z0-9]+(\\.[a-z0-9_]+)*$"
+        },
+        "rulehub.title": {
+            "type": "string",
+            "description": "Human readable short title of the policy.",
+            "minLength": 3
+        },
+        "rulehub.links": {
+            "description": "Optional multi-line or list of reference links (when represented as scalar block in YAML this schema treats it as string)",
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "minLength": 5
+                    }
+                }
+            ]
+        }
+    },
+    "required": [
+        "rulehub.id"
+    ],
+    "additionalProperties": true
+}

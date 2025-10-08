@@ -1,0 +1,3466 @@
+{
+  "packages": [
+    {
+      "coverage": [
+        "EU AMLD 5/6"
+      ],
+      "id": "aml.address_verification",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Address verification",
+      "standard": "EU AMLD",
+      "version": "5/6"
+    },
+    {
+      "coverage": [
+        "EU AMLD 5/6"
+      ],
+      "id": "aml.high_risk_country_edd",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Enhanced due diligence for high-risk countries",
+      "standard": "EU AMLD",
+      "version": "5/6"
+    },
+    {
+      "coverage": [
+        "EU AMLD 5/6"
+      ],
+      "id": "aml.kyc_basic_cdd",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Basic customer due diligence (KYC)",
+      "standard": "EU AMLD",
+      "version": "5/6"
+    },
+    {
+      "coverage": [
+        "EU AMLD 5/6"
+      ],
+      "id": "aml.minimum_age",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Minimum age check",
+      "standard": "EU AMLD",
+      "version": "5/6"
+    },
+    {
+      "coverage": [
+        "EU AMLD 5/6"
+      ],
+      "id": "aml.pep_screening_required",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PEP screening required",
+      "standard": "EU AMLD",
+      "version": "5/6"
+    },
+    {
+      "coverage": [
+        "EU AMLD 5/6"
+      ],
+      "id": "aml.sanctions_check",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Sanctions list screening",
+      "standard": "EU AMLD",
+      "version": "5/6"
+    },
+    {
+      "coverage": [
+        "EU AMLD 5/6"
+      ],
+      "id": "aml.txn_monitoring_thresholds",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Transaction monitoring thresholds",
+      "standard": "EU AMLD",
+      "version": "5/6"
+    },
+    {
+      "coverage": [
+        "EU AMLD 5/6"
+      ],
+      "id": "aml.ubo_identification",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Ultimate Beneficial Owner identification",
+      "standard": "EU AMLD",
+      "version": "5/6"
+    },
+    {
+      "id": "ban.hostnetwork",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": []
+    },
+    {
+      "id": "ban.hostnetwork.template",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": []
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.adr_provider_listed_uk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.ads_bonus_terms_fair_clear",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.ads_no_minors_targeting",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Ads \u2014 no minors targeting",
+      "standard": "other",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.affordability_checks_uk",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Affordability Checks (UK)",
+      "standard": "UKGC",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.age_verification_before_gambling_uk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.aml_high_risk_country_restrictions",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.aml_sar_reporting_uk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML SAR Reporting (UK)",
+      "standard": "UK AML / POCA",
+      "version": "current"
+    },
+    {
+      "id": "betting.au_iga_no_prohibited_services",
+      "jurisdiction": [
+        "AU"
+      ],
+      "name": "AU IGA No Prohibited Services",
+      "standard": "AU IGA",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.complaints_process_published",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "id": "betting.constraint.placeholder",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": []
+    },
+    {
+      "id": "betting.constraint.template.placeholder",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": []
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.credit_card_gambling_ban_uk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.data_integrity_audits",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Data Integrity Audits",
+      "standard": "Integrity",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.deposit_limit_controls",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Deposit Limit Controls",
+      "standard": "UK GC / EU AMLD",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.game_rules_visible_before_play",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.geofencing_regulated_markets",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.in_play_delay_controls",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "In-Play Delay Controls",
+      "standard": "UKGC/MGA",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.kyc_on_withdrawal",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.kyc_onboarding",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "KYC Onboarding",
+      "standard": "EU AMLD / UKGC",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_adm_it",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "id": "betting.license_check_agco_on",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_anj_fr",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_au_nt",
+      "jurisdiction": [
+        "APAC"
+      ],
+      "name": "License Check \u2014 AU Northern Territory",
+      "standard": "NT Racing Commission",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_brazil_14790",
+      "jurisdiction": [
+        "LatAm"
+      ],
+      "name": "License Check \u2014 Brazil 14.790/2023",
+      "standard": "Lei 14.790/2023",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_ca_on_igaming",
+      "jurisdiction": [
+        "North America"
+      ],
+      "name": "License Check \u2014 Ontario iGaming",
+      "standard": "AGCO/iGO",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_coljuegos_co",
+      "jurisdiction": [
+        "LatAm"
+      ],
+      "name": "License Check \u2014 Coljuegos (CO)",
+      "standard": "Coljuegos",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_dgoj_es",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_ggl_de",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_gra_sg",
+      "jurisdiction": [
+        "APAC"
+      ],
+      "name": "License Check \u2014 GRA (SG)",
+      "standard": "GRA (SG)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_ksa_nl",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_mga",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_spelinspektionen_se",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_spillemyndigheden_dk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_ukgc",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_us_co_division",
+      "jurisdiction": [
+        "North America"
+      ],
+      "name": "License Check \u2014 CO Division",
+      "standard": "Colorado Division",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_us_nj_dge",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_us_nv_ngcb",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.license_check_us_pa_pgcb",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.loss_limit_controls",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.market_restrictions_youth",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Market Restrictions \u2014 Youth/Underage",
+      "standard": "FR/Other EU",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.match_fixing_monitoring",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Match-Fixing Monitoring",
+      "standard": "Integrity",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.no_bets_by_participants",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "No Bets By Participants",
+      "standard": "Leagues/Regulators",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.official_data_only",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Official Data Only",
+      "standard": "State/League Rules",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.ongoing_aml_monitoring",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.player_funds_segregation",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "id": "betting.policy.placeholder",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": []
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.reality_checks_elapsed_time",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.reverse_withdrawal_ban_uk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.rng_certification_gli11",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.rtp_disclosure_to_players",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.safer_gambling_interactions",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.sanctions_screening_global",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.self_exclusion_de_oasis",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.self_exclusion_dk_rofus",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Self-exclusion (ROFUS - Denmark)",
+      "standard": "other",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.self_exclusion_es_rgiaj",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.self_exclusion_nl_cruks",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "id": "betting.self_exclusion_on_igaming",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.self_exclusion_se_spelpaus",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.self_exclusion_uk_gamstop",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.session_time_limits_controls",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "id": "betting.slots_min_spin_speed_uk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Slots Minimum Spin Speed (UK)",
+      "standard": "UKGC Slots Design",
+      "version": "current"
+    },
+    {
+      "id": "betting.slots_no_autoplay_uk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Slots No Autoplay (UK)",
+      "standard": "UKGC Slots Design",
+      "version": "current"
+    },
+    {
+      "id": "betting.slots_no_losses_disguised_as_wins",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.source_of_funds_checks",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.source_of_funds_thresholds",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Source of Funds \u2014 Thresholds",
+      "standard": "UKGC",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.suspicious_betting_reporting_uk",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Suspicious Betting \u2014 Reporting (UK)",
+      "standard": "UKGC",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Betting (multi-jurisdiction) current"
+      ],
+      "id": "betting.txn_monitoring_anomalies",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Transaction Monitoring \u2014 Anomalies",
+      "standard": "AML",
+      "version": "current"
+    },
+    {
+      "id": "block.hostpath",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "id": "disallow.latest",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.au_app_11_security_edtech",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.au_app_5_notice_edtech",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.au_ndb_breach_notification_edtech",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.br_lgpd_children_consent_best_interest",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.ca_pipeda_consent_edtech",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.ca_sopipa_no_sale_of_student_data",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.ca_sopipa_no_targeted_advertising",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.co_student_data_transparency",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.coppa_data_minimization",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.coppa_delete_on_parent_request",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "COPPA Deletion on Parent Request",
+      "standard": "COPPA",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.coppa_parental_consent_under_13",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.ct_student_data_privacy",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.edtech_access_least_privilege",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.edtech_audit_logs_student_record_access",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.edtech_encryption_at_rest",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.edtech_encryption_in_transit",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.edtech_retention_after_course_completion",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.eu_dpia_high_risk_edtech",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.eu_eprivacy_cookie_consent_edtech",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.eu_gdpr_minors_consent_education",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.eu_scc_transfers_edplatform",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.ferpa_consent_or_exception_for_disclosure",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.ferpa_directory_info_optout_respected",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.ferpa_parent_access_rights",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.il_soppa_breach_notification",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.in_dpdpa_children_verifiable_consent",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.kr_pipa_guardian_consent_under_14",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.ny_edlaw2d_encryption_and_contracts",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.nz_notice_at_collection_edtech",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.ppra_parental_consent_sensitive_surveys",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.uk_aadc_privacy_by_default",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "EdTech (multi-jurisdiction) current"
+      ],
+      "id": "edtech.uk_aadc_profiling_and_geolocation_off",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_account_freeze_on_hit",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Account Freeze On Sanctions Hit",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_adverse_media_screening",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Adverse Media Screening",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_customer_risk_tiering",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Customer Risk Tiering",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_duplicate_account_detection",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Duplicate Account Detection",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_geolocation_restrictions",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Geolocation Restrictions",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "id": "fintech.aml_manual_review_queue",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Manual Review Queue",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_ongoing_monitoring",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Ongoing Monitoring",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "id": "fintech.aml_pep_periodic_review",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML PEP Periodic Review",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_pep_screening",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML PEP Screening",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_risk_scoring_model",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Risk Scoring Model",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_sanctions_rescreening_frequency",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Sanctions Re-Screening Frequency",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_sanctions_screening",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Sanctions Screening",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_transaction_velocity_limits",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Transaction Velocity Limits",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_unusual_activity_alerting",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Unusual Activity Alerting",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.aml_watchlist_management",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AML Watchlist Management",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.bitlicense_compliance",
+      "jurisdiction": [
+        "US-NY"
+      ],
+      "name": "NYDFS BitLicense Compliance",
+      "standard": "NYDFS",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.card_tokenization_required",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Card Tokenization Required",
+      "standard": "PCI / EMVCo",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.chain_analysis_risk_controls",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Blockchain Analytics Risk Controls",
+      "standard": "FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.chargeback_monitoring",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Chargeback Monitoring",
+      "standard": "Card Schemes",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.cold_storage_ratio",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Cold Storage Ratio",
+      "standard": "Security",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.custody_asset_segregation",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Custody Asset Segregation",
+      "standard": "Custody",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.device_fingerprinting",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Device Fingerprinting",
+      "standard": "Fraud",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.fapi_compliance",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "FAPI Compliance",
+      "standard": "FAPI",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.fraud_velocity_checks",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Fraud Velocity Checks",
+      "standard": "Fraud",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.geofencing_restricted_markets",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Geofencing Restricted Markets",
+      "standard": "Risk",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.hot_wallet_limits",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Hot Wallet Limits",
+      "standard": "Security",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.ip_geolocation_consistency",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "IP Geolocation Consistency",
+      "standard": "Fraud",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.jwt_expiry_policy",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "JWT Expiry Policy",
+      "standard": "Security",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.kyc_biometric_liveness",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "KYC Biometric Liveness",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.kyc_document_verification",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "KYC Document Verification",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.kyc_reverification_schedule",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "KYC Re-Verification Schedule",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.kyc_source_of_funds",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "KYC Source of Funds",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.kyc_source_of_wealth",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "KYC Source of Wealth",
+      "standard": "EU AMLD / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.mcc_whitelisting",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "MCC Whitelisting",
+      "standard": "Risk",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.mtls_required",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "mTLS Required For APIs",
+      "standard": "Security",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.oauth2_pkce_required",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "OAuth2 PKCE Required",
+      "standard": "Security",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.ob_audit_logging",
+      "jurisdiction": [
+        "EU/UK"
+      ],
+      "name": "Open Banking Audit Logging",
+      "standard": "OBIE",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.ob_consent_expiry_90d",
+      "jurisdiction": [
+        "UK"
+      ],
+      "name": "Open Banking Consent Expiry 90d",
+      "standard": "OBIE",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.ob_consent_revocation",
+      "jurisdiction": [
+        "EU/UK"
+      ],
+      "name": "Open Banking Consent Revocation",
+      "standard": "OBIE",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.ob_data_minimization",
+      "jurisdiction": [
+        "EU/UK"
+      ],
+      "name": "Open Banking Data Minimization",
+      "standard": "OBIE",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.ob_rate_limits",
+      "jurisdiction": [
+        "EU/UK"
+      ],
+      "name": "Open Banking API Rate Limits",
+      "standard": "OBIE",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.ob_tpp_eidas_cert_validation",
+      "jurisdiction": [
+        "EU"
+      ],
+      "name": "Open Banking TPP eIDAS Validation",
+      "standard": "eIDAS",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pan_masking_in_logs",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PAN Masking In Logs",
+      "standard": "PCI DSS",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_account_lockout",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Account Lockout",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_default_passwords_changed",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Default Passwords Changed",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_file_integrity_monitoring",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 File Integrity Monitoring",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_https_only",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 HTTPS Only",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_key_management",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Key Management",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_log_retention",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Log Retention",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_malware_protection",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Malware Protection",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_mfa_required",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 MFA Required",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_network_segmentation",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Network Segmentation",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_pan_masking_in_logs",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 PAN Masking in Logs",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_secure_coding_practices",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Secure Coding Practices",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_session_timeout",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Session Timeout",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_storage_encryption",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Storage Encryption",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_tls_min_version",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 TLS Min Version",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.pci_vulnerability_scanning",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PCI DSS \u2014 Vulnerability Scanning",
+      "standard": "PCI DSS 4.0",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.proof_of_reserves_reporting",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Proof of Reserves Reporting",
+      "standard": "Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "PSD2 2015/2366"
+      ],
+      "id": "fintech.psd2_sca",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "PSD2 SCA (Strong Customer Authentication)",
+      "standard": "PSD2",
+      "version": "2015/2366"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.psd2_sca_enforced",
+      "jurisdiction": [
+        "EU"
+      ],
+      "name": "PSD2 SCA Enforced",
+      "standard": "PSD2 / EBA RTS",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.psd2_sca_exemptions_controls",
+      "jurisdiction": [
+        "EU"
+      ],
+      "name": "PSD2 SCA Exemptions Controls",
+      "standard": "PSD2 / EBA RTS",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.psd2_transaction_risk_analysis",
+      "jurisdiction": [
+        "EU"
+      ],
+      "name": "PSD2 Transaction Risk Analysis",
+      "standard": "PSD2 / EBA RTS",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "RBI eKYC placeholder"
+      ],
+      "id": "fintech.rbi_ekyc_risk",
+      "jurisdiction": [
+        "APAC"
+      ],
+      "name": "RBI eKYC \u2014 High-risk controls",
+      "standard": "RBI eKYC",
+      "version": "placeholder"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.stablecoin_reserve_ratio",
+      "jurisdiction": [
+        "EU"
+      ],
+      "name": "Stablecoin Reserve Ratio",
+      "standard": "MiCA",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.three_ds_required",
+      "jurisdiction": [
+        "EU/UK"
+      ],
+      "name": "3DS Required",
+      "standard": "EMVCo / PSD2",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.transaction_limits_per_risk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Transaction Limits per Risk Tier",
+      "standard": "Risk",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.travel_rule_compliance",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Travel Rule Compliance",
+      "standard": "FATF Rec.16",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "US FinReg MTL"
+      ],
+      "id": "fintech.us_mtl_license",
+      "jurisdiction": [
+        "North America"
+      ],
+      "name": "US Money Transmitter Licensing (MTL)",
+      "standard": "US FinReg",
+      "version": "state-licenses"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.vasp_license_required",
+      "jurisdiction": [
+        "EU/Global"
+      ],
+      "name": "VASP License Required",
+      "standard": "MiCA / FATF",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.withdrawal_address_whitelist",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Withdrawal Address Whitelist",
+      "standard": "Security",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "Fintech Max 2025-08-17"
+      ],
+      "id": "fintech.xs2a_api_security",
+      "jurisdiction": [
+        "EU/UK"
+      ],
+      "name": "Open Banking XS2A API Security",
+      "standard": "OBIE / FAPI",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "GDPR 2016/679"
+      ],
+      "id": "gdpr.consent_required",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Consent required",
+      "standard": "GDPR",
+      "version": "2016/679"
+    },
+    {
+      "coverage": [
+        "GDPR 2016/679"
+      ],
+      "id": "gdpr.data_minimization",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Data minimization",
+      "standard": "GDPR",
+      "version": "2016/679"
+    },
+    {
+      "coverage": [
+        "GDPR 2016/679"
+      ],
+      "id": "gdpr.data_retention",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Storage limitation (data retention)",
+      "standard": "GDPR",
+      "version": "2016/679"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.deposit_limit_controls",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Deposit Limits \u2014 Controls",
+      "standard": "UKGC/EU",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.geofencing_regulated_markets",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Geofencing \u2014 Regulated Markets Only",
+      "standard": "Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.license_check_adm_it",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "License Check \u2014 ADM (IT)",
+      "standard": "ADM",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.license_check_anj_fr",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "License Check \u2014 ANJ (FR)",
+      "standard": "ANJ",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.license_check_dgoj_es",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "License Check \u2014 DGOJ (ES)",
+      "standard": "DGOJ",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.license_check_ukgc",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "License Check \u2014 UKGC",
+      "standard": "UKGC",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.license_check_us_nj_dge",
+      "jurisdiction": [
+        "North America"
+      ],
+      "name": "License Check \u2014 NJ DGE",
+      "standard": "NJ DGE",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.license_check_us_nv_ngcb",
+      "jurisdiction": [
+        "North America"
+      ],
+      "name": "License Check \u2014 NV NGCB",
+      "standard": "NV NGCB",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.license_check_us_pa_pgcb",
+      "jurisdiction": [
+        "North America"
+      ],
+      "name": "License Check \u2014 PA PGCB",
+      "standard": "PA PGCB",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "iGaming (multi-jurisdiction) current"
+      ],
+      "id": "igaming.self_exclusion_uk_gamstop",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Self-Exclusion \u2014 GAMSTOP (UK)",
+      "standard": "UKGC LCCP",
+      "version": "current"
+    },
+    {
+      "id": "k8s.ban_hostnetwork",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Disallow hostNetwork in Pods",
+      "standard": "Kubernetes",
+      "version": "1.x"
+    },
+    {
+      "id": "k8s.block_hostpath",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Block hostPath volumes",
+      "standard": "Kubernetes",
+      "version": "1.x"
+    },
+    {
+      "coverage": [
+        "Kubernetes Security Baseline v1"
+      ],
+      "id": "k8s.disallow_latest",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Disallow image tag latest",
+      "standard": "Kubernetes",
+      "version": "1.x"
+    },
+    {
+      "id": "k8s.limit_capabilities",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Limit container capabilities",
+      "standard": "Kubernetes",
+      "version": "1.x"
+    },
+    {
+      "coverage": [
+        "Kubernetes Security Baseline v1"
+      ],
+      "id": "k8s.no_privileged",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Disallow privileged pods",
+      "standard": "Kubernetes",
+      "version": "1.x"
+    },
+    {
+      "coverage": [
+        "Kubernetes Security Baseline v1"
+      ],
+      "id": "k8s.no_run_as_root",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Disallow running as root",
+      "standard": "Kubernetes",
+      "version": "1.x"
+    },
+    {
+      "coverage": [
+        "Kubernetes Security Baseline v1"
+      ],
+      "id": "k8s.require_imagepullpolicy_always",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Require imagePullPolicy: Always",
+      "standard": "Kubernetes",
+      "version": "1.x"
+    },
+    {
+      "coverage": [
+        "Kubernetes Security Baseline v1"
+      ],
+      "id": "k8s.require_resources",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Require resource requests/limits",
+      "standard": "Kubernetes",
+      "version": "1.x"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.aba_model_rule_1_6_confidentiality",
+      "jurisdiction": [
+        "US"
+      ],
+      "name": "ABA Model Rule 1.6 \u2014 Confidentiality",
+      "standard": "ABA Model Rules",
+      "version": "current"
+    },
+    {
+      "id": "legaltech.ae_pdpl_consent_notice",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AE: PDPL Consent Notice",
+      "standard": "PDPL (UAE)",
+      "version": "current"
+    },
+    {
+      "id": "legaltech.au_app_notice_at_collection",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "AU: APP Notice At Collection",
+      "standard": "Australia Privacy Act (APPs)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.ca_qc_law25_privacy_governance",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Ca QC Law25 Privacy Governance",
+      "standard": "Quebec Law 25 (Canada)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.ccpa_notice_at_collection",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "CCPA: Notice At Collection",
+      "standard": "CCPA (California)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.ccpa_opt_out_enabled",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "CCPA: Opt Out Enabled",
+      "standard": "CCPA (California)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.ccpa_verification_of_requests",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "CCPA: Verification Of Requests",
+      "standard": "CCPA (California)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.ch_fadp_records_of_processing",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Ch FADP Records Of Processing",
+      "standard": "FADP (Switzerland)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.cpra_sensitive_data_limited_use",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "CPRA: Sensitive Data Limited Use",
+      "standard": "CPRA (California)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.data_residency_requirements_enforced",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Data Residency Requirements Enforced",
+      "standard": "Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.ediscovery_frcp_26_34_37",
+      "jurisdiction": [
+        "US"
+      ],
+      "name": "eDiscovery \u2014 FRCP 26/34/37",
+      "standard": "FRCP",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.encryption_at_rest_enabled",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Encryption At Rest Enabled",
+      "standard": "Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.encryption_in_transit_enabled",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Encryption In Transit Enabled",
+      "standard": "Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_breach_72h",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: Breach 72H",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_consent_valid",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: Consent Valid",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_cookie_consent_eprivacy",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: Cookie Consent Eprivacy",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_data_minimization",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: Data Minimization",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_dpia_required_high_risk",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: Dpia Required High Risk",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_dsar_timeline_30d",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: DSAR Timeline 30D",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_lawful_basis_required",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: Lawful Basis Required",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_records_of_processing",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: Records Of Processing",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_retention_limit",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: Retention Limit",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.gdpr_transfer_scc",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "GDPR: Transfer Scc",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.id_pdp_cross_border_transfer",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "ID: Pdp Cross Border Transfer",
+      "standard": "PDP (Indonesia)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.kr_pipa_breach_notification",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "KR: Pipa Breach Notification",
+      "standard": "PIPA (Korea)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.legal_hold_no_delete_enforced",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Legal Hold No Delete Enforced",
+      "standard": "Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.lgpd_brazil_compliance",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "LGPD: Brazil Compliance",
+      "standard": "LGPD (Brazil)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.mx_lfpdppp_notice_at_collection",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "MX: LFPDPPP Notice At Collection",
+      "standard": "LFPDPPP (Mexico)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.my_pdpa_retention_principle",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "MY: PDPA Retention Principle",
+      "standard": "Regulatory/Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.nz_breach_notification",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "NZ: Breach Notification",
+      "standard": "Regulatory/Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.pdpa_sg_consent_purposes",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PDPA: SG Consent Purposes",
+      "standard": "PDPA (Singapore)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.pipeda_ca_consent",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PIPEDA: Ca Consent",
+      "standard": "PIPEDA (Canada)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.pipl_cn_cross_border_assessment",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "PIPL: CN Cross Border Assessment",
+      "standard": "PIPL (China)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.popia_za_security_measures",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "POPIA: ZA Security Measures",
+      "standard": "POPIA (South Africa)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.records_classification_scheme_applied",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Records Classification Scheme Applied",
+      "standard": "Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.sa_pdpl_breach_notify",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "SA: PDPL Breach Notify",
+      "standard": "PDPL (Saudi Arabia)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.th_pdpa_breach_notify",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Th PDPA Breach Notify",
+      "standard": "Regulatory/Best Practice",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.tr_kvkk_verbis_registration",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "TR: KVKK VERBIS Registration",
+      "standard": "KVKK (Turkey)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.uk_gdpr_minor_consent",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "UK: GDPR Minor Consent",
+      "standard": "GDPR (EU)",
+      "version": "current"
+    },
+    {
+      "coverage": [
+        "LegalTech (multi-jurisdiction) current"
+      ],
+      "id": "legaltech.vn_pdpd_notice_and_consent",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Vn Pdpd Notice And Consent",
+      "standard": "PDPD (Vietnam)",
+      "version": "current"
+    },
+    {
+      "id": "limit.capabilities",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "id": "limit.capabilities.template",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.au_myr_health_privacy",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.backup_and_recovery_rto_rpo",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.ca_phipa_health_data",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.device_data_integrity_hashing",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.dicom_network_security_basic",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.eu_ivdr_clinical_performance",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.eu_mdr_ce_marking_and_udi",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.eu_mdr_clinical_evaluation",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.eu_mdr_eudamed_registration",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.eu_mdr_pms_psur",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.eu_vigilance_incident_reporting",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.fda_cybersecurity_524b_sbom",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.fda_mdr_event_reporting",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.fda_part11_audit_trail",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.fda_part11_esign_linkage",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.fda_part11_system_validation",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.fhir_smart_app_authz",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.gdpr_art9_special_category_safeguards",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.health_data_cross_border_controls",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.hipaa_access_audit_logging",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.hipaa_baa_with_vendors",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.hipaa_mfa_privileged_access",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.hipaa_minimum_necessary",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.hipaa_security_admin_safeguards",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.hipaa_security_tech_encryption",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.hitech_breach_notification_60d",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.iec_62304_scm_prp_processes",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.iec_62304_software_safety_class",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.iec_62366_usability_summative_eval",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.iso_13485_document_control",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.iso_14971_risk_management_file",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.iso_27001_isms_scope_and_controls",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.log_retention_for_clinical_events",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.onc_cures_api_fhir_r4",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.onc_information_blocking_prohibited",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.sg_hcsa_pdpa_health_data",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.uk_dtac_compliance",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "coverage": [
+        "MedTech (multi-jurisdiction) current"
+      ],
+      "id": "medtech.uk_mhra_post_market_surveillance",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "<Policy Title>",
+      "standard": "<Standard or Regulation>",
+      "version": "<version or \"current\">"
+    },
+    {
+      "id": "no.privileged",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "id": "no.run.as.root",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "id": "no.run.as.root.template",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "coverage": [
+        "PCI DSS 4.0"
+      ],
+      "id": "pci.ebs_encryption",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "EBS volume encryption enabled",
+      "standard": "PCI DSS",
+      "version": "4.0"
+    },
+    {
+      "coverage": [
+        "PCI DSS 4.0"
+      ],
+      "id": "pci.https_only",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Enforce HTTPS only",
+      "standard": "PCI DSS",
+      "version": "4.0"
+    },
+    {
+      "coverage": [
+        "PCI DSS 4.0"
+      ],
+      "id": "pci.iam_password_policy",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Strong password policy",
+      "standard": "PCI DSS",
+      "version": "4.0"
+    },
+    {
+      "coverage": [
+        "PCI DSS 4.0"
+      ],
+      "id": "pci.logging_enabled",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Logging enabled",
+      "standard": "PCI DSS",
+      "version": "4.0"
+    },
+    {
+      "coverage": [
+        "PCI DSS 4.0"
+      ],
+      "id": "pci.storage_encryption",
+      "jurisdiction": [
+        "Global"
+      ],
+      "name": "Encrypt stored cardholder data",
+      "standard": "PCI DSS",
+      "version": "4.0"
+    },
+    {
+      "id": "require.imagepullpolicy.always",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "id": "require.imagepullpolicy.always.template",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "id": "require.resources",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": []
+    },
+    {
+      "coverage": [
+        "AU iGaming Hosting placeholder"
+      ],
+      "id": "rg.au_audit_trails",
+      "jurisdiction": [
+        "APAC"
+      ],
+      "name": "AU \u2014 Audit trails & secure hosting controls",
+      "standard": "AU iGaming Hosting",
+      "version": "placeholder"
+    },
+    {
+      "coverage": [
+        "UKGC/MGA placeholder"
+      ],
+      "id": "rg.self_exclusion_enforced",
+      "jurisdiction": [
+        "Europe"
+      ],
+      "name": "Responsible Gambling \u2014 Self-exclusion enforced",
+      "standard": "UKGC/MGA",
+      "version": "placeholder"
+    },
+    {
+      "coverage": [
+        "UIGEA 31 USC 5361"
+      ],
+      "id": "rg.uigea_payment_blocks",
+      "jurisdiction": [
+        "North America"
+      ],
+      "name": "UIGEA \u2014 Payment blocks",
+      "standard": "UIGEA",
+      "version": "31 USC 5361"
+    }
+  ]
+}

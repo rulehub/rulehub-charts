@@ -1,0 +1,81 @@
+name: Helm Publish
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      ci_image_tag:
+        description: "CI image tag for RuleHub charts image (e.g., 2025.10.03-<sha> or vX.Y.Z). Falls back to repo var CI_IMAGE_TAG or latest."
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  packages: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    container:
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
+    defaults:
+      run:
+        shell: bash
+    env:
+      IS_ACT: "false"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0 pinned
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          fi
+      - name: Verify tag matches Chart.yaml version & appVersion
+        run: bash hack/ci/verify-tag-version.sh
+      - name: Login to GHCR
+        if: ${{ env.IS_ACT != 'true' }}
+        run: echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ghcr.io -u ${{ github.actor }} --password-stdin
+      - name: Package chart
+        run: bash hack/ci/package-chart.sh
+      - name: Kubeconform validate rendered templates
+        run: bash hack/ci/kubeconform-validate.sh
+      - name: Push to GHCR (oci://ghcr.io/${{ github.repository_owner }}/charts)
+        if: ${{ env.IS_ACT != 'true' }}
+        run: |
+          set -euo pipefail
+          for pkg in *.tgz; do
+            helm push "${pkg}" oci://ghcr.io/${{ github.repository_owner }}/charts
+          done
+      - name: Generate SLSA provenance (predicate)
+        run: |
+          set -euo pipefail
+          VERSION=${GITHUB_REF_NAME#v}
+          # Under workflow_dispatch or act, GITHUB_REF_NAME may be empty or non-semver (e.g., 'master');
+          # fallback to Chart.yaml version in those cases.
+          if [ -z "${VERSION:-}" ] || ! echo "$VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z.-]+)?$'; then
+            VERSION=$(grep '^version:' Chart.yaml | awk '{print $2}')
+            echo "[local] Using Chart.yaml version as fallback: ${VERSION}"
+          fi
+          bash hack/generate-provenance.sh --version "$VERSION" --package --out slsa-provenance.json
+      - name: Sign, SBOM, vulns, attest, verify (consolidated)
+        if: ${{ env.IS_ACT != 'true' }}
+        env:
+          ORG: ${{ github.repository_owner }}
+        run: |
+          set -euo pipefail
+          VERSION=${GITHUB_REF_NAME#v}
+          # Under workflow_dispatch or act, GITHUB_REF_NAME may be empty or non-semver; fallback to Chart.yaml
+          if [ -z "${VERSION:-}" ] || ! echo "$VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+([.-][0-9A-Za-z.-]+)?$'; then
+            VERSION=$(grep '^version:' Chart.yaml | awk '{print $2}')
+            echo "[local] Using Chart.yaml version as fallback: ${VERSION}"
+          fi
+          bash hack/ci/sign-and-attest.sh
+      - name: Summary
+        if: always()
+        env:
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: bash hack/ci/publish-summary.sh

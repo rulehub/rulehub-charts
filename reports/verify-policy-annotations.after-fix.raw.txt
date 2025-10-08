@@ -1,0 +1,662 @@
+Annotation validation issues (661):
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-adr_provider_listed_uk-constraint.yaml id=betting.adr_provider_listed_uk filename=betting-adr_provider_listed_uk-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-ads_bonus_terms_fair_clear-constraint.yaml id=betting.ads_bonus_terms_fair_clear filename=betting-ads_bonus_terms_fair_clear-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-ads_no_minors_targeting-constraint.yaml id=betting.ads_no_minors_targeting filename=betting-ads_no_minors_targeting-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-age_verification_before_gambling_uk-constraint.yaml id=betting.age_verification_before_gambling_uk filename=betting-age_verification_before_gambling_uk-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-aml_high_risk_country_restrictions-constraint.yaml id=betting.aml_high_risk_country_restrictions filename=betting-aml_high_risk_country_restrictions-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-aml_sar_reporting_uk-constraint.yaml id=betting.aml_sar_reporting_uk filename=betting-aml_sar_reporting_uk-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-au_iga_no_prohibited_services-constraint.yaml id=betting.au_iga_no_prohibited_services filename=betting-au_iga_no_prohibited_services-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-complaints_process_published-constraint.yaml id=betting.complaints_process_published filename=betting-complaints_process_published-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-credit_card_gambling_ban_uk-constraint.yaml id=betting.credit_card_gambling_ban_uk filename=betting-credit_card_gambling_ban_uk-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-deposit_limit_controls-constraint.yaml id=betting.deposit_limit_controls filename=betting-deposit_limit_controls-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-deposit_limit_controls-constraint.yaml betting.deposit_limit_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-game_rules_visible_before_play-constraint.yaml id=betting.game_rules_visible_before_play filename=betting-game_rules_visible_before_play-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-geofencing_regulated_markets-constraint.yaml id=betting.geofencing_regulated_markets filename=betting-geofencing_regulated_markets-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-geofencing_regulated_markets-constraint.yaml betting.geofencing_regulated_markets
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-kyc_on_withdrawal-constraint.yaml id=betting.kyc_on_withdrawal filename=betting-kyc_on_withdrawal-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_adm_it-constraint.yaml id=betting.license_check_adm_it filename=betting-license_check_adm_it-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_adm_it-constraint.yaml betting.license_check_adm_it
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_agco_on-constraint.yaml id=betting.license_check_agco_on filename=betting-license_check_agco_on-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_anj_fr-constraint.yaml id=betting.license_check_anj_fr filename=betting-license_check_anj_fr-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_anj_fr-constraint.yaml betting.license_check_anj_fr
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_ca_on_igaming-constraint.yaml id=betting.license_check_ca_on_igaming filename=betting-license_check_ca_on_igaming-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_dgoj_es-constraint.yaml id=betting.license_check_dgoj_es filename=betting-license_check_dgoj_es-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_dgoj_es-constraint.yaml betting.license_check_dgoj_es
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_ggl_de-constraint.yaml id=betting.license_check_ggl_de filename=betting-license_check_ggl_de-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_ksa_nl-constraint.yaml id=betting.license_check_ksa_nl filename=betting-license_check_ksa_nl-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_mga-constraint.yaml id=betting.license_check_mga filename=betting-license_check_mga-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_spelinspektionen_se-constraint.yaml id=betting.license_check_spelinspektionen_se filename=betting-license_check_spelinspektionen_se-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_spillemyndigheden_dk-constraint.yaml id=betting.license_check_spillemyndigheden_dk filename=betting-license_check_spillemyndigheden_dk-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_ukgc-constraint.yaml id=betting.license_check_ukgc filename=betting-license_check_ukgc-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_ukgc-constraint.yaml betting.license_check_ukgc
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_us_nj_dge-constraint.yaml id=betting.license_check_us_nj_dge filename=betting-license_check_us_nj_dge-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_us_nj_dge-constraint.yaml betting.license_check_us_nj_dge
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_us_nv_ngcb-constraint.yaml id=betting.license_check_us_nv_ngcb filename=betting-license_check_us_nv_ngcb-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_us_nv_ngcb-constraint.yaml betting.license_check_us_nv_ngcb
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_us_pa_pgcb-constraint.yaml id=betting.license_check_us_pa_pgcb filename=betting-license_check_us_pa_pgcb-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-license_check_us_pa_pgcb-constraint.yaml betting.license_check_us_pa_pgcb
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-loss_limit_controls-constraint.yaml id=betting.loss_limit_controls filename=betting-loss_limit_controls-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-ongoing_aml_monitoring-constraint.yaml id=betting.ongoing_aml_monitoring filename=betting-ongoing_aml_monitoring-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-player_funds_segregation-constraint.yaml id=betting.player_funds_segregation filename=betting-player_funds_segregation-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-reality_checks_elapsed_time-constraint.yaml id=betting.reality_checks_elapsed_time filename=betting-reality_checks_elapsed_time-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-reverse_withdrawal_ban_uk-constraint.yaml id=betting.reverse_withdrawal_ban_uk filename=betting-reverse_withdrawal_ban_uk-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-rng_certification_gli11-constraint.yaml id=betting.rng_certification_gli11 filename=betting-rng_certification_gli11-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-rtp_disclosure_to_players-constraint.yaml id=betting.rtp_disclosure_to_players filename=betting-rtp_disclosure_to_players-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-safer_gambling_interactions-constraint.yaml id=betting.safer_gambling_interactions filename=betting-safer_gambling_interactions-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-sanctions_screening_global-constraint.yaml id=betting.sanctions_screening_global filename=betting-sanctions_screening_global-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-self_exclusion_de_oasis-constraint.yaml id=betting.self_exclusion_de_oasis filename=betting-self_exclusion_de_oasis-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-self_exclusion_dk_rofus-constraint.yaml id=betting.self_exclusion_dk_rofus filename=betting-self_exclusion_dk_rofus-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-self_exclusion_es_rgiaj-constraint.yaml id=betting.self_exclusion_es_rgiaj filename=betting-self_exclusion_es_rgiaj-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-self_exclusion_nl_cruks-constraint.yaml id=betting.self_exclusion_nl_cruks filename=betting-self_exclusion_nl_cruks-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-self_exclusion_on_igaming-constraint.yaml id=betting.self_exclusion_on_igaming filename=betting-self_exclusion_on_igaming-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-self_exclusion_se_spelpaus-constraint.yaml id=betting.self_exclusion_se_spelpaus filename=betting-self_exclusion_se_spelpaus-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-self_exclusion_uk_gamstop-constraint.yaml id=betting.self_exclusion_uk_gamstop filename=betting-self_exclusion_uk_gamstop-constraint.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper/betting-self_exclusion_uk_gamstop-constraint.yaml betting.self_exclusion_uk_gamstop
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-session_time_limits_controls-constraint.yaml id=betting.session_time_limits_controls filename=betting-session_time_limits_controls-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-slots_min_spin_speed_uk-constraint.yaml id=betting.slots_min_spin_speed_uk filename=betting-slots_min_spin_speed_uk-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-slots_no_autoplay_uk-constraint.yaml id=betting.slots_no_autoplay_uk filename=betting-slots_no_autoplay_uk-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-slots_no_losses_disguised_as_wins-constraint.yaml id=betting.slots_no_losses_disguised_as_wins filename=betting-slots_no_losses_disguised_as_wins-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/betting-source_of_funds_checks-constraint.yaml id=betting.source_of_funds_checks filename=betting-source_of_funds_checks-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-au_app_11_security_edtech-constraint.yaml id=edtech.au_app_11_security_edtech filename=edtech-au_app_11_security_edtech-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-au_app_5_notice_edtech-constraint.yaml id=edtech.au_app_5_notice_edtech filename=edtech-au_app_5_notice_edtech-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-au_ndb_breach_notification_edtech-constraint.yaml id=edtech.au_ndb_breach_notification_edtech filename=edtech-au_ndb_breach_notification_edtech-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-br_lgpd_children_consent_best_interest-constraint.yaml id=edtech.br_lgpd_children_consent_best_interest filename=edtech-br_lgpd_children_consent_best_interest-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-ca_pipeda_consent_edtech-constraint.yaml id=edtech.ca_pipeda_consent_edtech filename=edtech-ca_pipeda_consent_edtech-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-ca_sopipa_no_sale_of_student_data-constraint.yaml id=edtech.ca_sopipa_no_sale_of_student_data filename=edtech-ca_sopipa_no_sale_of_student_data-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-ca_sopipa_no_targeted_advertising-constraint.yaml id=edtech.ca_sopipa_no_targeted_advertising filename=edtech-ca_sopipa_no_targeted_advertising-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-coppa_data_minimization-constraint.yaml id=edtech.coppa_data_minimization filename=edtech-coppa_data_minimization-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-coppa_delete_on_parent_request-constraint.yaml id=edtech.coppa_delete_on_parent_request filename=edtech-coppa_delete_on_parent_request-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-coppa_parental_consent_under_13-constraint.yaml id=edtech.coppa_parental_consent_under_13 filename=edtech-coppa_parental_consent_under_13-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-co_student_data_transparency-constraint.yaml id=edtech.co_student_data_transparency filename=edtech-co_student_data_transparency-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-ct_student_data_privacy-constraint.yaml id=edtech.ct_student_data_privacy filename=edtech-ct_student_data_privacy-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-edtech_access_least_privilege-constraint.yaml id=edtech.edtech_access_least_privilege filename=edtech-edtech_access_least_privilege-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-edtech_audit_logs_student_record_access-constraint.yaml id=edtech.edtech_audit_logs_student_record_access filename=edtech-edtech_audit_logs_student_record_access-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-edtech_encryption_at_rest-constraint.yaml id=edtech.edtech_encryption_at_rest filename=edtech-edtech_encryption_at_rest-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-edtech_encryption_in_transit-constraint.yaml id=edtech.edtech_encryption_in_transit filename=edtech-edtech_encryption_in_transit-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-edtech_retention_after_course_completion-constraint.yaml id=edtech.edtech_retention_after_course_completion filename=edtech-edtech_retention_after_course_completion-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-eu_dpia_high_risk_edtech-constraint.yaml id=edtech.eu_dpia_high_risk_edtech filename=edtech-eu_dpia_high_risk_edtech-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-eu_eprivacy_cookie_consent_edtech-constraint.yaml id=edtech.eu_eprivacy_cookie_consent_edtech filename=edtech-eu_eprivacy_cookie_consent_edtech-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-eu_gdpr_minors_consent_education-constraint.yaml id=edtech.eu_gdpr_minors_consent_education filename=edtech-eu_gdpr_minors_consent_education-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-eu_scc_transfers_edplatform-constraint.yaml id=edtech.eu_scc_transfers_edplatform filename=edtech-eu_scc_transfers_edplatform-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-ferpa_consent_or_exception_for_disclosure-constraint.yaml id=edtech.ferpa_consent_or_exception_for_disclosure filename=edtech-ferpa_consent_or_exception_for_disclosure-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-ferpa_directory_info_optout_respected-constraint.yaml id=edtech.ferpa_directory_info_optout_respected filename=edtech-ferpa_directory_info_optout_respected-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-ferpa_parent_access_rights-constraint.yaml id=edtech.ferpa_parent_access_rights filename=edtech-ferpa_parent_access_rights-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-il_soppa_breach_notification-constraint.yaml id=edtech.il_soppa_breach_notification filename=edtech-il_soppa_breach_notification-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-in_dpdpa_children_verifiable_consent-constraint.yaml id=edtech.in_dpdpa_children_verifiable_consent filename=edtech-in_dpdpa_children_verifiable_consent-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-kr_pipa_guardian_consent_under_14-constraint.yaml id=edtech.kr_pipa_guardian_consent_under_14 filename=edtech-kr_pipa_guardian_consent_under_14-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-ny_edlaw2d_encryption_and_contracts-constraint.yaml id=edtech.ny_edlaw2d_encryption_and_contracts filename=edtech-ny_edlaw2d_encryption_and_contracts-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-nz_notice_at_collection_edtech-constraint.yaml id=edtech.nz_notice_at_collection_edtech filename=edtech-nz_notice_at_collection_edtech-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-ppra_parental_consent_sensitive_surveys-constraint.yaml id=edtech.ppra_parental_consent_sensitive_surveys filename=edtech-ppra_parental_consent_sensitive_surveys-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-uk_aadc_privacy_by_default-constraint.yaml id=edtech.uk_aadc_privacy_by_default filename=edtech-uk_aadc_privacy_by_default-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/edtech-uk_aadc_profiling_and_geolocation_off-constraint.yaml id=edtech.uk_aadc_profiling_and_geolocation_off filename=edtech-uk_aadc_profiling_and_geolocation_off-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-au_myr_health_privacy-constraint.yaml id=medtech.au_myr_health_privacy filename=medtech-au_myr_health_privacy-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-backup_and_recovery_rto_rpo-constraint.yaml id=medtech.backup_and_recovery_rto_rpo filename=medtech-backup_and_recovery_rto_rpo-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-ca_phipa_health_data-constraint.yaml id=medtech.ca_phipa_health_data filename=medtech-ca_phipa_health_data-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-device_data_integrity_hashing-constraint.yaml id=medtech.device_data_integrity_hashing filename=medtech-device_data_integrity_hashing-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-dicom_network_security_basic-constraint.yaml id=medtech.dicom_network_security_basic filename=medtech-dicom_network_security_basic-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-eu_ivdr_clinical_performance-constraint.yaml id=medtech.eu_ivdr_clinical_performance filename=medtech-eu_ivdr_clinical_performance-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-eu_mdr_ce_marking_and_udi-constraint.yaml id=medtech.eu_mdr_ce_marking_and_udi filename=medtech-eu_mdr_ce_marking_and_udi-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-eu_mdr_clinical_evaluation-constraint.yaml id=medtech.eu_mdr_clinical_evaluation filename=medtech-eu_mdr_clinical_evaluation-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-eu_mdr_eudamed_registration-constraint.yaml id=medtech.eu_mdr_eudamed_registration filename=medtech-eu_mdr_eudamed_registration-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-eu_mdr_pms_psur-constraint.yaml id=medtech.eu_mdr_pms_psur filename=medtech-eu_mdr_pms_psur-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-eu_vigilance_incident_reporting-constraint.yaml id=medtech.eu_vigilance_incident_reporting filename=medtech-eu_vigilance_incident_reporting-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-fda_cybersecurity_524b_sbom-constraint.yaml id=medtech.fda_cybersecurity_524b_sbom filename=medtech-fda_cybersecurity_524b_sbom-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-fda_mdr_event_reporting-constraint.yaml id=medtech.fda_mdr_event_reporting filename=medtech-fda_mdr_event_reporting-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-fda_part11_audit_trail-constraint.yaml id=medtech.fda_part11_audit_trail filename=medtech-fda_part11_audit_trail-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-fda_part11_esign_linkage-constraint.yaml id=medtech.fda_part11_esign_linkage filename=medtech-fda_part11_esign_linkage-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-fda_part11_system_validation-constraint.yaml id=medtech.fda_part11_system_validation filename=medtech-fda_part11_system_validation-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-fhir_smart_app_authz-constraint.yaml id=medtech.fhir_smart_app_authz filename=medtech-fhir_smart_app_authz-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-gdpr_art9_special_category_safeguards-constraint.yaml id=medtech.gdpr_art9_special_category_safeguards filename=medtech-gdpr_art9_special_category_safeguards-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-health_data_cross_border_controls-constraint.yaml id=medtech.health_data_cross_border_controls filename=medtech-health_data_cross_border_controls-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-hipaa_access_audit_logging-constraint.yaml id=medtech.hipaa_access_audit_logging filename=medtech-hipaa_access_audit_logging-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-hipaa_baa_with_vendors-constraint.yaml id=medtech.hipaa_baa_with_vendors filename=medtech-hipaa_baa_with_vendors-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-hipaa_mfa_privileged_access-constraint.yaml id=medtech.hipaa_mfa_privileged_access filename=medtech-hipaa_mfa_privileged_access-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-hipaa_minimum_necessary-constraint.yaml id=medtech.hipaa_minimum_necessary filename=medtech-hipaa_minimum_necessary-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-hipaa_security_admin_safeguards-constraint.yaml id=medtech.hipaa_security_admin_safeguards filename=medtech-hipaa_security_admin_safeguards-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-hipaa_security_tech_encryption-constraint.yaml id=medtech.hipaa_security_tech_encryption filename=medtech-hipaa_security_tech_encryption-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-hitech_breach_notification_60d-constraint.yaml id=medtech.hitech_breach_notification_60d filename=medtech-hitech_breach_notification_60d-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-iec_62304_scm_prp_processes-constraint.yaml id=medtech.iec_62304_scm_prp_processes filename=medtech-iec_62304_scm_prp_processes-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-iec_62304_software_safety_class-constraint.yaml id=medtech.iec_62304_software_safety_class filename=medtech-iec_62304_software_safety_class-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-iec_62366_usability_summative_eval-constraint.yaml id=medtech.iec_62366_usability_summative_eval filename=medtech-iec_62366_usability_summative_eval-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-iso_13485_document_control-constraint.yaml id=medtech.iso_13485_document_control filename=medtech-iso_13485_document_control-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-iso_14971_risk_management_file-constraint.yaml id=medtech.iso_14971_risk_management_file filename=medtech-iso_14971_risk_management_file-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-iso_27001_isms_scope_and_controls-constraint.yaml id=medtech.iso_27001_isms_scope_and_controls filename=medtech-iso_27001_isms_scope_and_controls-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-log_retention_for_clinical_events-constraint.yaml id=medtech.log_retention_for_clinical_events filename=medtech-log_retention_for_clinical_events-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-onc_cures_api_fhir_r4-constraint.yaml id=medtech.onc_cures_api_fhir_r4 filename=medtech-onc_cures_api_fhir_r4-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-onc_information_blocking_prohibited-constraint.yaml id=medtech.onc_information_blocking_prohibited filename=medtech-onc_information_blocking_prohibited-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-sg_hcsa_pdpa_health_data-constraint.yaml id=medtech.sg_hcsa_pdpa_health_data filename=medtech-sg_hcsa_pdpa_health_data-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-uk_dtac_compliance-constraint.yaml id=medtech.uk_dtac_compliance filename=medtech-uk_dtac_compliance-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper/medtech-uk_mhra_post_market_surveillance-constraint.yaml id=medtech.uk_mhra_post_market_surveillance filename=medtech-uk_mhra_post_market_surveillance-constraint.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/ban-hostnetwork.yaml id=ban.hostnetwork.template filename=ban-hostnetwork.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-adr_provider_listed_uk-constrainttemplate.yaml id=betting.adr_provider_listed_uk filename=betting-adr_provider_listed_uk-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-adr_provider_listed_uk-constrainttemplate.yaml betting.adr_provider_listed_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-ads_bonus_terms_fair_clear-constrainttemplate.yaml id=betting.ads_bonus_terms_fair_clear filename=betting-ads_bonus_terms_fair_clear-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-ads_bonus_terms_fair_clear-constrainttemplate.yaml betting.ads_bonus_terms_fair_clear
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-ads_no_minors_targeting-constrainttemplate.yaml id=betting.ads_no_minors_targeting filename=betting-ads_no_minors_targeting-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-ads_no_minors_targeting-constrainttemplate.yaml betting.ads_no_minors_targeting
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-affordability-checks-uk-constrainttemplate.yaml betting.affordability_checks_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-age_verification_before_gambling_uk-constrainttemplate.yaml id=betting.age_verification_before_gambling_uk filename=betting-age_verification_before_gambling_uk-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-age_verification_before_gambling_uk-constrainttemplate.yaml betting.age_verification_before_gambling_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-aml_high_risk_country_restrictions-constrainttemplate.yaml id=betting.aml_high_risk_country_restrictions filename=betting-aml_high_risk_country_restrictions-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-aml_high_risk_country_restrictions-constrainttemplate.yaml betting.aml_high_risk_country_restrictions
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-aml_sar_reporting_uk-constrainttemplate.yaml id=betting.aml_sar_reporting_uk filename=betting-aml_sar_reporting_uk-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-aml_sar_reporting_uk-constrainttemplate.yaml betting.aml_sar_reporting_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-au_iga_no_prohibited_services-constrainttemplate.yaml id=betting.au_iga_no_prohibited_services filename=betting-au_iga_no_prohibited_services-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-au_iga_no_prohibited_services-constrainttemplate.yaml betting.au_iga_no_prohibited_services
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-complaints_process_published-constrainttemplate.yaml id=betting.complaints_process_published filename=betting-complaints_process_published-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-complaints_process_published-constrainttemplate.yaml betting.complaints_process_published
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-constrainttemplate-placeholder.yaml id=betting.constraint.template.placeholder filename=betting-constrainttemplate-placeholder.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-credit_card_gambling_ban_uk-constrainttemplate.yaml id=betting.credit_card_gambling_ban_uk filename=betting-credit_card_gambling_ban_uk-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-credit_card_gambling_ban_uk-constrainttemplate.yaml betting.credit_card_gambling_ban_uk
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-data-integrity-audits-constrainttemplate.yaml betting.data_integrity_audits
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-deposit-limit-controls-constrainttemplate.yaml betting.deposit_limit_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-deposit_limit_controls-constrainttemplate.yaml id=betting.deposit_limit_controls filename=betting-deposit_limit_controls-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-deposit_limit_controls-constrainttemplate.yaml betting.deposit_limit_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-game_rules_visible_before_play-constrainttemplate.yaml id=betting.game_rules_visible_before_play filename=betting-game_rules_visible_before_play-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-game_rules_visible_before_play-constrainttemplate.yaml betting.game_rules_visible_before_play
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-geofencing-regulated-markets-constrainttemplate.yaml betting.geofencing_regulated_markets
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-geofencing_regulated_markets-constrainttemplate.yaml id=betting.geofencing_regulated_markets filename=betting-geofencing_regulated_markets-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-geofencing_regulated_markets-constrainttemplate.yaml betting.geofencing_regulated_markets
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-in-play-delay-controls-constrainttemplate.yaml betting.in_play_delay_controls
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-kyc-onboarding-constrainttemplate.yaml betting.kyc_onboarding
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-kyc_on_withdrawal-constrainttemplate.yaml id=betting.kyc_on_withdrawal filename=betting-kyc_on_withdrawal-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-kyc_on_withdrawal-constrainttemplate.yaml betting.kyc_on_withdrawal
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license-check-adm-it-constrainttemplate.yaml betting.license_check_adm_it
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_adm_it-constrainttemplate.yaml id=betting.license_check_adm_it filename=betting-license_check_adm_it-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_adm_it-constrainttemplate.yaml betting.license_check_adm_it
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_agco_on-constrainttemplate.yaml id=betting.license_check_agco_on filename=betting-license_check_agco_on-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_agco_on-constrainttemplate.yaml betting.license_check_agco_on
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license-check-anj-fr-constrainttemplate.yaml betting.license_check_anj_fr
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_anj_fr-constrainttemplate.yaml id=betting.license_check_anj_fr filename=betting-license_check_anj_fr-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_anj_fr-constrainttemplate.yaml betting.license_check_anj_fr
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_ca_on_igaming-constrainttemplate.yaml id=betting.license_check_ca_on_igaming filename=betting-license_check_ca_on_igaming-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_ca_on_igaming-constrainttemplate.yaml betting.license_check_ca_on_igaming
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license-check-dgoj-es-constrainttemplate.yaml betting.license_check_dgoj_es
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_dgoj_es-constrainttemplate.yaml id=betting.license_check_dgoj_es filename=betting-license_check_dgoj_es-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_dgoj_es-constrainttemplate.yaml betting.license_check_dgoj_es
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_ggl_de-constrainttemplate.yaml id=betting.license_check_ggl_de filename=betting-license_check_ggl_de-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_ggl_de-constrainttemplate.yaml betting.license_check_ggl_de
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_ksa_nl-constrainttemplate.yaml id=betting.license_check_ksa_nl filename=betting-license_check_ksa_nl-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_ksa_nl-constrainttemplate.yaml betting.license_check_ksa_nl
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_mga-constrainttemplate.yaml id=betting.license_check_mga filename=betting-license_check_mga-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_mga-constrainttemplate.yaml betting.license_check_mga
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_spelinspektionen_se-constrainttemplate.yaml id=betting.license_check_spelinspektionen_se filename=betting-license_check_spelinspektionen_se-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_spelinspektionen_se-constrainttemplate.yaml betting.license_check_spelinspektionen_se
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_spillemyndigheden_dk-constrainttemplate.yaml id=betting.license_check_spillemyndigheden_dk filename=betting-license_check_spillemyndigheden_dk-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_spillemyndigheden_dk-constrainttemplate.yaml betting.license_check_spillemyndigheden_dk
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license-check-ukgc-constrainttemplate.yaml betting.license_check_ukgc
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_ukgc-constrainttemplate.yaml id=betting.license_check_ukgc filename=betting-license_check_ukgc-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_ukgc-constrainttemplate.yaml betting.license_check_ukgc
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license-check-us-co-division-constrainttemplate.yaml betting.license_check_us_co_division
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license-check-us-nj-dge-constrainttemplate.yaml betting.license_check_us_nj_dge
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_us_nj_dge-constrainttemplate.yaml id=betting.license_check_us_nj_dge filename=betting-license_check_us_nj_dge-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_us_nj_dge-constrainttemplate.yaml betting.license_check_us_nj_dge
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license-check-us-nv-ngcb-constrainttemplate.yaml betting.license_check_us_nv_ngcb
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_us_nv_ngcb-constrainttemplate.yaml id=betting.license_check_us_nv_ngcb filename=betting-license_check_us_nv_ngcb-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_us_nv_ngcb-constrainttemplate.yaml betting.license_check_us_nv_ngcb
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license-check-us-pa-pgcb-constrainttemplate.yaml betting.license_check_us_pa_pgcb
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_us_pa_pgcb-constrainttemplate.yaml id=betting.license_check_us_pa_pgcb filename=betting-license_check_us_pa_pgcb-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-license_check_us_pa_pgcb-constrainttemplate.yaml betting.license_check_us_pa_pgcb
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-loss_limit_controls-constrainttemplate.yaml id=betting.loss_limit_controls filename=betting-loss_limit_controls-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-loss_limit_controls-constrainttemplate.yaml betting.loss_limit_controls
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-market-restrictions-youth-constrainttemplate.yaml betting.market_restrictions_youth
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-match-fixing-monitoring-constrainttemplate.yaml betting.match_fixing_monitoring
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-no-bets-by-participants-constrainttemplate.yaml betting.no_bets_by_participants
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-official-data-only-constrainttemplate.yaml betting.official_data_only
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-ongoing_aml_monitoring-constrainttemplate.yaml id=betting.ongoing_aml_monitoring filename=betting-ongoing_aml_monitoring-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-ongoing_aml_monitoring-constrainttemplate.yaml betting.ongoing_aml_monitoring
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-player_funds_segregation-constrainttemplate.yaml id=betting.player_funds_segregation filename=betting-player_funds_segregation-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-player_funds_segregation-constrainttemplate.yaml betting.player_funds_segregation
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-reality_checks_elapsed_time-constrainttemplate.yaml id=betting.reality_checks_elapsed_time filename=betting-reality_checks_elapsed_time-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-reality_checks_elapsed_time-constrainttemplate.yaml betting.reality_checks_elapsed_time
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-reverse_withdrawal_ban_uk-constrainttemplate.yaml id=betting.reverse_withdrawal_ban_uk filename=betting-reverse_withdrawal_ban_uk-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-reverse_withdrawal_ban_uk-constrainttemplate.yaml betting.reverse_withdrawal_ban_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-rng_certification_gli11-constrainttemplate.yaml id=betting.rng_certification_gli11 filename=betting-rng_certification_gli11-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-rng_certification_gli11-constrainttemplate.yaml betting.rng_certification_gli11
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-rtp_disclosure_to_players-constrainttemplate.yaml id=betting.rtp_disclosure_to_players filename=betting-rtp_disclosure_to_players-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-rtp_disclosure_to_players-constrainttemplate.yaml betting.rtp_disclosure_to_players
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-safer_gambling_interactions-constrainttemplate.yaml id=betting.safer_gambling_interactions filename=betting-safer_gambling_interactions-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-safer_gambling_interactions-constrainttemplate.yaml betting.safer_gambling_interactions
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-sanctions_screening_global-constrainttemplate.yaml id=betting.sanctions_screening_global filename=betting-sanctions_screening_global-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-sanctions_screening_global-constrainttemplate.yaml betting.sanctions_screening_global
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_de_oasis-constrainttemplate.yaml id=betting.self_exclusion_de_oasis filename=betting-self_exclusion_de_oasis-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_de_oasis-constrainttemplate.yaml betting.self_exclusion_de_oasis
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_dk_rofus-constrainttemplate.yaml id=betting.self_exclusion_dk_rofus filename=betting-self_exclusion_dk_rofus-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_dk_rofus-constrainttemplate.yaml betting.self_exclusion_dk_rofus
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_es_rgiaj-constrainttemplate.yaml id=betting.self_exclusion_es_rgiaj filename=betting-self_exclusion_es_rgiaj-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_es_rgiaj-constrainttemplate.yaml betting.self_exclusion_es_rgiaj
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_nl_cruks-constrainttemplate.yaml id=betting.self_exclusion_nl_cruks filename=betting-self_exclusion_nl_cruks-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_nl_cruks-constrainttemplate.yaml betting.self_exclusion_nl_cruks
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_on_igaming-constrainttemplate.yaml id=betting.self_exclusion_on_igaming filename=betting-self_exclusion_on_igaming-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_on_igaming-constrainttemplate.yaml betting.self_exclusion_on_igaming
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_se_spelpaus-constrainttemplate.yaml id=betting.self_exclusion_se_spelpaus filename=betting-self_exclusion_se_spelpaus-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_se_spelpaus-constrainttemplate.yaml betting.self_exclusion_se_spelpaus
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self-exclusion-uk-gamstop-constrainttemplate.yaml betting.self_exclusion_uk_gamstop
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_uk_gamstop-constrainttemplate.yaml id=betting.self_exclusion_uk_gamstop filename=betting-self_exclusion_uk_gamstop-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-self_exclusion_uk_gamstop-constrainttemplate.yaml betting.self_exclusion_uk_gamstop
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-session_time_limits_controls-constrainttemplate.yaml id=betting.session_time_limits_controls filename=betting-session_time_limits_controls-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-session_time_limits_controls-constrainttemplate.yaml betting.session_time_limits_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-slots_min_spin_speed_uk-constrainttemplate.yaml id=betting.slots_min_spin_speed_uk filename=betting-slots_min_spin_speed_uk-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-slots_min_spin_speed_uk-constrainttemplate.yaml betting.slots_min_spin_speed_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-slots_no_autoplay_uk-constrainttemplate.yaml id=betting.slots_no_autoplay_uk filename=betting-slots_no_autoplay_uk-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-slots_no_autoplay_uk-constrainttemplate.yaml betting.slots_no_autoplay_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-slots_no_losses_disguised_as_wins-constrainttemplate.yaml id=betting.slots_no_losses_disguised_as_wins filename=betting-slots_no_losses_disguised_as_wins-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-slots_no_losses_disguised_as_wins-constrainttemplate.yaml betting.slots_no_losses_disguised_as_wins
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-source_of_funds_checks-constrainttemplate.yaml id=betting.source_of_funds_checks filename=betting-source_of_funds_checks-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-source_of_funds_checks-constrainttemplate.yaml betting.source_of_funds_checks
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-source-of-funds-thresholds-constrainttemplate.yaml betting.source_of_funds_thresholds
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-suspicious-betting-reporting-uk-constrainttemplate.yaml betting.suspicious_betting_reporting_uk
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/betting-txn-monitoring-anomalies-constrainttemplate.yaml betting.txn_monitoring_anomalies
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-au_app_11_security_edtech-constrainttemplate.yaml id=edtech.au_app_11_security_edtech filename=edtech-au_app_11_security_edtech-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-au_app_11_security_edtech-constrainttemplate.yaml edtech.au_app_11_security_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-au_app_5_notice_edtech-constrainttemplate.yaml id=edtech.au_app_5_notice_edtech filename=edtech-au_app_5_notice_edtech-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-au_app_5_notice_edtech-constrainttemplate.yaml edtech.au_app_5_notice_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-au_ndb_breach_notification_edtech-constrainttemplate.yaml id=edtech.au_ndb_breach_notification_edtech filename=edtech-au_ndb_breach_notification_edtech-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-au_ndb_breach_notification_edtech-constrainttemplate.yaml edtech.au_ndb_breach_notification_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-br_lgpd_children_consent_best_interest-constrainttemplate.yaml id=edtech.br_lgpd_children_consent_best_interest filename=edtech-br_lgpd_children_consent_best_interest-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-br_lgpd_children_consent_best_interest-constrainttemplate.yaml edtech.br_lgpd_children_consent_best_interest
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ca_pipeda_consent_edtech-constrainttemplate.yaml id=edtech.ca_pipeda_consent_edtech filename=edtech-ca_pipeda_consent_edtech-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ca_pipeda_consent_edtech-constrainttemplate.yaml edtech.ca_pipeda_consent_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ca_sopipa_no_sale_of_student_data-constrainttemplate.yaml id=edtech.ca_sopipa_no_sale_of_student_data filename=edtech-ca_sopipa_no_sale_of_student_data-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ca_sopipa_no_sale_of_student_data-constrainttemplate.yaml edtech.ca_sopipa_no_sale_of_student_data
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ca_sopipa_no_targeted_advertising-constrainttemplate.yaml id=edtech.ca_sopipa_no_targeted_advertising filename=edtech-ca_sopipa_no_targeted_advertising-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ca_sopipa_no_targeted_advertising-constrainttemplate.yaml edtech.ca_sopipa_no_targeted_advertising
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-coppa_data_minimization-constrainttemplate.yaml id=edtech.coppa_data_minimization filename=edtech-coppa_data_minimization-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-coppa_data_minimization-constrainttemplate.yaml edtech.coppa_data_minimization
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-coppa_delete_on_parent_request-constrainttemplate.yaml id=edtech.coppa_delete_on_parent_request filename=edtech-coppa_delete_on_parent_request-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-coppa_delete_on_parent_request-constrainttemplate.yaml edtech.coppa_delete_on_parent_request
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-coppa_parental_consent_under_13-constrainttemplate.yaml id=edtech.coppa_parental_consent_under_13 filename=edtech-coppa_parental_consent_under_13-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-coppa_parental_consent_under_13-constrainttemplate.yaml edtech.coppa_parental_consent_under_13
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-co_student_data_transparency-constrainttemplate.yaml id=edtech.co_student_data_transparency filename=edtech-co_student_data_transparency-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-co_student_data_transparency-constrainttemplate.yaml edtech.co_student_data_transparency
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ct_student_data_privacy-constrainttemplate.yaml id=edtech.ct_student_data_privacy filename=edtech-ct_student_data_privacy-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ct_student_data_privacy-constrainttemplate.yaml edtech.ct_student_data_privacy
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_access_least_privilege-constrainttemplate.yaml id=edtech.edtech_access_least_privilege filename=edtech-edtech_access_least_privilege-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_access_least_privilege-constrainttemplate.yaml edtech.edtech_access_least_privilege
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_audit_logs_student_record_access-constrainttemplate.yaml id=edtech.edtech_audit_logs_student_record_access filename=edtech-edtech_audit_logs_student_record_access-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_audit_logs_student_record_access-constrainttemplate.yaml edtech.edtech_audit_logs_student_record_access
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_encryption_at_rest-constrainttemplate.yaml id=edtech.edtech_encryption_at_rest filename=edtech-edtech_encryption_at_rest-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_encryption_at_rest-constrainttemplate.yaml edtech.edtech_encryption_at_rest
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_encryption_in_transit-constrainttemplate.yaml id=edtech.edtech_encryption_in_transit filename=edtech-edtech_encryption_in_transit-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_encryption_in_transit-constrainttemplate.yaml edtech.edtech_encryption_in_transit
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_retention_after_course_completion-constrainttemplate.yaml id=edtech.edtech_retention_after_course_completion filename=edtech-edtech_retention_after_course_completion-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-edtech_retention_after_course_completion-constrainttemplate.yaml edtech.edtech_retention_after_course_completion
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-eu_dpia_high_risk_edtech-constrainttemplate.yaml id=edtech.eu_dpia_high_risk_edtech filename=edtech-eu_dpia_high_risk_edtech-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-eu_dpia_high_risk_edtech-constrainttemplate.yaml edtech.eu_dpia_high_risk_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-eu_eprivacy_cookie_consent_edtech-constrainttemplate.yaml id=edtech.eu_eprivacy_cookie_consent_edtech filename=edtech-eu_eprivacy_cookie_consent_edtech-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-eu_eprivacy_cookie_consent_edtech-constrainttemplate.yaml edtech.eu_eprivacy_cookie_consent_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-eu_gdpr_minors_consent_education-constrainttemplate.yaml id=edtech.eu_gdpr_minors_consent_education filename=edtech-eu_gdpr_minors_consent_education-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-eu_gdpr_minors_consent_education-constrainttemplate.yaml edtech.eu_gdpr_minors_consent_education
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-eu_scc_transfers_edplatform-constrainttemplate.yaml id=edtech.eu_scc_transfers_edplatform filename=edtech-eu_scc_transfers_edplatform-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-eu_scc_transfers_edplatform-constrainttemplate.yaml edtech.eu_scc_transfers_edplatform
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ferpa_consent_or_exception_for_disclosure-constrainttemplate.yaml id=edtech.ferpa_consent_or_exception_for_disclosure filename=edtech-ferpa_consent_or_exception_for_disclosure-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ferpa_consent_or_exception_for_disclosure-constrainttemplate.yaml edtech.ferpa_consent_or_exception_for_disclosure
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ferpa_directory_info_optout_respected-constrainttemplate.yaml id=edtech.ferpa_directory_info_optout_respected filename=edtech-ferpa_directory_info_optout_respected-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ferpa_directory_info_optout_respected-constrainttemplate.yaml edtech.ferpa_directory_info_optout_respected
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ferpa_parent_access_rights-constrainttemplate.yaml id=edtech.ferpa_parent_access_rights filename=edtech-ferpa_parent_access_rights-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ferpa_parent_access_rights-constrainttemplate.yaml edtech.ferpa_parent_access_rights
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-il_soppa_breach_notification-constrainttemplate.yaml id=edtech.il_soppa_breach_notification filename=edtech-il_soppa_breach_notification-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-il_soppa_breach_notification-constrainttemplate.yaml edtech.il_soppa_breach_notification
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-in_dpdpa_children_verifiable_consent-constrainttemplate.yaml id=edtech.in_dpdpa_children_verifiable_consent filename=edtech-in_dpdpa_children_verifiable_consent-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-in_dpdpa_children_verifiable_consent-constrainttemplate.yaml edtech.in_dpdpa_children_verifiable_consent
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-kr_pipa_guardian_consent_under_14-constrainttemplate.yaml id=edtech.kr_pipa_guardian_consent_under_14 filename=edtech-kr_pipa_guardian_consent_under_14-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-kr_pipa_guardian_consent_under_14-constrainttemplate.yaml edtech.kr_pipa_guardian_consent_under_14
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ny_edlaw2d_encryption_and_contracts-constrainttemplate.yaml id=edtech.ny_edlaw2d_encryption_and_contracts filename=edtech-ny_edlaw2d_encryption_and_contracts-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ny_edlaw2d_encryption_and_contracts-constrainttemplate.yaml edtech.ny_edlaw2d_encryption_and_contracts
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-nz_notice_at_collection_edtech-constrainttemplate.yaml id=edtech.nz_notice_at_collection_edtech filename=edtech-nz_notice_at_collection_edtech-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-nz_notice_at_collection_edtech-constrainttemplate.yaml edtech.nz_notice_at_collection_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ppra_parental_consent_sensitive_surveys-constrainttemplate.yaml id=edtech.ppra_parental_consent_sensitive_surveys filename=edtech-ppra_parental_consent_sensitive_surveys-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-ppra_parental_consent_sensitive_surveys-constrainttemplate.yaml edtech.ppra_parental_consent_sensitive_surveys
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-uk_aadc_privacy_by_default-constrainttemplate.yaml id=edtech.uk_aadc_privacy_by_default filename=edtech-uk_aadc_privacy_by_default-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-uk_aadc_privacy_by_default-constrainttemplate.yaml edtech.uk_aadc_privacy_by_default
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-uk_aadc_profiling_and_geolocation_off-constrainttemplate.yaml id=edtech.uk_aadc_profiling_and_geolocation_off filename=edtech-uk_aadc_profiling_and_geolocation_off-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/edtech-uk_aadc_profiling_and_geolocation_off-constrainttemplate.yaml edtech.uk_aadc_profiling_and_geolocation_off
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/limit-capabilities.yaml id=limit.capabilities.template filename=limit-capabilities.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-au_myr_health_privacy-constrainttemplate.yaml id=medtech.au_myr_health_privacy filename=medtech-au_myr_health_privacy-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-au_myr_health_privacy-constrainttemplate.yaml medtech.au_myr_health_privacy
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-backup_and_recovery_rto_rpo-constrainttemplate.yaml id=medtech.backup_and_recovery_rto_rpo filename=medtech-backup_and_recovery_rto_rpo-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-backup_and_recovery_rto_rpo-constrainttemplate.yaml medtech.backup_and_recovery_rto_rpo
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-ca_phipa_health_data-constrainttemplate.yaml id=medtech.ca_phipa_health_data filename=medtech-ca_phipa_health_data-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-ca_phipa_health_data-constrainttemplate.yaml medtech.ca_phipa_health_data
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-device_data_integrity_hashing-constrainttemplate.yaml id=medtech.device_data_integrity_hashing filename=medtech-device_data_integrity_hashing-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-device_data_integrity_hashing-constrainttemplate.yaml medtech.device_data_integrity_hashing
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-dicom_network_security_basic-constrainttemplate.yaml id=medtech.dicom_network_security_basic filename=medtech-dicom_network_security_basic-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-dicom_network_security_basic-constrainttemplate.yaml medtech.dicom_network_security_basic
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_ivdr_clinical_performance-constrainttemplate.yaml id=medtech.eu_ivdr_clinical_performance filename=medtech-eu_ivdr_clinical_performance-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_ivdr_clinical_performance-constrainttemplate.yaml medtech.eu_ivdr_clinical_performance
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_mdr_ce_marking_and_udi-constrainttemplate.yaml id=medtech.eu_mdr_ce_marking_and_udi filename=medtech-eu_mdr_ce_marking_and_udi-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_mdr_ce_marking_and_udi-constrainttemplate.yaml medtech.eu_mdr_ce_marking_and_udi
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_mdr_clinical_evaluation-constrainttemplate.yaml id=medtech.eu_mdr_clinical_evaluation filename=medtech-eu_mdr_clinical_evaluation-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_mdr_clinical_evaluation-constrainttemplate.yaml medtech.eu_mdr_clinical_evaluation
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_mdr_eudamed_registration-constrainttemplate.yaml id=medtech.eu_mdr_eudamed_registration filename=medtech-eu_mdr_eudamed_registration-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_mdr_eudamed_registration-constrainttemplate.yaml medtech.eu_mdr_eudamed_registration
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_mdr_pms_psur-constrainttemplate.yaml id=medtech.eu_mdr_pms_psur filename=medtech-eu_mdr_pms_psur-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_mdr_pms_psur-constrainttemplate.yaml medtech.eu_mdr_pms_psur
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_vigilance_incident_reporting-constrainttemplate.yaml id=medtech.eu_vigilance_incident_reporting filename=medtech-eu_vigilance_incident_reporting-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-eu_vigilance_incident_reporting-constrainttemplate.yaml medtech.eu_vigilance_incident_reporting
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_cybersecurity_524b_sbom-constrainttemplate.yaml id=medtech.fda_cybersecurity_524b_sbom filename=medtech-fda_cybersecurity_524b_sbom-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_cybersecurity_524b_sbom-constrainttemplate.yaml medtech.fda_cybersecurity_524b_sbom
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_mdr_event_reporting-constrainttemplate.yaml id=medtech.fda_mdr_event_reporting filename=medtech-fda_mdr_event_reporting-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_mdr_event_reporting-constrainttemplate.yaml medtech.fda_mdr_event_reporting
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_part11_audit_trail-constrainttemplate.yaml id=medtech.fda_part11_audit_trail filename=medtech-fda_part11_audit_trail-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_part11_audit_trail-constrainttemplate.yaml medtech.fda_part11_audit_trail
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_part11_esign_linkage-constrainttemplate.yaml id=medtech.fda_part11_esign_linkage filename=medtech-fda_part11_esign_linkage-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_part11_esign_linkage-constrainttemplate.yaml medtech.fda_part11_esign_linkage
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_part11_system_validation-constrainttemplate.yaml id=medtech.fda_part11_system_validation filename=medtech-fda_part11_system_validation-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fda_part11_system_validation-constrainttemplate.yaml medtech.fda_part11_system_validation
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fhir_smart_app_authz-constrainttemplate.yaml id=medtech.fhir_smart_app_authz filename=medtech-fhir_smart_app_authz-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-fhir_smart_app_authz-constrainttemplate.yaml medtech.fhir_smart_app_authz
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-gdpr_art9_special_category_safeguards-constrainttemplate.yaml id=medtech.gdpr_art9_special_category_safeguards filename=medtech-gdpr_art9_special_category_safeguards-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-gdpr_art9_special_category_safeguards-constrainttemplate.yaml medtech.gdpr_art9_special_category_safeguards
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-health_data_cross_border_controls-constrainttemplate.yaml id=medtech.health_data_cross_border_controls filename=medtech-health_data_cross_border_controls-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-health_data_cross_border_controls-constrainttemplate.yaml medtech.health_data_cross_border_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_access_audit_logging-constrainttemplate.yaml id=medtech.hipaa_access_audit_logging filename=medtech-hipaa_access_audit_logging-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_access_audit_logging-constrainttemplate.yaml medtech.hipaa_access_audit_logging
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_baa_with_vendors-constrainttemplate.yaml id=medtech.hipaa_baa_with_vendors filename=medtech-hipaa_baa_with_vendors-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_baa_with_vendors-constrainttemplate.yaml medtech.hipaa_baa_with_vendors
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_mfa_privileged_access-constrainttemplate.yaml id=medtech.hipaa_mfa_privileged_access filename=medtech-hipaa_mfa_privileged_access-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_mfa_privileged_access-constrainttemplate.yaml medtech.hipaa_mfa_privileged_access
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_minimum_necessary-constrainttemplate.yaml id=medtech.hipaa_minimum_necessary filename=medtech-hipaa_minimum_necessary-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_minimum_necessary-constrainttemplate.yaml medtech.hipaa_minimum_necessary
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_security_admin_safeguards-constrainttemplate.yaml id=medtech.hipaa_security_admin_safeguards filename=medtech-hipaa_security_admin_safeguards-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_security_admin_safeguards-constrainttemplate.yaml medtech.hipaa_security_admin_safeguards
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_security_tech_encryption-constrainttemplate.yaml id=medtech.hipaa_security_tech_encryption filename=medtech-hipaa_security_tech_encryption-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hipaa_security_tech_encryption-constrainttemplate.yaml medtech.hipaa_security_tech_encryption
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hitech_breach_notification_60d-constrainttemplate.yaml id=medtech.hitech_breach_notification_60d filename=medtech-hitech_breach_notification_60d-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-hitech_breach_notification_60d-constrainttemplate.yaml medtech.hitech_breach_notification_60d
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iec_62304_scm_prp_processes-constrainttemplate.yaml id=medtech.iec_62304_scm_prp_processes filename=medtech-iec_62304_scm_prp_processes-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iec_62304_scm_prp_processes-constrainttemplate.yaml medtech.iec_62304_scm_prp_processes
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iec_62304_software_safety_class-constrainttemplate.yaml id=medtech.iec_62304_software_safety_class filename=medtech-iec_62304_software_safety_class-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iec_62304_software_safety_class-constrainttemplate.yaml medtech.iec_62304_software_safety_class
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iec_62366_usability_summative_eval-constrainttemplate.yaml id=medtech.iec_62366_usability_summative_eval filename=medtech-iec_62366_usability_summative_eval-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iec_62366_usability_summative_eval-constrainttemplate.yaml medtech.iec_62366_usability_summative_eval
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iso_13485_document_control-constrainttemplate.yaml id=medtech.iso_13485_document_control filename=medtech-iso_13485_document_control-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iso_13485_document_control-constrainttemplate.yaml medtech.iso_13485_document_control
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iso_14971_risk_management_file-constrainttemplate.yaml id=medtech.iso_14971_risk_management_file filename=medtech-iso_14971_risk_management_file-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iso_14971_risk_management_file-constrainttemplate.yaml medtech.iso_14971_risk_management_file
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iso_27001_isms_scope_and_controls-constrainttemplate.yaml id=medtech.iso_27001_isms_scope_and_controls filename=medtech-iso_27001_isms_scope_and_controls-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-iso_27001_isms_scope_and_controls-constrainttemplate.yaml medtech.iso_27001_isms_scope_and_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-log_retention_for_clinical_events-constrainttemplate.yaml id=medtech.log_retention_for_clinical_events filename=medtech-log_retention_for_clinical_events-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-log_retention_for_clinical_events-constrainttemplate.yaml medtech.log_retention_for_clinical_events
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-onc_cures_api_fhir_r4-constrainttemplate.yaml id=medtech.onc_cures_api_fhir_r4 filename=medtech-onc_cures_api_fhir_r4-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-onc_cures_api_fhir_r4-constrainttemplate.yaml medtech.onc_cures_api_fhir_r4
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-onc_information_blocking_prohibited-constrainttemplate.yaml id=medtech.onc_information_blocking_prohibited filename=medtech-onc_information_blocking_prohibited-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-onc_information_blocking_prohibited-constrainttemplate.yaml medtech.onc_information_blocking_prohibited
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-sg_hcsa_pdpa_health_data-constrainttemplate.yaml id=medtech.sg_hcsa_pdpa_health_data filename=medtech-sg_hcsa_pdpa_health_data-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-sg_hcsa_pdpa_health_data-constrainttemplate.yaml medtech.sg_hcsa_pdpa_health_data
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-uk_dtac_compliance-constrainttemplate.yaml id=medtech.uk_dtac_compliance filename=medtech-uk_dtac_compliance-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-uk_dtac_compliance-constrainttemplate.yaml medtech.uk_dtac_compliance
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-uk_mhra_post_market_surveillance-constrainttemplate.yaml id=medtech.uk_mhra_post_market_surveillance filename=medtech-uk_mhra_post_market_surveillance-constrainttemplate.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/gatekeeper-templates/medtech-uk_mhra_post_market_surveillance-constrainttemplate.yaml medtech.uk_mhra_post_market_surveillance
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/no-run-as-root.yaml id=no.run.as.root.template filename=no-run-as-root.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/gatekeeper-templates/require-imagepullpolicy-always.yaml id=require.imagepullpolicy.always.template filename=require-imagepullpolicy-always.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-adr_provider_listed_uk-policy.yaml id=betting.adr_provider_listed_uk filename=betting-adr_provider_listed_uk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-adr_provider_listed_uk-policy.yaml betting.adr_provider_listed_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-ads_bonus_terms_fair_clear-policy.yaml id=betting.ads_bonus_terms_fair_clear filename=betting-ads_bonus_terms_fair_clear-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-ads_bonus_terms_fair_clear-policy.yaml betting.ads_bonus_terms_fair_clear
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-ads_no_minors_targeting-policy.yaml id=betting.ads_no_minors_targeting filename=betting-ads_no_minors_targeting-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-ads_no_minors_targeting-policy.yaml betting.ads_no_minors_targeting
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-affordability_checks_uk-policy.yaml id=betting.affordability_checks_uk filename=betting-affordability_checks_uk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-affordability_checks_uk-policy.yaml betting.affordability_checks_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-age_verification_before_gambling_uk-policy.yaml id=betting.age_verification_before_gambling_uk filename=betting-age_verification_before_gambling_uk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-age_verification_before_gambling_uk-policy.yaml betting.age_verification_before_gambling_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-aml_high_risk_country_restrictions-policy.yaml id=betting.aml_high_risk_country_restrictions filename=betting-aml_high_risk_country_restrictions-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-aml_high_risk_country_restrictions-policy.yaml betting.aml_high_risk_country_restrictions
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-aml_sar_reporting_uk-policy.yaml id=betting.aml_sar_reporting_uk filename=betting-aml_sar_reporting_uk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-aml_sar_reporting_uk-policy.yaml betting.aml_sar_reporting_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-au_iga_no_prohibited_services-policy.yaml id=betting.au_iga_no_prohibited_services filename=betting-au_iga_no_prohibited_services-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-au_iga_no_prohibited_services-policy.yaml betting.au_iga_no_prohibited_services
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-complaints_process_published-policy.yaml id=betting.complaints_process_published filename=betting-complaints_process_published-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-complaints_process_published-policy.yaml betting.complaints_process_published
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-credit_card_gambling_ban_uk-policy.yaml id=betting.credit_card_gambling_ban_uk filename=betting-credit_card_gambling_ban_uk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-credit_card_gambling_ban_uk-policy.yaml betting.credit_card_gambling_ban_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-data_integrity_audits-policy.yaml id=betting.data_integrity_audits filename=betting-data_integrity_audits-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-data_integrity_audits-policy.yaml betting.data_integrity_audits
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-deposit_limit_controls-policy.yaml id=betting.deposit_limit_controls filename=betting-deposit_limit_controls-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-deposit_limit_controls-policy.yaml betting.deposit_limit_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-game_rules_visible_before_play-policy.yaml id=betting.game_rules_visible_before_play filename=betting-game_rules_visible_before_play-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-game_rules_visible_before_play-policy.yaml betting.game_rules_visible_before_play
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-geofencing_regulated_markets-policy.yaml id=betting.geofencing_regulated_markets filename=betting-geofencing_regulated_markets-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-geofencing_regulated_markets-policy.yaml betting.geofencing_regulated_markets
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-in_play_delay_controls-policy.yaml id=betting.in_play_delay_controls filename=betting-in_play_delay_controls-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-in_play_delay_controls-policy.yaml betting.in_play_delay_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-kyc_onboarding-policy.yaml id=betting.kyc_onboarding filename=betting-kyc_onboarding-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-kyc_onboarding-policy.yaml betting.kyc_onboarding
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-kyc_on_withdrawal-policy.yaml id=betting.kyc_on_withdrawal filename=betting-kyc_on_withdrawal-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-kyc_on_withdrawal-policy.yaml betting.kyc_on_withdrawal
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_adm_it-policy.yaml id=betting.license_check_adm_it filename=betting-license_check_adm_it-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_adm_it-policy.yaml betting.license_check_adm_it
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_agco_on-policy.yaml id=betting.license_check_agco_on filename=betting-license_check_agco_on-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_agco_on-policy.yaml betting.license_check_agco_on
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_anj_fr-policy.yaml id=betting.license_check_anj_fr filename=betting-license_check_anj_fr-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_anj_fr-policy.yaml betting.license_check_anj_fr
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_ca_on_igaming-policy.yaml id=betting.license_check_ca_on_igaming filename=betting-license_check_ca_on_igaming-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_ca_on_igaming-policy.yaml betting.license_check_ca_on_igaming
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_dgoj_es-policy.yaml id=betting.license_check_dgoj_es filename=betting-license_check_dgoj_es-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_dgoj_es-policy.yaml betting.license_check_dgoj_es
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_ggl_de-policy.yaml id=betting.license_check_ggl_de filename=betting-license_check_ggl_de-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_ggl_de-policy.yaml betting.license_check_ggl_de
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_ksa_nl-policy.yaml id=betting.license_check_ksa_nl filename=betting-license_check_ksa_nl-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_ksa_nl-policy.yaml betting.license_check_ksa_nl
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_mga-policy.yaml id=betting.license_check_mga filename=betting-license_check_mga-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_mga-policy.yaml betting.license_check_mga
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_spelinspektionen_se-policy.yaml id=betting.license_check_spelinspektionen_se filename=betting-license_check_spelinspektionen_se-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_spelinspektionen_se-policy.yaml betting.license_check_spelinspektionen_se
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_spillemyndigheden_dk-policy.yaml id=betting.license_check_spillemyndigheden_dk filename=betting-license_check_spillemyndigheden_dk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_spillemyndigheden_dk-policy.yaml betting.license_check_spillemyndigheden_dk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_ukgc-policy.yaml id=betting.license_check_ukgc filename=betting-license_check_ukgc-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_ukgc-policy.yaml betting.license_check_ukgc
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_us_co_division-policy.yaml id=betting.license_check_us_co_division filename=betting-license_check_us_co_division-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_us_co_division-policy.yaml betting.license_check_us_co_division
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_us_nj_dge-policy.yaml id=betting.license_check_us_nj_dge filename=betting-license_check_us_nj_dge-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_us_nj_dge-policy.yaml betting.license_check_us_nj_dge
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_us_nv_ngcb-policy.yaml id=betting.license_check_us_nv_ngcb filename=betting-license_check_us_nv_ngcb-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_us_nv_ngcb-policy.yaml betting.license_check_us_nv_ngcb
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-license_check_us_pa_pgcb-policy.yaml id=betting.license_check_us_pa_pgcb filename=betting-license_check_us_pa_pgcb-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-license_check_us_pa_pgcb-policy.yaml betting.license_check_us_pa_pgcb
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-loss_limit_controls-policy.yaml id=betting.loss_limit_controls filename=betting-loss_limit_controls-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-loss_limit_controls-policy.yaml betting.loss_limit_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-market_restrictions_youth-policy.yaml id=betting.market_restrictions_youth filename=betting-market_restrictions_youth-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-market_restrictions_youth-policy.yaml betting.market_restrictions_youth
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-match_fixing_monitoring-policy.yaml id=betting.match_fixing_monitoring filename=betting-match_fixing_monitoring-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-match_fixing_monitoring-policy.yaml betting.match_fixing_monitoring
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-no_bets_by_participants-policy.yaml id=betting.no_bets_by_participants filename=betting-no_bets_by_participants-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-no_bets_by_participants-policy.yaml betting.no_bets_by_participants
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-official_data_only-policy.yaml id=betting.official_data_only filename=betting-official_data_only-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-official_data_only-policy.yaml betting.official_data_only
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-ongoing_aml_monitoring-policy.yaml id=betting.ongoing_aml_monitoring filename=betting-ongoing_aml_monitoring-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-ongoing_aml_monitoring-policy.yaml betting.ongoing_aml_monitoring
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-player_funds_segregation-policy.yaml id=betting.player_funds_segregation filename=betting-player_funds_segregation-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-player_funds_segregation-policy.yaml betting.player_funds_segregation
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-reality_checks_elapsed_time-policy.yaml id=betting.reality_checks_elapsed_time filename=betting-reality_checks_elapsed_time-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-reality_checks_elapsed_time-policy.yaml betting.reality_checks_elapsed_time
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-reverse_withdrawal_ban_uk-policy.yaml id=betting.reverse_withdrawal_ban_uk filename=betting-reverse_withdrawal_ban_uk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-reverse_withdrawal_ban_uk-policy.yaml betting.reverse_withdrawal_ban_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-rng_certification_gli11-policy.yaml id=betting.rng_certification_gli11 filename=betting-rng_certification_gli11-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-rng_certification_gli11-policy.yaml betting.rng_certification_gli11
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-rtp_disclosure_to_players-policy.yaml id=betting.rtp_disclosure_to_players filename=betting-rtp_disclosure_to_players-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-rtp_disclosure_to_players-policy.yaml betting.rtp_disclosure_to_players
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-safer_gambling_interactions-policy.yaml id=betting.safer_gambling_interactions filename=betting-safer_gambling_interactions-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-safer_gambling_interactions-policy.yaml betting.safer_gambling_interactions
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-sanctions_screening_global-policy.yaml id=betting.sanctions_screening_global filename=betting-sanctions_screening_global-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-sanctions_screening_global-policy.yaml betting.sanctions_screening_global
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_de_oasis-policy.yaml id=betting.self_exclusion_de_oasis filename=betting-self_exclusion_de_oasis-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_de_oasis-policy.yaml betting.self_exclusion_de_oasis
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_dk_rofus-policy.yaml id=betting.self_exclusion_dk_rofus filename=betting-self_exclusion_dk_rofus-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_dk_rofus-policy.yaml betting.self_exclusion_dk_rofus
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_es_rgiaj-policy.yaml id=betting.self_exclusion_es_rgiaj filename=betting-self_exclusion_es_rgiaj-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_es_rgiaj-policy.yaml betting.self_exclusion_es_rgiaj
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_nl_cruks-policy.yaml id=betting.self_exclusion_nl_cruks filename=betting-self_exclusion_nl_cruks-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_nl_cruks-policy.yaml betting.self_exclusion_nl_cruks
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_on_igaming-policy.yaml id=betting.self_exclusion_on_igaming filename=betting-self_exclusion_on_igaming-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_on_igaming-policy.yaml betting.self_exclusion_on_igaming
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_se_spelpaus-policy.yaml id=betting.self_exclusion_se_spelpaus filename=betting-self_exclusion_se_spelpaus-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_se_spelpaus-policy.yaml betting.self_exclusion_se_spelpaus
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_uk_gamstop-policy.yaml id=betting.self_exclusion_uk_gamstop filename=betting-self_exclusion_uk_gamstop-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-self_exclusion_uk_gamstop-policy.yaml betting.self_exclusion_uk_gamstop
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-session_time_limits_controls-policy.yaml id=betting.session_time_limits_controls filename=betting-session_time_limits_controls-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-session_time_limits_controls-policy.yaml betting.session_time_limits_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-slots_min_spin_speed_uk-policy.yaml id=betting.slots_min_spin_speed_uk filename=betting-slots_min_spin_speed_uk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-slots_min_spin_speed_uk-policy.yaml betting.slots_min_spin_speed_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-slots_no_autoplay_uk-policy.yaml id=betting.slots_no_autoplay_uk filename=betting-slots_no_autoplay_uk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-slots_no_autoplay_uk-policy.yaml betting.slots_no_autoplay_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-slots_no_losses_disguised_as_wins-policy.yaml id=betting.slots_no_losses_disguised_as_wins filename=betting-slots_no_losses_disguised_as_wins-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-slots_no_losses_disguised_as_wins-policy.yaml betting.slots_no_losses_disguised_as_wins
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-source_of_funds_checks-policy.yaml id=betting.source_of_funds_checks filename=betting-source_of_funds_checks-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-source_of_funds_checks-policy.yaml betting.source_of_funds_checks
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-source_of_funds_thresholds-policy.yaml id=betting.source_of_funds_thresholds filename=betting-source_of_funds_thresholds-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-source_of_funds_thresholds-policy.yaml betting.source_of_funds_thresholds
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-suspicious_betting_reporting_uk-policy.yaml id=betting.suspicious_betting_reporting_uk filename=betting-suspicious_betting_reporting_uk-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-suspicious_betting_reporting_uk-policy.yaml betting.suspicious_betting_reporting_uk
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/betting-txn_monitoring_anomalies-policy.yaml id=betting.txn_monitoring_anomalies filename=betting-txn_monitoring_anomalies-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/betting-txn_monitoring_anomalies-policy.yaml betting.txn_monitoring_anomalies
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-au_app_11_security_edtech-policy.yaml id=edtech.au_app_11_security_edtech filename=edtech-au_app_11_security_edtech-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-au_app_11_security_edtech-policy.yaml edtech.au_app_11_security_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-au_app_5_notice_edtech-policy.yaml id=edtech.au_app_5_notice_edtech filename=edtech-au_app_5_notice_edtech-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-au_app_5_notice_edtech-policy.yaml edtech.au_app_5_notice_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-au_ndb_breach_notification_edtech-policy.yaml id=edtech.au_ndb_breach_notification_edtech filename=edtech-au_ndb_breach_notification_edtech-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-au_ndb_breach_notification_edtech-policy.yaml edtech.au_ndb_breach_notification_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-br_lgpd_children_consent_best_interest-policy.yaml id=edtech.br_lgpd_children_consent_best_interest filename=edtech-br_lgpd_children_consent_best_interest-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-br_lgpd_children_consent_best_interest-policy.yaml edtech.br_lgpd_children_consent_best_interest
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-ca_pipeda_consent_edtech-policy.yaml id=edtech.ca_pipeda_consent_edtech filename=edtech-ca_pipeda_consent_edtech-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-ca_pipeda_consent_edtech-policy.yaml edtech.ca_pipeda_consent_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-ca_sopipa_no_sale_of_student_data-policy.yaml id=edtech.ca_sopipa_no_sale_of_student_data filename=edtech-ca_sopipa_no_sale_of_student_data-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-ca_sopipa_no_sale_of_student_data-policy.yaml edtech.ca_sopipa_no_sale_of_student_data
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-ca_sopipa_no_targeted_advertising-policy.yaml id=edtech.ca_sopipa_no_targeted_advertising filename=edtech-ca_sopipa_no_targeted_advertising-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-ca_sopipa_no_targeted_advertising-policy.yaml edtech.ca_sopipa_no_targeted_advertising
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-coppa_data_minimization-policy.yaml id=edtech.coppa_data_minimization filename=edtech-coppa_data_minimization-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-coppa_data_minimization-policy.yaml edtech.coppa_data_minimization
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-coppa_delete_on_parent_request-policy.yaml id=edtech.coppa_delete_on_parent_request filename=edtech-coppa_delete_on_parent_request-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-coppa_delete_on_parent_request-policy.yaml edtech.coppa_delete_on_parent_request
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-coppa_parental_consent_under_13-policy.yaml id=edtech.coppa_parental_consent_under_13 filename=edtech-coppa_parental_consent_under_13-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-coppa_parental_consent_under_13-policy.yaml edtech.coppa_parental_consent_under_13
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-co_student_data_transparency-policy.yaml id=edtech.co_student_data_transparency filename=edtech-co_student_data_transparency-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-co_student_data_transparency-policy.yaml edtech.co_student_data_transparency
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-ct_student_data_privacy-policy.yaml id=edtech.ct_student_data_privacy filename=edtech-ct_student_data_privacy-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-ct_student_data_privacy-policy.yaml edtech.ct_student_data_privacy
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_access_least_privilege-policy.yaml id=edtech.edtech_access_least_privilege filename=edtech-edtech_access_least_privilege-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_access_least_privilege-policy.yaml edtech.edtech_access_least_privilege
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_audit_logs_student_record_access-policy.yaml id=edtech.edtech_audit_logs_student_record_access filename=edtech-edtech_audit_logs_student_record_access-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_audit_logs_student_record_access-policy.yaml edtech.edtech_audit_logs_student_record_access
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_encryption_at_rest-policy.yaml id=edtech.edtech_encryption_at_rest filename=edtech-edtech_encryption_at_rest-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_encryption_at_rest-policy.yaml edtech.edtech_encryption_at_rest
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_encryption_in_transit-policy.yaml id=edtech.edtech_encryption_in_transit filename=edtech-edtech_encryption_in_transit-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_encryption_in_transit-policy.yaml edtech.edtech_encryption_in_transit
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_retention_after_course_completion-policy.yaml id=edtech.edtech_retention_after_course_completion filename=edtech-edtech_retention_after_course_completion-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-edtech_retention_after_course_completion-policy.yaml edtech.edtech_retention_after_course_completion
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-eu_dpia_high_risk_edtech-policy.yaml id=edtech.eu_dpia_high_risk_edtech filename=edtech-eu_dpia_high_risk_edtech-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-eu_dpia_high_risk_edtech-policy.yaml edtech.eu_dpia_high_risk_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-eu_eprivacy_cookie_consent_edtech-policy.yaml id=edtech.eu_eprivacy_cookie_consent_edtech filename=edtech-eu_eprivacy_cookie_consent_edtech-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-eu_eprivacy_cookie_consent_edtech-policy.yaml edtech.eu_eprivacy_cookie_consent_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-eu_gdpr_minors_consent_education-policy.yaml id=edtech.eu_gdpr_minors_consent_education filename=edtech-eu_gdpr_minors_consent_education-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-eu_gdpr_minors_consent_education-policy.yaml edtech.eu_gdpr_minors_consent_education
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-eu_scc_transfers_edplatform-policy.yaml id=edtech.eu_scc_transfers_edplatform filename=edtech-eu_scc_transfers_edplatform-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-eu_scc_transfers_edplatform-policy.yaml edtech.eu_scc_transfers_edplatform
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-ferpa_consent_or_exception_for_disclosure-policy.yaml id=edtech.ferpa_consent_or_exception_for_disclosure filename=edtech-ferpa_consent_or_exception_for_disclosure-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-ferpa_consent_or_exception_for_disclosure-policy.yaml edtech.ferpa_consent_or_exception_for_disclosure
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-ferpa_directory_info_optout_respected-policy.yaml id=edtech.ferpa_directory_info_optout_respected filename=edtech-ferpa_directory_info_optout_respected-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-ferpa_directory_info_optout_respected-policy.yaml edtech.ferpa_directory_info_optout_respected
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-ferpa_parent_access_rights-policy.yaml id=edtech.ferpa_parent_access_rights filename=edtech-ferpa_parent_access_rights-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-ferpa_parent_access_rights-policy.yaml edtech.ferpa_parent_access_rights
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-il_soppa_breach_notification-policy.yaml id=edtech.il_soppa_breach_notification filename=edtech-il_soppa_breach_notification-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-il_soppa_breach_notification-policy.yaml edtech.il_soppa_breach_notification
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-in_dpdpa_children_verifiable_consent-policy.yaml id=edtech.in_dpdpa_children_verifiable_consent filename=edtech-in_dpdpa_children_verifiable_consent-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-in_dpdpa_children_verifiable_consent-policy.yaml edtech.in_dpdpa_children_verifiable_consent
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-kr_pipa_guardian_consent_under_14-policy.yaml id=edtech.kr_pipa_guardian_consent_under_14 filename=edtech-kr_pipa_guardian_consent_under_14-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-kr_pipa_guardian_consent_under_14-policy.yaml edtech.kr_pipa_guardian_consent_under_14
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-ny_edlaw2d_encryption_and_contracts-policy.yaml id=edtech.ny_edlaw2d_encryption_and_contracts filename=edtech-ny_edlaw2d_encryption_and_contracts-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-ny_edlaw2d_encryption_and_contracts-policy.yaml edtech.ny_edlaw2d_encryption_and_contracts
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-nz_notice_at_collection_edtech-policy.yaml id=edtech.nz_notice_at_collection_edtech filename=edtech-nz_notice_at_collection_edtech-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-nz_notice_at_collection_edtech-policy.yaml edtech.nz_notice_at_collection_edtech
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-ppra_parental_consent_sensitive_surveys-policy.yaml id=edtech.ppra_parental_consent_sensitive_surveys filename=edtech-ppra_parental_consent_sensitive_surveys-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-ppra_parental_consent_sensitive_surveys-policy.yaml edtech.ppra_parental_consent_sensitive_surveys
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-uk_aadc_privacy_by_default-policy.yaml id=edtech.uk_aadc_privacy_by_default filename=edtech-uk_aadc_privacy_by_default-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-uk_aadc_privacy_by_default-policy.yaml edtech.uk_aadc_privacy_by_default
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/edtech-uk_aadc_profiling_and_geolocation_off-policy.yaml id=edtech.uk_aadc_profiling_and_geolocation_off filename=edtech-uk_aadc_profiling_and_geolocation_off-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/edtech-uk_aadc_profiling_and_geolocation_off-policy.yaml edtech.uk_aadc_profiling_and_geolocation_off
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-deposit_limit_controls-policy.yaml id=igaming.deposit_limit_controls filename=igaming-deposit_limit_controls-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-geofencing_regulated_markets-policy.yaml id=igaming.geofencing_regulated_markets filename=igaming-geofencing_regulated_markets-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-license_check_adm_it-policy.yaml id=igaming.license_check_adm_it filename=igaming-license_check_adm_it-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-license_check_anj_fr-policy.yaml id=igaming.license_check_anj_fr filename=igaming-license_check_anj_fr-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-license_check_dgoj_es-policy.yaml id=igaming.license_check_dgoj_es filename=igaming-license_check_dgoj_es-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-license_check_ukgc-policy.yaml id=igaming.license_check_ukgc filename=igaming-license_check_ukgc-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-license_check_us_nj_dge-policy.yaml id=igaming.license_check_us_nj_dge filename=igaming-license_check_us_nj_dge-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-license_check_us_nv_ngcb-policy.yaml id=igaming.license_check_us_nv_ngcb filename=igaming-license_check_us_nv_ngcb-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-license_check_us_pa_pgcb-policy.yaml id=igaming.license_check_us_pa_pgcb filename=igaming-license_check_us_pa_pgcb-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/igaming-self_exclusion_uk_gamstop-policy.yaml id=igaming.self_exclusion_uk_gamstop filename=igaming-self_exclusion_uk_gamstop-policy.yaml
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-au_myr_health_privacy-policy.yaml id=medtech.au_myr_health_privacy filename=medtech-au_myr_health_privacy-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-au_myr_health_privacy-policy.yaml medtech.au_myr_health_privacy
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-backup_and_recovery_rto_rpo-policy.yaml id=medtech.backup_and_recovery_rto_rpo filename=medtech-backup_and_recovery_rto_rpo-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-backup_and_recovery_rto_rpo-policy.yaml medtech.backup_and_recovery_rto_rpo
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-ca_phipa_health_data-policy.yaml id=medtech.ca_phipa_health_data filename=medtech-ca_phipa_health_data-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-ca_phipa_health_data-policy.yaml medtech.ca_phipa_health_data
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-device_data_integrity_hashing-policy.yaml id=medtech.device_data_integrity_hashing filename=medtech-device_data_integrity_hashing-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-device_data_integrity_hashing-policy.yaml medtech.device_data_integrity_hashing
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-dicom_network_security_basic-policy.yaml id=medtech.dicom_network_security_basic filename=medtech-dicom_network_security_basic-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-dicom_network_security_basic-policy.yaml medtech.dicom_network_security_basic
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-eu_ivdr_clinical_performance-policy.yaml id=medtech.eu_ivdr_clinical_performance filename=medtech-eu_ivdr_clinical_performance-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-eu_ivdr_clinical_performance-policy.yaml medtech.eu_ivdr_clinical_performance
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-eu_mdr_ce_marking_and_udi-policy.yaml id=medtech.eu_mdr_ce_marking_and_udi filename=medtech-eu_mdr_ce_marking_and_udi-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-eu_mdr_ce_marking_and_udi-policy.yaml medtech.eu_mdr_ce_marking_and_udi
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-eu_mdr_clinical_evaluation-policy.yaml id=medtech.eu_mdr_clinical_evaluation filename=medtech-eu_mdr_clinical_evaluation-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-eu_mdr_clinical_evaluation-policy.yaml medtech.eu_mdr_clinical_evaluation
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-eu_mdr_eudamed_registration-policy.yaml id=medtech.eu_mdr_eudamed_registration filename=medtech-eu_mdr_eudamed_registration-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-eu_mdr_eudamed_registration-policy.yaml medtech.eu_mdr_eudamed_registration
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-eu_mdr_pms_psur-policy.yaml id=medtech.eu_mdr_pms_psur filename=medtech-eu_mdr_pms_psur-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-eu_mdr_pms_psur-policy.yaml medtech.eu_mdr_pms_psur
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-eu_vigilance_incident_reporting-policy.yaml id=medtech.eu_vigilance_incident_reporting filename=medtech-eu_vigilance_incident_reporting-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-eu_vigilance_incident_reporting-policy.yaml medtech.eu_vigilance_incident_reporting
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-fda_cybersecurity_524b_sbom-policy.yaml id=medtech.fda_cybersecurity_524b_sbom filename=medtech-fda_cybersecurity_524b_sbom-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-fda_cybersecurity_524b_sbom-policy.yaml medtech.fda_cybersecurity_524b_sbom
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-fda_mdr_event_reporting-policy.yaml id=medtech.fda_mdr_event_reporting filename=medtech-fda_mdr_event_reporting-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-fda_mdr_event_reporting-policy.yaml medtech.fda_mdr_event_reporting
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-fda_part11_audit_trail-policy.yaml id=medtech.fda_part11_audit_trail filename=medtech-fda_part11_audit_trail-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-fda_part11_audit_trail-policy.yaml medtech.fda_part11_audit_trail
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-fda_part11_esign_linkage-policy.yaml id=medtech.fda_part11_esign_linkage filename=medtech-fda_part11_esign_linkage-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-fda_part11_esign_linkage-policy.yaml medtech.fda_part11_esign_linkage
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-fda_part11_system_validation-policy.yaml id=medtech.fda_part11_system_validation filename=medtech-fda_part11_system_validation-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-fda_part11_system_validation-policy.yaml medtech.fda_part11_system_validation
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-fhir_smart_app_authz-policy.yaml id=medtech.fhir_smart_app_authz filename=medtech-fhir_smart_app_authz-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-fhir_smart_app_authz-policy.yaml medtech.fhir_smart_app_authz
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-gdpr_art9_special_category_safeguards-policy.yaml id=medtech.gdpr_art9_special_category_safeguards filename=medtech-gdpr_art9_special_category_safeguards-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-gdpr_art9_special_category_safeguards-policy.yaml medtech.gdpr_art9_special_category_safeguards
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-health_data_cross_border_controls-policy.yaml id=medtech.health_data_cross_border_controls filename=medtech-health_data_cross_border_controls-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-health_data_cross_border_controls-policy.yaml medtech.health_data_cross_border_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_access_audit_logging-policy.yaml id=medtech.hipaa_access_audit_logging filename=medtech-hipaa_access_audit_logging-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_access_audit_logging-policy.yaml medtech.hipaa_access_audit_logging
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_baa_with_vendors-policy.yaml id=medtech.hipaa_baa_with_vendors filename=medtech-hipaa_baa_with_vendors-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_baa_with_vendors-policy.yaml medtech.hipaa_baa_with_vendors
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_mfa_privileged_access-policy.yaml id=medtech.hipaa_mfa_privileged_access filename=medtech-hipaa_mfa_privileged_access-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_mfa_privileged_access-policy.yaml medtech.hipaa_mfa_privileged_access
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_minimum_necessary-policy.yaml id=medtech.hipaa_minimum_necessary filename=medtech-hipaa_minimum_necessary-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_minimum_necessary-policy.yaml medtech.hipaa_minimum_necessary
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_security_admin_safeguards-policy.yaml id=medtech.hipaa_security_admin_safeguards filename=medtech-hipaa_security_admin_safeguards-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_security_admin_safeguards-policy.yaml medtech.hipaa_security_admin_safeguards
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_security_tech_encryption-policy.yaml id=medtech.hipaa_security_tech_encryption filename=medtech-hipaa_security_tech_encryption-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-hipaa_security_tech_encryption-policy.yaml medtech.hipaa_security_tech_encryption
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-hitech_breach_notification_60d-policy.yaml id=medtech.hitech_breach_notification_60d filename=medtech-hitech_breach_notification_60d-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-hitech_breach_notification_60d-policy.yaml medtech.hitech_breach_notification_60d
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-iec_62304_scm_prp_processes-policy.yaml id=medtech.iec_62304_scm_prp_processes filename=medtech-iec_62304_scm_prp_processes-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-iec_62304_scm_prp_processes-policy.yaml medtech.iec_62304_scm_prp_processes
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-iec_62304_software_safety_class-policy.yaml id=medtech.iec_62304_software_safety_class filename=medtech-iec_62304_software_safety_class-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-iec_62304_software_safety_class-policy.yaml medtech.iec_62304_software_safety_class
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-iec_62366_usability_summative_eval-policy.yaml id=medtech.iec_62366_usability_summative_eval filename=medtech-iec_62366_usability_summative_eval-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-iec_62366_usability_summative_eval-policy.yaml medtech.iec_62366_usability_summative_eval
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-iso_13485_document_control-policy.yaml id=medtech.iso_13485_document_control filename=medtech-iso_13485_document_control-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-iso_13485_document_control-policy.yaml medtech.iso_13485_document_control
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-iso_14971_risk_management_file-policy.yaml id=medtech.iso_14971_risk_management_file filename=medtech-iso_14971_risk_management_file-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-iso_14971_risk_management_file-policy.yaml medtech.iso_14971_risk_management_file
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-iso_27001_isms_scope_and_controls-policy.yaml id=medtech.iso_27001_isms_scope_and_controls filename=medtech-iso_27001_isms_scope_and_controls-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-iso_27001_isms_scope_and_controls-policy.yaml medtech.iso_27001_isms_scope_and_controls
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-log_retention_for_clinical_events-policy.yaml id=medtech.log_retention_for_clinical_events filename=medtech-log_retention_for_clinical_events-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-log_retention_for_clinical_events-policy.yaml medtech.log_retention_for_clinical_events
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-onc_cures_api_fhir_r4-policy.yaml id=medtech.onc_cures_api_fhir_r4 filename=medtech-onc_cures_api_fhir_r4-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-onc_cures_api_fhir_r4-policy.yaml medtech.onc_cures_api_fhir_r4
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-onc_information_blocking_prohibited-policy.yaml id=medtech.onc_information_blocking_prohibited filename=medtech-onc_information_blocking_prohibited-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-onc_information_blocking_prohibited-policy.yaml medtech.onc_information_blocking_prohibited
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-sg_hcsa_pdpa_health_data-policy.yaml id=medtech.sg_hcsa_pdpa_health_data filename=medtech-sg_hcsa_pdpa_health_data-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-sg_hcsa_pdpa_health_data-policy.yaml medtech.sg_hcsa_pdpa_health_data
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-uk_dtac_compliance-policy.yaml id=medtech.uk_dtac_compliance filename=medtech-uk_dtac_compliance-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-uk_dtac_compliance-policy.yaml medtech.uk_dtac_compliance
+  - [FILENAME_ID_MISMATCH] /workspaces/rulehub-charts/files/kyverno/medtech-uk_mhra_post_market_surveillance-policy.yaml id=medtech.uk_mhra_post_market_surveillance filename=medtech-uk_mhra_post_market_surveillance-policy.yaml
+  - [DUP_ID] /workspaces/rulehub-charts/files/kyverno/medtech-uk_mhra_post_market_surveillance-policy.yaml medtech.uk_mhra_post_market_surveillance
