@@ -1,0 +1,6 @@
+{
+  "ref": "refs/heads/main",
+  "inputs": {
+    "ci_image_tag": ""
+  }
+}

@@ -164,9 +164,6 @@ jobs:
     name: Chart Testing (lint + install)
     needs: guard
     runs-on: ubuntu-latest
-    container:
-      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
-      options: --user 0:0
     env:
       IS_ACT: "false"
     strategy:
@@ -174,6 +171,8 @@ jobs:
         kubeVersion: ["1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.31.0"]
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Set up chart-testing
+        uses: helm/chart-testing-action@v2.6.1
       - name: Detect ACT environment
         shell: bash
         run: |
@@ -183,7 +182,7 @@ jobs:
       - name: Verify ct available
         run: |
           set -e
-          command -v ct >/dev/null 2>&1 || { echo 'ct not found in ci-charts image'; exit 1; }
+          command -v ct >/dev/null 2>&1 || { echo 'ct not found in PATH after setup'; exit 1; }
       - name: Create kind cluster (${{ matrix.kubeVersion }})
         if: ${{ env.IS_ACT != 'true' }}
         uses: helm/kind-action@99576bfa6ddf9a8e612d83b513da5a75875caced
