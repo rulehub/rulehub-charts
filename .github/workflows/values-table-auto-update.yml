@@ -36,7 +36,7 @@ jobs:
       resolved_tag: ${{ steps.ctag.outputs.resolved_tag }}
     steps:
       - name: Checkout repository (required for local actions)
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Resolve CI image tag
         id: ctag
         env:
@@ -52,7 +52,7 @@ jobs:
       options: --user 0:0
     steps:
       - name: Checkout
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
         with:
           fetch-depth: 0
       - name: Generate VALUES_TABLE.md
