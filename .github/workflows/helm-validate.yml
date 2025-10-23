@@ -150,7 +150,13 @@ jobs:
       options: --user 0:0
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
-      # Helm & helm-unittest preinstalled in ci-charts image
+      # Ensure helm-unittest plugin is available (pin version for determinism)
+      - name: Install helm-unittest plugin (if missing)
+        shell: bash
+        run: |
+          if ! helm plugin list | awk '{print $1}' | grep -qx "unittest"; then
+            helm plugin install https://github.com/helm-unittest/helm-unittest --version v0.5.1
+          fi
       - name: Helm version
         run: helm version --short
       - name: Run unit tests

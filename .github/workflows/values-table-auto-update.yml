@@ -55,9 +55,14 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
         with:
           fetch-depth: 0
+      - name: Configure git safe.directory
+        shell: bash
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Generate VALUES_TABLE.md
         run: bash hack/gen-values-table.sh
       - name: Commit changes if any
+        shell: bash
         run: |
           if ! git diff --quiet --exit-code -- VALUES_TABLE.md; then
             git config user.name "github-actions[bot]"

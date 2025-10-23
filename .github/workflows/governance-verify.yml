@@ -154,6 +154,7 @@ jobs:
           fi
       - name: Verify rendered size (<= 250KB default)
         if: ${{ env.IS_ACT != 'true' }}
+        shell: bash
         run: |
           if [ -n "${ACT:-}" ]; then
             echo 'Skipping size verification under ACT.'
