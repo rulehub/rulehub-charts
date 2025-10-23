@@ -297,7 +297,7 @@ opentelemetryCollector:
   # Image details (kept minimal; override as needed)
   image:
     repository: otel/opentelemetry-collector-contrib
-    tag: 0.101.0
+    tag: 0.138.0
     pullPolicy: IfNotPresent
   # Resource requests/limits (lightweight default)
   resources:
