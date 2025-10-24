@@ -75,3 +75,6 @@ node_modules/
 # Terraform (if ever used locally)
 .terraform/
 .terraform.lock.hcl
+
+
+.github/act.env

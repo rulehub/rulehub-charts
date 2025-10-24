@@ -3,6 +3,7 @@ chart-dirs:
   - .
 excluded-charts: []
 remote: origin
+target-branch: main
 validate-maintainers: false
 check-version-increment: false
 lint-conf: ct-lint.yaml

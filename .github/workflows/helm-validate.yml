@@ -184,7 +184,8 @@ jobs:
           if [ -n "${ACT:-}" ]; then
             echo "Skipping helm unittest under ACT (plugin setup often diverges)." && exit 0
           fi
-          helm unittest -3 -f tests/*.yaml .
+          # Run helm-unittest across all test files (no unsupported shorthand flags)
+          helm unittest -f tests/*.yaml .
 
   ct:
     name: Chart Testing (lint + install)
