@@ -33,34 +33,36 @@ printf '| %s | %s | %s | %s |\n' 'gatekeeper.enabled' 'boolean' "${gatekeeper_en
 printf '| %s | %s | %s | %s |\n' 'kyverno.enabled' 'boolean' "${kyverno_enabled_default:-true}" 'Enable Kyverno engine' >> "$TMP_OUT"
 printf '| %s | %s | %s | %s |\n' 'kyverno.validationFailureAction' 'string' "${kyverno_vfa_default:-}" 'Global Kyverno override ("", audit, enforce)' >> "$TMP_OUT"
 
-# Policies: extract lists using yq if available for robustness; fallback to awk
-if command -v yq >/dev/null 2>&1; then
-  # Gatekeeper policies
-  yq '.gatekeeper.policies | keys | .[]' values.yaml | while read -r key; do
-    # skip non-leaf maps if present (we only document .enabled switches)
-    echo "| gatekeeper.policies.${key}.enabled | boolean | true | - |" >> "$TMP_OUT"
-  done
-  # Kyverno policies
-  yq '.kyverno.policies | keys | .[]' values.yaml | while read -r key; do
-    echo "| kyverno.policies.${key}.enabled | boolean | true | - |" >> "$TMP_OUT"
-  done
-else
-  awk 'BEGIN{sect=""; subsect=""} \
-  /^gatekeeper:/ {sect="g"; subsect=""} \
-  /^kyverno:/ {sect="k"; subsect=""} \
-  sect=="g" && /^  policies:/ {subsect="gp"; next} \
-  sect=="k" && /^  policies:/ {subsect="kp"; next} \
-  (subsect=="gp" || subsect=="kp") && /^[[:space:]]{4}[a-zA-Z0-9_.-]+:/ { \
-    key=$1; sub(/:$/,"",key); \
-    if(subsect=="gp") print "G " key; else print "K " key; \
-  }' values.yaml | while read -r kind name; do
-    if [[ $kind == G ]]; then
-      printf '| gatekeeper.policies.%s.enabled | boolean | true | - |\n' "$name" >> "$TMP_OUT"
-    else
-      printf '| kyverno.policies.%s.enabled | boolean | true | - |\n' "$name" >> "$TMP_OUT"
-    fi
-  done
-fi
+# Policies: extract lists deterministically without external yq dependency (awk-only)
+awk '
+BEGIN{sect=""; subsect=""}
+# Top-level keys
+/^[^[:space:]]/ {
+  if ($0 ~ /^gatekeeper:/) { sect="g"; subsect=""; next }
+  if ($0 ~ /^kyverno:/) { sect="k"; subsect=""; next }
+  # Any other top-level key: leave sections
+  sect=""; subsect=""; next
+}
+# Two-space indent keys under current section
+/^  [^[:space:]]/ {
+  if (sect=="g" && $0 ~ /^  policies:/) { subsect="gp"; next }
+  if (sect=="k" && $0 ~ /^  policies:/) { subsect="kp"; next }
+  # Different two-space key under gatekeeper/kyverno ends policies block
+  if (subsect!="") { subsect="" }
+  next
+}
+# Four-space indent: collect policy names only within policies block
+(subsect=="gp" || subsect=="kp") && /^    [a-zA-Z0-9_.-]+:/ {
+  key=$1; sub(/:$/,"",key);
+  if(subsect=="gp") print "G " key; else print "K " key;
+}
+' values.yaml | while read -r kind name; do
+  if [[ $kind == G ]]; then
+    printf '| gatekeeper.policies.%s.enabled | boolean | true | - |\n' "$name" >> "$TMP_OUT"
+  else
+    printf '| kyverno.policies.%s.enabled | boolean | true | - |\n' "$name" >> "$TMP_OUT"
+  fi
+done
 
 echo >> "$TMP_OUT"
 echo "*Generated automatically - do not edit manually*" >> "$TMP_OUT"

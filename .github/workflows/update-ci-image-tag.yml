@@ -14,13 +14,23 @@ permissions:
     actions: write
 
 jobs:
+    noop-on-act:
+        name: No-op on ACT
+        if: ${{ github.actor == 'nektos/act' }}
+        runs-on: ubuntu-latest
+        steps:
+            - name: Summary
+              run: echo "[act] Skipping update-ci-image-tag workflow (local emulation)." >> "$GITHUB_STEP_SUMMARY"
+
     resolve-ci-image:
+        if: ${{ github.actor != 'nektos/act' }}
         name: Resolve CI image
         uses: rulehub/rulehub/.github/workflows/resolve-ci-image.yml@main
         with:
             kind: base
 
     set-var:
+        if: ${{ github.actor != 'nektos/act' }}
         needs: [resolve-ci-image]
         runs-on: ubuntu-latest
         container:
