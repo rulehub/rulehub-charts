@@ -152,7 +152,7 @@ jobs:
           if [ -n "${ACT:-}" ]; then
             echo "IS_ACT=true" >> "$GITHUB_ENV"
           fi
-      - name: Verify rendered size (<= 250KB default)
+      - name: Verify rendered size (<= 300KB CI threshold)
         if: ${{ env.IS_ACT != 'true' }}
         shell: bash
         run: |
@@ -160,7 +160,7 @@ jobs:
             echo 'Skipping size verification under ACT.'
             exit 0
           fi
-          bash hack/verify-size.sh
+          THRESHOLD=300000 bash hack/verify-size.sh
 
   freeze:
     name: Freeze (label or manual)

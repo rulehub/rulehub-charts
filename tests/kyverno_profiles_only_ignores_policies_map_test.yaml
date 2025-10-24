@@ -1,4 +1,18 @@
----
-suite: Placeholder (no-op)
-templates: []
-tests: []
+suite: kyverno profilesOnly ignores policies map
+templates:
+  - templates/policy-sets.yaml
+tests:
+  - it: should not include kyverno.policies in summary when useProfilesOnly is true
+    set:
+      kyverno:
+        enabled: true
+        useProfilesOnly: true
+        policies:
+          block-hostpath:
+            enabled: true
+    asserts:
+      - equal:
+          path: spec.kyverno.enabled
+          value: true
+      - isNull:
+          path: spec.kyverno.policies

@@ -1,11 +1,11 @@
 ## Synthetic aggregation template for tests (not applied cluster-wide)
 # Treat "enabled" as true ONLY when it's a boolean true. Strings like "true" are not accepted.
-{{- $kyEnabled := and (kindIs "bool" .Values.kyverno.enabled) .Values.kyverno.enabled -}}
-{{- $gkEnabled := and (kindIs "bool" .Values.gatekeeper.enabled) .Values.gatekeeper.enabled -}}
+{{ $kyEnabled := and (kindIs "bool" .Values.kyverno.enabled) .Values.kyverno.enabled -}}
+{{ $gkEnabled := and (kindIs "bool" .Values.gatekeeper.enabled) .Values.gatekeeper.enabled -}}
 
-{{- /* Collect only explicitly boolean-true policy toggles */ -}}
+{{- /* Collect only explicitly boolean-true policy toggles (skip when useProfilesOnly=true to mirror render loop) */ -}}
 {{- $kyPolicies := dict -}}
-{{- if and .Values.kyverno .Values.kyverno.policies -}}
+{{- if and .Values.kyverno (not (.Values.kyverno.useProfilesOnly | default false)) .Values.kyverno.policies -}}
   {{- range $n, $c := .Values.kyverno.policies -}}
     {{- $pEnabled := and $c (hasKey $c "enabled") (kindIs "bool" (get $c "enabled")) (get $c "enabled") -}}
     {{- if $pEnabled -}}{{- $_ := set $kyPolicies $n (dict) -}}{{- end -}}
@@ -48,4 +48,5 @@
 {{- if gt (len $anns) 0 -}}
   {{- $_ := set $meta "annotations" $anns -}}
 {{- end -}}
+---
 {{ toYaml (dict "apiVersion" "policy-sets.test/v1" "kind" "PolicySets" "metadata" $meta "spec" $spec) }}
