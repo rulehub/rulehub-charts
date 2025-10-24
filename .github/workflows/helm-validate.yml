@@ -150,12 +150,32 @@ jobs:
       options: --user 0:0
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          fi
       # Ensure helm-unittest plugin is available (pin version for determinism)
       - name: Install helm-unittest plugin (if missing)
         shell: bash
         run: |
+          # Skip plugin installation entirely under ACT to avoid flaky network/plugin bootstrap
+          if [ -n "${ACT:-}" ] || [ "${IS_ACT:-false}" = "true" ]; then
+            echo "ACT detected; skipping helm-unittest plugin install."
+            exit 0
+          fi
           if ! helm plugin list | awk '{print $1}' | grep -qx "unittest"; then
-            helm plugin install https://github.com/helm-unittest/helm-unittest --version v0.5.1
+            echo "Installing helm-unittest v0.5.1..."
+            for i in 1 2 3; do
+              if helm plugin install https://github.com/helm-unittest/helm-unittest --version v0.5.1; then
+                break
+              fi
+              echo "helm-unittest install attempt $i failed; retrying in 5s..."
+              sleep 5
+            done
+            # Verify install succeeded
+            helm plugin list | awk '{print $1}' | grep -qx "unittest" || { echo "helm-unittest plugin not installed after retries" >&2; exit 1; }
           fi
       - name: Helm version
         run: helm version --short
@@ -177,15 +197,17 @@ jobs:
         kubeVersion: ["1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.31.0"]
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
-      - name: Set up chart-testing
-        uses: helm/chart-testing-action@v2.6.1
       - name: Detect ACT environment
         shell: bash
         run: |
           if [ -n "${ACT:-}" ]; then
             echo "IS_ACT=true" >> "$GITHUB_ENV"
           fi
+      - name: Set up chart-testing
+        if: ${{ env.IS_ACT != 'true' }}
+        uses: helm/chart-testing-action@v2.6.1
       - name: Verify ct available
+        if: ${{ env.IS_ACT != 'true' }}
         run: |
           set -e
           command -v ct >/dev/null 2>&1 || { echo 'ct not found in PATH after setup'; exit 1; }
