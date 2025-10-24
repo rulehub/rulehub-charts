@@ -1,18 +1,16 @@
----
-# Test Gatekeeper enabled, Kyverno disabled
-values:
-  gatekeeper:
-    enabled: true
-  kyverno:
-    enabled: false
+suite: Gatekeeper enabled
 templates:
   - templates/policy-sets.yaml
-assertions:
-  - contains:
-      path: spec.gatekeeper
-      content:
+tests:
+  - it: Gatekeeper enabled, Kyverno disabled
+    set:
+      gatekeeper:
         enabled: true
-  - notContains:
-      path: spec.kyverno
-      content:
-        enabled: true
+      kyverno:
+        enabled: false
+    asserts:
+      - equal:
+          path: spec.gatekeeper.enabled
+          value: true
+      - isNull:
+          path: spec.kyverno

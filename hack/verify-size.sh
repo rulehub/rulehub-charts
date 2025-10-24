@@ -16,7 +16,7 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 # Reset positional args only if any were collected (avoid unbound under set -u)
-if (( ${#args[@]:-0} > 0 )); then
+if (( ${#args[@]} > 0 )); then
   set -- "${args[@]}"
 else
   set --
