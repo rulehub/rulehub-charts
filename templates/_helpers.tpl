@@ -221,8 +221,7 @@ data:
 		{{- $rendered := include "policy-sets.gk.render" (dict "bytes" $bytes "root" $root) -}}
 		{{- if $rendered -}}
 			{{- if $deprecated }}# Deprecated policy key used: {{ $underscore }} (use {{ $name }}){{- end }}
----
-{{ $rendered }}
+{{ printf "\n---\n" }}{{- $rendered -}}{{ printf "\n" }}
 		{{- end -}}
 	{{- end -}}
 {{- end -}}
@@ -284,8 +283,7 @@ data:
 		{{- $action := (get $cfg "validationFailureAction" | default $defaultAction) -}}
 		{{- $r := include "policy-sets.kyverno.render" (dict "bytes" $bytes "action" $action "name" $name "root" $root) -}}
 		{{- if $r -}}
----
-{{ $r }}
+{{ printf "\n---\n" }}{{- $r -}}{{ printf "\n" }}
 		{{- end -}}
 	{{- end -}}
 {{- end -}}
