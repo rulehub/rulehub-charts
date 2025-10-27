@@ -19,15 +19,15 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* Build spec conditionally: include kyverno/gatekeeper sections only when enabled (or policies present) */ -}}
+{{- /* Build spec conditionally: include kyverno/gatekeeper sections only when top-level enabled is true (do not include sections merely because policies are present when disabled) */ -}}
 {{- $spec := dict -}}
-{{- if or $kyEnabled (gt (len $kyPolicies) 0) -}}
-  {{- $kyBlock := dict "enabled" $kyEnabled -}}
+{{- if $kyEnabled -}}
+  {{- $kyBlock := dict "enabled" true -}}
   {{- if gt (len $kyPolicies) 0 -}}{{- $_ := set $kyBlock "policies" $kyPolicies -}}{{- end -}}
   {{- $_ := set $spec "kyverno" $kyBlock -}}
 {{- end -}}
-{{- if or $gkEnabled (gt (len $gkPolicies) 0) -}}
-  {{- $gkBlock := dict "enabled" $gkEnabled -}}
+{{- if $gkEnabled -}}
+  {{- $gkBlock := dict "enabled" true -}}
   {{- if gt (len $gkPolicies) 0 -}}{{- $_ := set $gkBlock "policies" $gkPolicies -}}{{- end -}}
   {{- $_ := set $spec "gatekeeper" $gkBlock -}}
 {{- end -}}

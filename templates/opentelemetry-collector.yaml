@@ -7,6 +7,7 @@ metadata:
   labels:
     app.kubernetes.io/name: {{ $c.name }}
     app.kubernetes.io/part-of: {{ .Chart.Name }}
+    chart/version: {{ .Chart.Version | quote }}
   annotations:
     policy-sets/chart.version: {{ .Chart.Version | quote }}
     {{- with $.Values.build.commitSha }}
@@ -41,6 +42,7 @@ metadata:
   labels:
     app.kubernetes.io/name: {{ $c.name }}
     app.kubernetes.io/part-of: {{ .Chart.Name }}
+    chart/version: {{ .Chart.Version | quote }}
   annotations:
     policy-sets/chart.version: {{ .Chart.Version | quote }}
     {{- with $.Values.build.commitSha }}
@@ -56,6 +58,7 @@ spec:
       labels:
         app.kubernetes.io/name: {{ $c.name }}
         app.kubernetes.io/part-of: {{ .Chart.Name }}
+        chart/version: {{ .Chart.Version | quote }}
       annotations:
         policy-sets/chart.version: {{ .Chart.Version | quote }}
         {{- with $.Values.build.commitSha }}
@@ -92,6 +95,7 @@ metadata:
   labels:
     app.kubernetes.io/name: {{ $c.name }}
     app.kubernetes.io/part-of: {{ .Chart.Name }}
+    chart/version: {{ .Chart.Version | quote }}
   annotations:
     policy-sets/chart.version: {{ .Chart.Version | quote }}
     {{- with $.Values.build.commitSha }}

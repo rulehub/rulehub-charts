@@ -176,6 +176,21 @@ pre-commit-run: ## Run pre-commit hooks in isolated venv (no repo pollution)
 	  PRE_COMMIT_HOME=$(PRE_COMMIT_HOME_DIR) pre-commit run --all-files \
 	'
 
+pre-commit-all: ## Run pre-commit default + manual hooks (full verification bundle)
+	@set -euo pipefail; \
+	python3 -m venv $(PRE_COMMIT_VENV); \
+	source $(PRE_COMMIT_VENV)/bin/activate; \
+	python -m pip install --upgrade pip >/dev/null; \
+	python -m pip install "pre-commit>=3.6,<4" >/dev/null; \
+	PRE_COMMIT_HOME=$(PRE_COMMIT_HOME_DIR) pre-commit run --all-files; \
+	SKIP_MANUAL=""; \
+	if [ -z "$${REF:-}" ]; then SKIP_MANUAL="$$SKIP_MANUAL,freeze-verify,removed-without-deprecation-verify"; fi; \
+	SKIP_MANUAL=$${SKIP_MANUAL#,}; \
+	if [ -n "$$SKIP_MANUAL" ]; then \
+	  echo "[pre-commit-all] Skipping manual hooks: $$SKIP_MANUAL (set REF and/or INDEX_JSON to enable)"; \
+	fi; \
+	SKIP=$$SKIP_MANUAL DRIFT_ALLOW=$${DRIFT_ALLOW:-true} PRE_COMMIT_HOME=$(PRE_COMMIT_HOME_DIR) pre-commit run --all-files --hook-stage manual
+
 snapshots-generate: ## Generate current snapshot documents (golden) into snapshots/current
 	./hack/generate-snapshots.sh values.yaml snapshots/current
 
@@ -202,8 +217,8 @@ underscore-gate: ## Verify no new underscore policy key added without dash varia
 	./hack/verify-underscore-gate.sh $(if $(BASE),--base $(BASE),)
 
 helm-unit: ## Run helm-unittest test suite (requires helm unittest plugin)
-	@if ! helm plugin list | grep -q unittest; then echo 'helm unittest plugin not installed (helm plugin install https://github.com/helm-unittest/helm-unittest)'; exit 2; fi
-	helm unittest -3 ./
+	@if ! helm plugin list | grep -q unittest; then echo 'helm unittest plugin not installed (helm plugin install https://github.com/helm-unittest/helm-unittest --version v0.5.1)'; exit 2; fi
+	helm unittest -f "tests/*.yaml" ./
 
 orphan-policies: ## Detect orphan policy files (no key) and dangling keys (no file)
 	./hack/detect-orphan-policies.sh

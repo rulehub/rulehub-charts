@@ -102,6 +102,130 @@ repos:
         files: (Chart.yaml|values.yaml|README.md)
         pass_filenames: false
 
+      # Additional verification hooks (kept lightweight by default; heavy/ref-dependent marked manual)
+
+      - id: verify-profiles
+        name: verify profiles render declared policies
+        entry: hack/verify-profiles.sh
+        language: system
+        pass_filenames: false
+
+      - id: verify-profile-consistency
+        name: verify profiles internal consistency
+        entry: hack/verify-profile-consistency.sh
+        language: system
+        pass_filenames: false
+
+      - id: enforce-rationale
+        name: verify Kyverno enforce rationale present
+        entry: hack/verify-enforce-rationale.sh
+        language: system
+        pass_filenames: false
+
+      - id: schema-coverage
+        name: schema coverage of values.yaml
+        entry: hack/schema-coverage.sh
+        language: system
+        pass_filenames: false
+
+      - id: schema-compare
+        name: schema compare (values vs values.schema.json)
+        entry: hack/compare-values-schema.sh
+        language: system
+        pass_filenames: false
+
+      - id: size-verify
+        name: verify rendered manifest size
+        entry: hack/verify-size.sh
+        language: system
+        pass_filenames: false
+        args: ["--threshold", "320000"]
+
+      - id: integrity-verify
+        name: verify policy YAML integrity (manifest + hashes)
+        entry: hack/verify-integrity.sh
+        language: system
+        pass_filenames: false
+
+      - id: integrity-configmap-verify
+        name: verify integrity ConfigMap exported when enabled
+        entry: hack/verify-integrity-configmap.sh
+        language: system
+        pass_filenames: false
+
+      - id: manifest-verify
+        name: verify manifest.json schema
+        entry: hack/verify-manifest-schema.sh
+        language: system
+        pass_filenames: false
+
+      - id: kubeconform-verify
+        name: verify kubeconform checksum (tooling integrity)
+        entry: hack/verify-kubeconform-checksum.sh
+        language: system
+        pass_filenames: false
+
+      - id: stub-not-enforce-verify
+        name: verify deprecated stub policies are not enforced
+        entry: hack/verify-stub-not-enforce.sh
+        language: system
+        pass_filenames: false
+
+      - id: soft-deletion-verify
+        name: verify deprecated stubs removed after soft deletion window
+        entry: hack/verify-soft-deletion.sh
+        language: system
+        pass_filenames: false
+
+      - id: underscore-gate
+        name: underscore gate for new policy keys (diff vs base)
+        entry: hack/verify-underscore-gate.sh
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+      - id: deprecation-verify
+        name: verify deprecation window
+        entry: hack/verify-deprecation-window.sh
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+      - id: freeze-verify
+        name: verify release freeze window
+        entry: hack/verify-freeze.sh
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+      - id: removed-without-deprecation-verify
+        name: verify removed policy files were previously deprecated
+        entry: hack/verify-removed-without-deprecation.sh
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+      - id: drift-index-verify
+        name: verify drift vs core index.json
+        entry: hack/verify-drift-index.sh
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+      - id: performance-verify
+        name: verify template performance regression within threshold
+        entry: hack/verify-performance.sh
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
+      - id: plugin-index-verify
+        name: verify generated plugin index
+        entry: hack/verify-plugin-index.sh
+        language: system
+        pass_filenames: false
+        stages: [manual]
+
 exclude: |
   ^\.git/|
   ^dist/|

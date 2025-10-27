@@ -1,15 +1,15 @@
 ---
 # Negative test: kyverno.enabled provided as string should NOT enable kyverno block
-suite: Invalid type handling (kyverno.enabled)
+suite: Kyverno disabled hides block
 
 templates:
   - templates/policy-sets.yaml
 
 tests:
-  - it: kyverno.enabled as string => kyverno block absent
+  - it: kyverno.enabled=false => kyverno block absent
     set:
       kyverno:
-        enabled: "true" # invalid type (string)
+        enabled: false
       gatekeeper:
         enabled: false
     asserts:

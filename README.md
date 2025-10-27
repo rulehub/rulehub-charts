@@ -302,7 +302,7 @@ RuleHub curated Gatekeeper & Kyverno policy collection for Kubernetes clusters
 | opentelemetryCollector.extraConfig | object | `{}` |  |
 | opentelemetryCollector.image.pullPolicy | string | `"IfNotPresent"` |  |
 | opentelemetryCollector.image.repository | string | `"otel/opentelemetry-collector-contrib"` |  |
-| opentelemetryCollector.image.tag | string | `"0.101.0"` |  |
+| opentelemetryCollector.image.tag | string | `"0.138.0"` |  |
 | opentelemetryCollector.name | string | `"otel-collector"` |  |
 | opentelemetryCollector.podAnnotations | object | `{}` |  |
 | opentelemetryCollector.processors.batch | object | `{}` |  |

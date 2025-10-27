@@ -14,6 +14,7 @@ This directory groups conceptual and process documentation for the chart.
 - Release checklist: `release-checklist.md`
 - Release freeze checklist: `release-freeze-checklist.md`
 - Normalization plan (dash aliases, underscore removal lifecycle): `normalization-plan.md`
+- Drift check vs core index: `drift-check.md`
 
 ### Still at Repository Root
 

@@ -26,7 +26,7 @@ Use this checklist for every release. Automate sequentially; keep manual notes f
 ## Validation
 
 - [ ] `helm lint .`
-- [ ] `helm unittest -3 -f tests/*.yaml .`
+- [ ] `helm unittest -f tests/*.yaml .`
 - [ ] Render & kubeconform (baseline K8s versions):
   - [ ] `helm template rulehub-policies . > rendered.yaml`
   - [ ] `kubeconform -strict -ignore-missing-schemas rendered.yaml`

@@ -12,6 +12,10 @@ tests:
         policies:
           block-hostpath:
             enabled: true
+          disallow-latest:
+            enabled: false
+          require-resources:
+            enabled: false
     asserts:
       - isNotNull:
           path: spec.kyverno.policies.block-hostpath

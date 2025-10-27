@@ -39,7 +39,10 @@ current=""
 while IFS= read -r line || [ -n "$line" ]; do
   if [[ "$line" =~ ^--- ]]; then
     if [[ -n "$current" ]]; then
-      if ! grep -q "chart/version:" <<<"$current"; then
+      # Skip non-resource blocks (no kind present)
+      if ! grep -q '^kind:' <<<"$current"; then
+        : # ignore preamble or non-YAML blocks
+      elif ! grep -q "chart/version:" <<<"$current"; then
         kind=$(grep -m1 '^kind:' <<<"$current" | awk '{print $2}') || true
         name=$(grep -m1 '^  name:' <<<"$current" | awk '{print $2}') || true
         [[ -z "$name" ]] && name=$(grep -m1 '^metadata:' -A3 <<<"$current" | grep '^  name:' | awk '{print $2}') || true
@@ -53,7 +56,9 @@ while IFS= read -r line || [ -n "$line" ]; do
 done < "$TMP_RENDER"
 
 if [[ -n "$current" ]]; then
-  if ! grep -q "chart/version:" <<<"$current"; then
+  if ! grep -q '^kind:' <<<"$current"; then
+    :
+  elif ! grep -q "chart/version:" <<<"$current"; then
     kind=$(grep -m1 '^kind:' <<<"$current" | awk '{print $2}') || true
     name=$(grep -m1 '^  name:' <<<"$current" | awk '{print $2}') || true
     [[ -z "$name" ]] && name=$(grep -m1 '^metadata:' -A3 <<<"$current" | grep '^  name:' | awk '{print $2}') || true
