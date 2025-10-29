@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+пше#!/usr/bin/env bash
 set -euo pipefail
 
 # verify-drift-index.sh

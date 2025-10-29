@@ -101,6 +101,7 @@ jobs:
       - name: Install Python deps (rulehub)
         if: ${{ env.IS_ACT != 'true' }}
         working-directory: rulehub
+        shell: bash
         run: |
           set -euo pipefail
           make deps
