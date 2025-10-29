@@ -27,9 +27,26 @@ jobs:
   check-tag:
     name: Ensure CI image tag
     runs-on: ubuntu-latest
+    env:
+      IS_ACT: "false"
     outputs:
       resolved_tag: ${{ steps.ctag.outputs.resolved_tag }}
     steps:
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ "${GITHUB_ACTOR:-}" = "nektos/act" ] || [ -n "${ACT:-}" ]; then
+            echo "Detected ACT environment"
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          else
+            echo "Not running under ACT"
+          fi
+      - name: Cleanup cached actions (ACT)
+        if: ${{ env.IS_ACT == 'true' }}
+        shell: bash
+        run: |
+          # Remove stale cached actions injected under the repo path by act to avoid lstat failures during checkout
+          rm -rf .github/_actions || true
       - name: Checkout repository (required for local actions)
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Resolve CI image tag
@@ -41,10 +58,27 @@ jobs:
   verify:
     needs: [check-tag]
     runs-on: ubuntu-latest
+    env:
+      IS_ACT: "false"
     container:
       image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ needs.check-tag.outputs.resolved_tag }}"
       options: --user 0:0
     steps:
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ "${GITHUB_ACTOR:-}" = "nektos/act" ] || [ -n "${ACT:-}" ]; then
+            echo "Detected ACT environment"
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          else
+            echo "Not running under ACT"
+          fi
+      - name: Cleanup cached actions (ACT)
+        if: ${{ env.IS_ACT == 'true' }}
+        shell: bash
+        run: |
+          # Remove stale cached actions injected under the repo path by act to avoid lstat failures during checkout
+          rm -rf .github/_actions || true
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Configure git safe.directory
         shell: bash

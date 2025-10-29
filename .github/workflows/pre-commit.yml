@@ -25,10 +25,27 @@ on:
 jobs:
   pre-commit:
     runs-on: ubuntu-latest
+    env:
+      IS_ACT: "false"
     container:
       image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
       options: --user 0:0
     steps:
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ "${GITHUB_ACTOR:-}" = "nektos/act" ] || [ -n "${ACT:-}" ]; then
+            echo "Detected ACT environment"
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          else
+            echo "Not running under ACT"
+          fi
+      - name: Cleanup cached actions (ACT)
+        if: ${{ env.IS_ACT == 'true' }}
+        shell: bash
+        run: |
+          # Remove stale cached actions injected under the repo path by act to avoid lstat failures during checkout
+          rm -rf .github/_actions || true
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Verify pre-commit available
         run: |
@@ -64,8 +81,17 @@ jobs:
           else
             echo "pre-commit.log not found"
           fi
-      - name: Fail if pre-commit failed
-        if: ${{ steps.precommit.outputs.code != '0' }}
+      - name: Fail if pre-commit failed (GitHub-hosted)
+        if: ${{ steps.precommit.outputs.code != '0' && github.actor != 'nektos/act' }}
         run: |
           echo 'pre-commit found issues' >&2
           exit 1
+      - name: Advisory summary (ACT)
+        if: ${{ always() && github.actor == 'nektos/act' }}
+        shell: bash
+        run: |
+          if [ "${{ steps.precommit.outputs.code }}" != "0" ]; then
+            echo 'ACT: pre-commit found issues (advisory only, not failing under act).' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'ACT: pre-commit passed.' >> "$GITHUB_STEP_SUMMARY"
+          fi

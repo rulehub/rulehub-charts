@@ -24,7 +24,24 @@ jobs:
   guard:
     name: Require CI image tag (no drift)
     runs-on: ubuntu-latest
+    env:
+      IS_ACT: "false"
     steps:
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ "${GITHUB_ACTOR:-}" = "nektos/act" ] || [ -n "${ACT:-}" ]; then
+            echo "Detected ACT environment"
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          else
+            echo "Not running under ACT"
+          fi
+      - name: Cleanup cached actions (ACT)
+        if: ${{ env.IS_ACT == 'true' }}
+        shell: bash
+        run: |
+          # Remove stale cached actions injected under the repo path by act to avoid lstat failures during checkout
+          rm -rf .github/_actions || true
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Enforce pinned CI image tag
@@ -47,17 +64,29 @@ jobs:
       IS_ACT: "false"
       RULEHUB_REPO: rulehub/rulehub
     steps:
-      - name: Checkout charts
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Detect ACT environment
         shell: bash
         run: |
-          if [ -n "${ACT:-}" ]; then
-            echo "Detected ACT environment via env variable"
+          if [ "${GITHUB_ACTOR:-}" = "nektos/act" ] || [ -n "${ACT:-}" ]; then
+            echo "Detected ACT environment"
             echo "IS_ACT=true" >> "$GITHUB_ENV"
           else
             echo "Not running under ACT"
           fi
+      - name: Cleanup cached actions (ACT)
+        if: ${{ env.IS_ACT == 'true' }}
+        shell: bash
+        run: |
+          # Remove stale cached actions injected under the repo path by act to avoid lstat failures during checkout
+          rm -rf .github/_actions || true
+      - name: Checkout charts
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+      - name: Cleanup stale clone dir (ACT)
+        if: ${{ env.IS_ACT == 'true' }}
+        shell: bash
+        run: |
+          # Remove residual 'rulehub' directory from previous ACT runs to avoid clone conflicts
+          rm -rf rulehub || true
       - name: Fetch rulehub repository
         shell: bash
         run: |

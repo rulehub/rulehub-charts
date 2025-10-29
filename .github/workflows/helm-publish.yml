@@ -26,14 +26,20 @@ jobs:
     env:
       IS_ACT: "false"
     steps:
-      - name: Checkout
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0 pinned
       - name: Detect ACT environment
         shell: bash
         run: |
           if [ -n "${ACT:-}" ]; then
             echo "IS_ACT=true" >> "$GITHUB_ENV"
           fi
+      - name: ACT cleanup (stale cached actions)
+        if: ${{ github.actor == 'nektos/act' }}
+        shell: bash
+        run: |
+          # Workaround for intermittent lstat errors under act due to stale cached actions
+          rm -rf .github/_actions || true
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0 pinned
       - name: Verify tag matches Chart.yaml version & appVersion
         run: bash hack/ci/verify-tag-version.sh
       - name: Login to GHCR

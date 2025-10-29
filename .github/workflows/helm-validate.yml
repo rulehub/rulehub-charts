@@ -66,6 +66,12 @@ jobs:
       matrix:
         kubeVersion: ["1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.31.0"]
     steps:
+      - name: ACT cleanup (stale cached actions)
+        if: ${{ github.actor == 'nektos/act' }}
+        shell: bash
+        run: |
+          # Workaround for intermittent lstat errors under act due to stale cached actions
+          rm -rf .github/_actions || true
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Detect ACT environment
         shell: bash
@@ -117,6 +123,12 @@ jobs:
       matrix:
         kubeVersion: ["1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.31.0"]
     steps:
+      - name: ACT cleanup (stale cached actions)
+        if: ${{ github.actor == 'nektos/act' }}
+        shell: bash
+        run: |
+          # Workaround for intermittent lstat errors under act due to stale cached actions
+          rm -rf .github/_actions || true
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Detect ACT environment
         shell: bash
@@ -149,6 +161,12 @@ jobs:
       image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
       options: --user 0:0
     steps:
+      - name: ACT cleanup (stale cached actions)
+        if: ${{ github.actor == 'nektos/act' }}
+        shell: bash
+        run: |
+          # Workaround for intermittent lstat errors under act due to stale cached actions
+          rm -rf .github/_actions || true
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Detect ACT environment
         shell: bash
@@ -197,6 +215,12 @@ jobs:
       matrix:
         kubeVersion: ["1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.31.0"]
     steps:
+      - name: ACT cleanup (stale cached actions)
+        if: ${{ github.actor == 'nektos/act' }}
+        shell: bash
+        run: |
+          # Workaround for intermittent lstat errors under act due to stale cached actions
+          rm -rf .github/_actions || true
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Detect ACT environment
         shell: bash
@@ -242,6 +266,18 @@ jobs:
       image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
       options: --user 0:0
     steps:
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          fi
+      - name: ACT cleanup (stale cached actions)
+        if: ${{ github.actor == 'nektos/act' }}
+        shell: bash
+        run: |
+          # Workaround for intermittent lstat errors under act due to stale cached actions
+          rm -rf .github/_actions || true
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Verify deterministic rendering (default values)
         run: bash hack/verify-deterministic.sh values.yaml
