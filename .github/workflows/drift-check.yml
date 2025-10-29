@@ -120,7 +120,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          ../hack/ci/drift-compare-filter.sh --charts-dir ../files --allowed '["betting.","edtech.","medtech.","igaming."]' --fail-on-drift | tee /tmp/drift-summary.txt
+          bash ../hack/ci/drift-compare-filter.sh --charts-dir ../files --allowed '["betting.","edtech.","medtech.","igaming."]' --fail-on-drift | tee /tmp/drift-summary.txt
           echo 'Filtered drift summary:' >> $GITHUB_STEP_SUMMARY
           cat /tmp/drift-summary.txt >> $GITHUB_STEP_SUMMARY || true
           # Prepare top-n lists for summary
