@@ -35,13 +35,18 @@ done
 python tools/compare_charts_policies.py --charts-dir "$CHARTS_DIR" --json > charts-drift.json
 
 jq -r --argjson allowed "$ALLOWED" '
-  def allowed: any($allowed[]; . as $p | startswith($p));
+  # Given a string (the drift id), return true if it starts with any of the allowed prefixes.
+  def is_allowed:
+    . as $s | any($allowed[]; $s | startswith(.));
   {
-    filtered_missing:   (.missing_in_charts // []) | map(select(allowed)),
-    filtered_extra:     (.extra_in_charts    // [])
-                          | map(select(allowed))
-                          | map(select(. != "betting.constraint.placeholder" and . != "betting.policy.placeholder"))
-  } | . + { missing_count: (.filtered_missing|length), extra_count: (.filtered_extra|length) }' charts-drift.json > charts-drift.filtered.json
+    filtered_missing: (.missing_in_charts // [])
+      | map(select(is_allowed)),
+    filtered_extra:   (.extra_in_charts // [])
+      | map(select(is_allowed))
+      | map(select(. != "betting.constraint.placeholder" and . != "betting.policy.placeholder"))
+  }
+  | . + { missing_count: (.filtered_missing|length), extra_count: (.filtered_extra|length) }
+' charts-drift.json > charts-drift.filtered.json
 
 echo "missing=$(jq -r '.missing_count' charts-drift.filtered.json) extra=$(jq -r '.extra_count' charts-drift.filtered.json)"
 
