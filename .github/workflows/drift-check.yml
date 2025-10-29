@@ -55,7 +55,7 @@ jobs:
     name: Compare with RuleHub catalog
     runs-on: ubuntu-latest
     container:
-      image: "ghcr.io/${{ github.repository_owner }}/ci-base-rulehub:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
+      image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
       options: --user 0:0
     permissions:
       contents: read
@@ -98,10 +98,12 @@ jobs:
             echo "GitHub Actions environment; cloning with github.token"
             git clone --depth 1 "https://${{ github.token }}@github.com/${RULEHUB_REPO}.git" rulehub
           fi
-      - name: Install deps
+      - name: Install Python deps (rulehub)
         if: ${{ env.IS_ACT != 'true' }}
+        working-directory: rulehub
         run: |
-          echo "Dependencies are preinstalled in ci-base-rulehub image; skipping."
+          set -euo pipefail
+          make deps
       - name: Generate RuleHub catalog
         if: ${{ env.IS_ACT != 'true' }}
         working-directory: rulehub
