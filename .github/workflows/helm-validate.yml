@@ -106,7 +106,7 @@ jobs:
       - name: Upload rendered manifest (${{ matrix.kubeVersion }})
         if: ${{ env.IS_ACT != 'true' }}
         continue-on-error: true
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: rendered-${{ matrix.kubeVersion }}.yaml
           path: rendered-${{ matrix.kubeVersion }}.yaml
@@ -149,7 +149,7 @@ jobs:
           kubeconform -strict -ignore-missing-schemas -summary -output json -schema-location default -schema-location 'https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/{{ .Group }}/{{ .ResourceKind }}_{{ .ResourceAPIVersion }}.json' rendered-${{ matrix.kubeVersion }}.yaml | tee kubeconform-${{ matrix.kubeVersion }}.json
       - name: Upload kubeconform results (${{ matrix.kubeVersion }})
         if: ${{ env.IS_ACT != 'true' }}
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: kubeconform-${{ matrix.kubeVersion }}.json
           path: kubeconform-${{ matrix.kubeVersion }}.json
