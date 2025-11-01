@@ -64,7 +64,7 @@ jobs:
           echo "code=$code" >> "$GITHUB_OUTPUT"
       - name: Upload pre-commit log (GitHub only)
         if: ${{ always() && github.actor != 'nektos/act' }}
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         with:
           name: pre-commit-log
           path: pre-commit.log
