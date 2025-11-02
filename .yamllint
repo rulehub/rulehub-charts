@@ -13,3 +13,7 @@ rules:
 # Ignore Helm templates (contain Go templating, not plain YAML)
 ignore: |
   templates/**/*.yaml
+  .git/**
+  dist/**
+  tmp/**
+  .venv/**

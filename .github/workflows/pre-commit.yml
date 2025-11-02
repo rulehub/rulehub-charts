@@ -51,6 +51,20 @@ jobs:
         run: |
           set -e
           command -v pre-commit >/dev/null 2>&1 || { echo 'pre-commit not found in ci-charts image'; exit 1; }
+      - name: Install yq v4 (ACT fallback)
+        if: ${{ env.IS_ACT == 'true' }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if command -v yq >/dev/null 2>&1; then
+            echo "yq present: $(yq --version)"
+          else
+            echo "Installing yq v4 fallback for ACT…"
+            ARCH="amd64"; [ "$(uname -m)" = "aarch64" ] && ARCH="arm64"
+            curl -fsSL -o /usr/local/bin/yq "https://github.com/mikefarah/yq/releases/download/v4.44.3/yq_linux_${ARCH}"
+            chmod +x /usr/local/bin/yq
+            yq --version
+          fi
       - name: Run pre-commit (all files)
         id: precommit
         shell: bash

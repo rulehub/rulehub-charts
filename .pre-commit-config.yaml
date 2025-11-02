@@ -13,7 +13,8 @@ repos:
     hooks:
       - id: yamllint
         additional_dependencies: []
-        args: ["-c", ".yamllint", "."]
+        # Let pre-commit pass the file list; don't scan the whole repo (avoids .git cache)
+        args: ["-c", ".yamllint"]
   - repo: local
     hooks:
       - id: helm-lint

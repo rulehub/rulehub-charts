@@ -1,5 +1,8 @@
 # Exclude CI/config
 .github/
+.git/
+.gitignore
+.gitattributes
 # Tests not needed in packaged chart
 tests/
 # Examples / dev artefacts
