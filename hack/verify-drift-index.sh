@@ -1,4 +1,4 @@
-пше#!/usr/bin/env bash
+#!/usr/bin/env bash
 set -euo pipefail
 
 # verify-drift-index.sh
@@ -18,7 +18,8 @@ for a in "$@"; do
     *) ARGS+=("$a") ;;
   esac
 done
-set -- "${ARGS[@]}"
+# Avoid unbound expansion under `set -u` when ARGS is empty
+set -- ${ARGS[@]+"${ARGS[@]}"}
 
 INDEX_JSON="${1:-${INDEX_JSON:-${CORE_INDEX:-}}}"
 

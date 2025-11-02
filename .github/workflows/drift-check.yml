@@ -19,6 +19,14 @@ on:
         description: "CI image tag for RuleHub charts image (e.g., 2025.10.03-<sha> or vX.Y.Z). Falls back to repo var CI_IMAGE_TAG or latest."
         required: false
         default: ""
+      allowed_prefixes:
+        description: 'JSON array of allowed domain prefixes to include in drift (e.g., ["betting.","edtech."]). Use ["*"] for ALL.'
+        required: false
+        default: '["betting.","edtech.","medtech.","igaming."]'
+      strict:
+        description: "Strict mode: enforce 1:1 for ALL IDs (passes --domains-all)."
+        required: false
+        default: "false"
 
 jobs:
   guard:
@@ -120,7 +128,12 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          bash ../hack/ci/drift-compare-filter.sh --charts-dir ../files --allowed '["betting.","edtech.","medtech.","igaming."]' --fail-on-drift | tee /tmp/drift-summary.txt
+          if [[ "${{ inputs.strict }}" == "true" ]]; then
+            echo "Strict mode enabled: enforcing ALL IDs"
+            bash ../hack/ci/drift-compare-filter.sh --charts-dir ../files --domains-all --fail-on-drift | tee /tmp/drift-summary.txt
+          else
+            bash ../hack/ci/drift-compare-filter.sh --charts-dir ../files --allowed '${{ inputs.allowed_prefixes }}' --fail-on-drift | tee /tmp/drift-summary.txt
+          fi
           echo 'Filtered drift summary:' >> $GITHUB_STEP_SUMMARY
           cat /tmp/drift-summary.txt >> $GITHUB_STEP_SUMMARY || true
           # Prepare top-n lists for summary

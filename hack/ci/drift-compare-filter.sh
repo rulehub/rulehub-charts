@@ -17,6 +17,8 @@ set -euo pipefail
 #   --fail-on-drift  Exit non-zero if filtered drift exists (default: off)
 
 CHARTS_DIR="../files"
+# Allowed domain prefixes to include in drift reporting. If set to ["*"], all IDs are included.
+# Can be overridden via --allowed, --domains-all, or DRIFT_ALLOWED_PREFIXES env var.
 ALLOWED='["betting.","edtech.","medtech.","igaming."]'
 FAIL=0
 
@@ -26,23 +28,31 @@ while [[ $# -gt 0 ]]; do
       CHARTS_DIR="$2"; shift 2;;
     --allowed)
       ALLOWED="$2"; shift 2;;
+    --domains-all)
+      ALLOWED='["*"]'; shift;;
     --fail-on-drift)
       FAIL=1; shift;;
     *) echo "Unknown arg: $1" >&2; exit 2;;
   esac
 done
 
+# Allow environment override for prefixes
+if [[ -n "${DRIFT_ALLOWED_PREFIXES:-}" ]]; then
+  ALLOWED="$DRIFT_ALLOWED_PREFIXES"
+fi
+
 python tools/compare_charts_policies.py --charts-dir "$CHARTS_DIR" --json > charts-drift.json
 
 jq -r --argjson allowed "$ALLOWED" '
-  # Given a string (the drift id), return true if it starts with any of the allowed prefixes.
-  def is_allowed:
-    . as $s | any($allowed[]; $s | startswith(.));
+  # If prefixes include "*", keep all; otherwise keep items starting with one of the prefixes.
+  def allow_all: any($allowed[]; . == "*");
+  def is_allowed: . as $s | any($allowed[]; $s | startswith(.));
+  def keep: if allow_all then true else is_allowed end;
   {
     filtered_missing: (.missing_in_charts // [])
-      | map(select(is_allowed)),
+      | map(select(keep)),
     filtered_extra:   (.extra_in_charts // [])
-      | map(select(is_allowed))
+      | map(select(keep))
       | map(select(. != "betting.constraint.placeholder" and . != "betting.policy.placeholder"))
   }
   | . + { missing_count: (.filtered_missing|length), extra_count: (.filtered_extra|length) }
