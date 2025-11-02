@@ -77,4 +77,7 @@ node_modules/
 .terraform.lock.hcl
 
 
+.github/act.events/
 .github/act.env
+
+.cache/

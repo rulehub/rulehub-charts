@@ -4,6 +4,9 @@
 tests/
 # Examples / dev artefacts
 examples/
+# Local development environments and caches
+.venv/
+.cache/
 # Local junk
 *.swp
 *.tmp
