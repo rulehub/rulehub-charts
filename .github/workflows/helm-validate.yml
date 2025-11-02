@@ -230,7 +230,7 @@ jobs:
           fi
       - name: Set up chart-testing
         if: ${{ env.IS_ACT != 'true' }}
-        uses: helm/chart-testing-action@v2.6.1
+        uses: helm/chart-testing-action@v2.7.0
       - name: Verify ct available
         if: ${{ env.IS_ACT != 'true' }}
         run: |
