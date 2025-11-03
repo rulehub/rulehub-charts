@@ -1,0 +1,57 @@
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: fintech-aml-integration-required
+  annotations:
+    rulehub.id: fintech.aml_integration_required
+    rulehub.title: "Require AML integration declaration and credentials"
+    rulehub.links: |
+      - "<https://example.com/aml-integration-controls>"
+      - "<https://example.com/aml-provider-guidance>"
+spec:
+  validationFailureAction: audit
+  background: true
+  rules:
+    - name: require-aml-annotations
+      match:
+        any:
+          - resources:
+              kinds:
+                - Deployment
+                - StatefulSet
+                - DaemonSet
+      validate:
+        message: "AML integration must be declared via annotations and provider set"
+        pattern:
+          metadata:
+            annotations:
+              aml.rulehub/integration: "required"
+              aml.provider: "?*"
+    - name: require-aml-secret
+      match:
+        any:
+          - resources:
+              kinds:
+                - Deployment
+                - StatefulSet
+                - DaemonSet
+      validate:
+        message: "Workload must reference secret 'aml-credentials' via env or volume"
+        anyPattern:
+          - spec:
+              template:
+                spec:
+                  containers:
+                    - env:
+                        - name: AML_API_KEY
+                          valueFrom:
+                            secretKeyRef:
+                              name: aml-credentials
+                              key: apiKey
+          - spec:
+              template:
+                spec:
+                  volumes:
+                    - name: aml-credentials
+                      secret:
+                        secretName: aml-credentials

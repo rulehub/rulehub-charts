@@ -105,6 +105,9 @@ jq '
         }
       | with_entries(select(.value != null))
     )
+  # Filter out placeholders and template-only IDs, and require a repoPath
+  | map(select((.id // "") | test("(\\.template$|placeholder)"; "i") | not))
+  | map(select(has("repoPath")))
   | sort_by(.id)
 ' "${MANIFEST}" \
 | jq -S '{ packages: . }' \

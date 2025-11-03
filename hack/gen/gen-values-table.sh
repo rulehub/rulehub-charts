@@ -27,11 +27,16 @@ echo '|-----|------|---------|-------------|' >> "$TMP_OUT"
 # Top-level keys types (simple extraction)
 gatekeeper_enabled_default="$(grep -E '^gatekeeper:' -A3 values.yaml | grep 'enabled:' | head -1 | awk '{print $2}')"
 kyverno_enabled_default="$(grep -E '^kyverno:' -A5 values.yaml | grep 'enabled:' | head -1 | awk '{print $2}')"
-kyverno_vfa_default="$(grep -E '^kyverno:' -A12 values.yaml | grep 'validationFailureAction:' | head -1 | awk '{print $2}')"
+kyverno_vfa_default="$(grep -E '^kyverno:' -A20 values.yaml | grep 'validationFailureAction:' | head -1 | awk '{print $2}')"
+# Tolerate missing useProfilesOnly keys by suppressing pipeline errors (schema may define without default in values.yaml)
+gk_profiles_only_default="$({ grep -E '^gatekeeper:' -A10 values.yaml | grep 'useProfilesOnly:' | head -1 | awk '{print $2}'; } || true)"
+kyverno_profiles_only_default="$({ grep -E '^kyverno:' -A10 values.yaml | grep 'useProfilesOnly:' | head -1 | awk '{print $2}'; } || true)"
 
 printf '| %s | %s | %s | %s |\n' 'gatekeeper.enabled' 'boolean' "${gatekeeper_enabled_default:-true}" 'Enable Gatekeeper engine' >> "$TMP_OUT"
 printf '| %s | %s | %s | %s |\n' 'kyverno.enabled' 'boolean' "${kyverno_enabled_default:-true}" 'Enable Kyverno engine' >> "$TMP_OUT"
 printf '| %s | %s | %s | %s |\n' 'kyverno.validationFailureAction' 'string' "${kyverno_vfa_default:-}" 'Global Kyverno override ("", audit, enforce)' >> "$TMP_OUT"
+printf '| %s | %s | %s | %s |\n' 'gatekeeper.useProfilesOnly' 'boolean' "${gk_profiles_only_default:-false}" 'Ignore gatekeeper.policies; render only activeProfiles' >> "$TMP_OUT"
+printf '| %s | %s | %s | %s |\n' 'kyverno.useProfilesOnly' 'boolean' "${kyverno_profiles_only_default:-false}" 'Ignore kyverno.policies; render only activeProfiles' >> "$TMP_OUT"
 
 # Policies: extract lists deterministically without external yq dependency (awk-only)
 awk '

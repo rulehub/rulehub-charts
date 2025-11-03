@@ -1,0 +1,45 @@
+---
+suite: Profile aml-fintech renders Kyverno FinTech policies
+
+templates:
+  - templates/kyverno.yaml
+
+tests:
+  - it: renders fintech-aml_integration_required ClusterPolicy
+    set:
+      kyverno:
+        enabled: true
+        useProfilesOnly: true
+      activeProfiles:
+        - aml-fintech
+    asserts:
+      - documentIndex: 0
+        isKind:
+          of: ClusterPolicy
+      - documentIndex: 0
+        equal:
+          path: apiVersion
+          value: kyverno.io/v1
+      - documentIndex: 0
+        equal:
+          path: metadata.name
+          value: fintech-aml-integration-required
+  - it: renders fintech-verify_images_signed ClusterPolicy
+    set:
+      kyverno:
+        enabled: true
+        useProfilesOnly: true
+      activeProfiles:
+        - aml-fintech
+    asserts:
+      - documentIndex: 1
+        isKind:
+          of: ClusterPolicy
+      - documentIndex: 1
+        equal:
+          path: apiVersion
+          value: kyverno.io/v2beta1
+      - documentIndex: 1
+        equal:
+          path: metadata.name
+          value: fintech-verify-images-signed

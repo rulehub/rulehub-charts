@@ -7,6 +7,8 @@
 | gatekeeper.enabled | boolean | true | Enable Gatekeeper engine |
 | kyverno.enabled | boolean | true | Enable Kyverno engine |
 | kyverno.validationFailureAction | string | "" | Global Kyverno override ("", audit, enforce) |
+| gatekeeper.useProfilesOnly | boolean | false | Ignore gatekeeper.policies; render only activeProfiles |
+| kyverno.useProfilesOnly | boolean | false | Ignore kyverno.policies; render only activeProfiles |
 | gatekeeper.policies.block-hostpath.enabled | boolean | true | - |
 | gatekeeper.policies.ban-hostnetwork.enabled | boolean | true | - |
 | gatekeeper.policies.disallow-latest.enabled | boolean | true | - |
@@ -146,6 +148,7 @@
 | gatekeeper.policies.betting-source-of-funds-thresholds-constraint.enabled | boolean | true | - |
 | gatekeeper.policies.betting-suspicious-betting-reporting-uk-constraint.enabled | boolean | true | - |
 | gatekeeper.policies.betting-txn-monitoring-anomalies-constraint.enabled | boolean | true | - |
+| gatekeeper.policies.fintech-aml_integration_required-constraint.enabled | boolean | true | - |
 | kyverno.policies.block-hostpath.enabled | boolean | true | - |
 | kyverno.policies.disallow-latest.enabled | boolean | true | - |
 | kyverno.policies.no-privileged.enabled | boolean | true | - |
@@ -295,5 +298,7 @@
 | kyverno.policies.medtech-uk_dtac_compliance-policy.enabled | boolean | true | - |
 | kyverno.policies.medtech-uk_mhra_post_market_surveillance-policy.enabled | boolean | true | - |
 | kyverno.policies.betting-policy-placeholder.enabled | boolean | true | - |
+| kyverno.policies.fintech-aml_integration_required-policy.enabled | boolean | true | - |
+| kyverno.policies.fintech-verify_images_signed-policy.enabled | boolean | true | - |
 
 *Generated automatically - do not edit manually*

@@ -1,0 +1,27 @@
+---
+suite: FinTech Gatekeeper policies enabled
+
+templates:
+  - templates/policy-sets.yaml
+
+tests:
+  - it: fintech AML ConstraintTemplate enabled
+    set:
+      gatekeeper:
+        enabled: true
+        policies:
+          fintech-aml_integration_required-constrainttemplate:
+            enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.gatekeeper.policies.fintech-aml_integration_required-constrainttemplate
+  - it: fintech AML Constraint enabled
+    set:
+      gatekeeper:
+        enabled: true
+        policies:
+          fintech-aml_integration_required-constraint:
+            enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.gatekeeper.policies.fintech-aml_integration_required-constraint

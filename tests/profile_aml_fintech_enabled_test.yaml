@@ -1,0 +1,26 @@
+---
+suite: Profile aml-fintech enables FinTech policies
+
+templates:
+  - templates/policy-sets.yaml
+
+tests:
+  - it: aml-fintech profile enables Kyverno and Gatekeeper FinTech policies
+    set:
+      kyverno:
+        enabled: true
+      gatekeeper:
+        enabled: true
+      activeProfiles:
+        - aml-fintech
+    asserts:
+      # Kyverno policies from profile
+      - isNotNull:
+          path: spec.kyverno.policies.fintech-aml_integration_required-policy
+      - isNotNull:
+          path: spec.kyverno.policies.fintech-verify_images_signed-policy
+      # Gatekeeper policies from profile
+      - isNotNull:
+          path: spec.gatekeeper.policies.fintech-aml_integration_required-constrainttemplate
+      - isNotNull:
+          path: spec.gatekeeper.policies.fintech-aml_integration_required-constraint

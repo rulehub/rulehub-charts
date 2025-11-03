@@ -1,0 +1,13 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: AMLIntegrationRequired
+metadata:
+  name: fintech-aml-integration-required
+  annotations:
+    rulehub.id: fintech.aml_integration_required
+spec:
+  match:
+    kinds:
+      - apiGroups: [""]
+        kinds: ["Deployment", "StatefulSet", "DaemonSet"]
+    namespaces: ["*"]
+  parameters: {}

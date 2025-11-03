@@ -1,0 +1,30 @@
+apiVersion: kyverno.io/v2beta1
+kind: ClusterPolicy
+metadata:
+  name: fintech-verify-images-signed
+  annotations:
+    rulehub.id: fintech.verify_images_signed
+    rulehub.title: "Images must be signed (cosign)"
+    rulehub.links: |
+      - "<https://github.com/sigstore/cosign>"
+      - "<https://kyverno.io/policies/>"
+spec:
+  validationFailureAction: audit
+  failurePolicy: Fail
+  background: false
+  rules:
+    - name: verify-cosign-signatures
+      match:
+        any:
+          - resources:
+              kinds: ["Pod"]
+      verifyImages:
+        - imageReferences:
+            - "*"
+          attestors:
+            - entries:
+                - keys:
+                    publicKeys: |-
+                      -----BEGIN PUBLIC KEY-----
+                      # TODO: replace with your organization cosign public key
+                      -----END PUBLIC KEY-----

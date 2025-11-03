@@ -20,6 +20,10 @@
           "type": "boolean",
           "description": "Master switch: render Gatekeeper Constraints & required ConstraintTemplates."
         },
+        "useProfilesOnly": {
+          "type": "boolean",
+          "description": "When true, ignore gatekeeper.policies map and render only constraints enabled via activeProfiles (profile-driven render only)."
+        },
         "policies": {
           "type": "object",
           "description": "Map of Gatekeeper constraint entries keyed by filename stem; each entry may be disabled via enabled=false.",

@@ -1,5 +1,5 @@
 {{- if .Values.gatekeeper.enabled }}
-{{- $pol := .Values.gatekeeper.policies }}
+{{- $pol := (ternary (dict) .Values.gatekeeper.policies .Values.gatekeeper.useProfilesOnly) }}
 
 {{- /* ConstraintTemplates */ -}}
 {{ include "policy-sets.gk.loop" (dict "glob" "files/gatekeeper-templates/*.yaml" "pol" $pol "root" .) }}

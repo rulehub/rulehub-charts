@@ -1,0 +1,63 @@
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata:
+  name: fintech-aml-integration-required
+  annotations:
+    rulehub.id: fintech.aml_integration_required
+    rulehub.title: Require AML integration declaration and credentials
+    rulehub.links: |
+      - <https://example.com/aml-integration-controls>
+      - <https://example.com/aml-provider-guidance>
+spec:
+  crd:
+    spec:
+      names:
+        kind: AMLIntegrationRequired
+      validation:
+        openAPIV3Schema:
+          type: object
+          properties: {}
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package rulehub.fintech.aml_integration_required
+        import future.keywords.if
+
+        # returns true if any container env var references the aml-credentials secret key
+        has_aml_env(c) {
+          some i
+          e := c.env[i]
+          e.name == "AML_API_KEY"
+          e.valueFrom.secretKeyRef.name == "aml-credentials"
+          e.valueFrom.secretKeyRef.key == "apiKey"
+        }
+
+        # returns true if any volume mounts the aml-credentials secret
+        has_aml_volume(podspec) {
+          some i
+          v := podspec.volumes[i]
+          v.name == "aml-credentials"
+          v.secret.secretName == "aml-credentials"
+        }
+
+        deny[msg] {
+          kind := input.review.kind.kind
+          kind == "Deployment" or kind == "StatefulSet" or kind == "DaemonSet"
+
+          anns := input.review.object.metadata.annotations
+          not anns["aml.rulehub/integration"]
+          msg := "AML integration annotation aml.rulehub/integration is required"
+        }
+
+        deny[msg] {
+          kind := input.review.kind.kind
+          kind == "Deployment" or kind == "StatefulSet" or kind == "DaemonSet"
+
+          anns := input.review.object.metadata.annotations
+          anns["aml.rulehub/integration"] == "required"
+
+          podspec := input.review.object.spec.template.spec
+          not has_aml_env(podspec.containers[_])
+          not has_aml_volume(podspec)
+          msg := "Workload must reference Secret 'aml-credentials' via AML_API_KEY env or volume"
+        }

@@ -5,6 +5,8 @@ schemaVersion: 1
 # - Verification script: make deprecation-verify (fails if window not satisfied or deprecated key still enforce-enabled).
 gatekeeper:
   enabled: true
+  # When true, ignore gatekeeper.policies map and render only constraints/templates enabled via activeProfiles
+  useProfilesOnly: false
   policies:
     block-hostpath:
       enabled: true
@@ -293,6 +295,9 @@ gatekeeper:
       enabled: false
     betting-txn-monitoring-anomalies-constraint:
       enabled: false
+    # FinTech AML (new) — disabled by default, enable via profiles or explicit toggle
+    fintech-aml_integration_required-constraint:
+      enabled: false
 build:
   # Optional commit SHA injected into annotations policy-sets/build.commit (override at install: --set build.commitSha=$(git rev-parse HEAD))
   commitSha: ""
@@ -345,6 +350,8 @@ opentelemetryCollector:
   podAnnotations: {}
 kyverno:
   enabled: true
+  # When true, ignore kyverno.policies map and render only policies enabled via activeProfiles
+  useProfilesOnly: false
   # Optional global default for all Kyverno policies below.
   # When set (e.g., "audit" or "enforce"), it overrides the
   # spec.validationFailureAction of each rendered Kyverno policy.
@@ -659,6 +666,11 @@ kyverno:
     # Inactive stub to satisfy sync for placeholder file
     betting-policy-placeholder:
       enabled: false
+    # FinTech AML (new) — disabled by default, enable via profiles or explicit toggle
+    fintech-aml_integration_required-policy:
+      enabled: false
+    fintech-verify_images_signed-policy:
+      enabled: false
 
 # Profile bundles (baseline / extended). Policies listed here can be toggled via activeProfiles.
 profiles:
@@ -695,6 +707,13 @@ profiles:
       - medtech-fda_part11_system_validation-policy
       - medtech-iec_62304_software_safety_class-policy
       - medtech-uk_mhra_post_market_surveillance-policy
+  aml-fintech:
+    description: Guardrails ensuring AML integration is declared and enforced (Kyverno & Gatekeeper).
+    policies:
+      # Kyverno
+      - fintech-aml_integration_required-policy
+      - fintech-verify_images_signed-policy
+      # Gatekeeper constraint is implied via Gatekeeper engine when applicable; profile list tracks Kyverno keys.
 
 # Activate one or more profiles by name (order matters for override resolution)
 activeProfiles: []

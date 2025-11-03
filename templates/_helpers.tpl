@@ -189,34 +189,41 @@ data:
 {{- range $path, $bytes := ($root.Files.Glob $glob) -}}
 	{{- $name := trimSuffix ".yaml" (base $path) -}}
 	{{- $underscore := replace "-" "_" $name -}}
-	{{- $cfg := dict -}}
-	{{- $deprecated := false -}}
-	{{- if $pol -}}
-		{{- if hasKey $pol $name -}}
-			{{- $cfg = get $pol $name -}}
-		{{- else if hasKey $pol $underscore -}}
-			{{- $cfg = get $pol $underscore -}}
-			{{- $deprecated = true -}}
+		{{- $cfg := dict -}}
+		{{- $deprecated := false -}}
+		{{- if $pol -}}
+				{{- if hasKey $pol $name -}}
+						{{- $cfg = get $pol $name -}}
+				{{- else if hasKey $pol $underscore -}}
+						{{- $cfg = get $pol $underscore -}}
+						{{- $deprecated = true -}}
+				{{- end -}}
 		{{- end -}}
-	{{- end -}}
-	{{- $enabled := true -}}
-	{{- if and (not $cfg) (hasKey $auto $name) -}}
-	  {{- /* auto-enable from profile: start with profile override if present */ -}}
-	  {{- $pcfg := (get $profileOverrides $name) | default (dict) -}}
-	  {{- if not (hasKey $pcfg "enabled") -}}{{- $_ := set $pcfg "enabled" true -}}{{- end -}}
-	  {{- $cfg = $pcfg -}}
-	{{- else if and (not $cfg) (hasKey $auto $underscore) -}}
-	  {{- $pcfg := (get $profileOverrides $underscore) | default (dict) -}}
-	  {{- if not (hasKey $pcfg "enabled") -}}{{- $_ := set $pcfg "enabled" true -}}{{- end -}}
-	  {{- $cfg = $pcfg -}}
-	{{- else if and $cfg (hasKey $profileOverrides $name) -}}
-	  {{- /* Merge profile override into explicit cfg without overwriting explicit enabled flag */ -}}
-	  {{- $ovr := (get $profileOverrides $name) -}}
-	  {{- range $k3, $v3 := $ovr -}}
-	    {{- if or (not (hasKey $cfg $k3)) (and (ne $k3 "enabled")) -}}{{- $_ := set $cfg $k3 $v3 -}}{{- end -}}
-	  {{- end -}}
-	{{- end -}}
-	{{- if and $cfg (hasKey $cfg "enabled") -}}{{- $enabled = get $cfg "enabled" -}}{{- end -}}
+		{{- /* Default disabled; enable if explicitly true or listed in active profile(s) */ -}}
+		{{- $enabled := false -}}
+		{{- $profileOn := or (hasKey $auto $name) (hasKey $auto $underscore) -}}
+		{{- if and $cfg (hasKey $cfg "enabled") -}}
+				{{- $enabled = get $cfg "enabled" -}}
+		{{- end -}}
+		{{- if $profileOn -}}
+				{{- $enabled = true -}}
+		{{- end -}}
+		{{- if and (not $cfg) (hasKey $auto $name) -}}
+			{{- /* auto-enable from profile: start with profile override if present */ -}}
+			{{- $pcfg := (get $profileOverrides $name) | default (dict) -}}
+			{{- if not (hasKey $pcfg "enabled") -}}{{- $_ := set $pcfg "enabled" true -}}{{- end -}}
+			{{- $cfg = $pcfg -}}
+		{{- else if and (not $cfg) (hasKey $auto $underscore) -}}
+			{{- $pcfg := (get $profileOverrides $underscore) | default (dict) -}}
+			{{- if not (hasKey $pcfg "enabled") -}}{{- $_ := set $pcfg "enabled" true -}}{{- end -}}
+			{{- $cfg = $pcfg -}}
+		{{- else if and $cfg (hasKey $profileOverrides $name) -}}
+			{{- /* Merge profile override into explicit cfg without overwriting explicit enabled flag */ -}}
+			{{- $ovr := (get $profileOverrides $name) -}}
+			{{- range $k3, $v3 := $ovr -}}
+				{{- if or (not (hasKey $cfg $k3)) (and (ne $k3 "enabled")) -}}{{- $_ := set $cfg $k3 $v3 -}}{{- end -}}
+			{{- end -}}
+		{{- end -}}
 	{{- if $enabled -}}
 		{{- $rendered := include "policy-sets.gk.render" (dict "bytes" $bytes "root" $root) -}}
 		{{- if $rendered -}}
@@ -261,9 +268,11 @@ data:
 	{{- $name := trimSuffix ".yaml" (base $path) -}}
 	{{- $cfg := (get $pol $name) | default (dict) -}}
 	{{- $enabled := false -}}
+	{{- $profileOn := hasKey $auto $name -}}
 	{{- if and $cfg (hasKey $cfg "enabled") -}}
 		{{- $enabled = get $cfg "enabled" -}}
-	{{- else if hasKey $auto $name -}}
+	{{- end -}}
+	{{- if $profileOn -}}
 		{{- $enabled = true -}}
 		{{- if hasKey $profileOverrides $name -}}
 			{{- $ovr := (get $profileOverrides $name) -}}

@@ -1,0 +1,27 @@
+---
+suite: FinTech Kyverno policy enabled
+
+templates:
+  - templates/policy-sets.yaml
+
+tests:
+  - it: fintech-aml_integration_required-policy enabled
+    set:
+      kyverno:
+        enabled: true
+        policies:
+          fintech-aml_integration_required-policy:
+            enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.kyverno.policies.fintech-aml_integration_required-policy
+  - it: fintech-verify_images_signed-policy enabled
+    set:
+      kyverno:
+        enabled: true
+        policies:
+          fintech-verify_images_signed-policy:
+            enabled: true
+    asserts:
+      - isNotNull:
+          path: spec.kyverno.policies.fintech-verify_images_signed-policy
