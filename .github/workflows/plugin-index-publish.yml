@@ -1,0 +1,92 @@
+name: Plugin Index Publish
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "manifest.json"
+      - "files/**"
+      - "hack/gen/gen-plugin-index.sh"
+      - "hack/verify/verify-plugin-index.sh"
+      - "metadata/plugin-index-metadata.json"
+      - "Makefile"
+      - ".github/workflows/plugin-index-publish.yml"
+  workflow_dispatch:
+    inputs:
+      ci_image_tag:
+        description: "(optional) CI image tag for RuleHub charts image; not required for publish job"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: plugin-index-publish
+  cancel-in-progress: false
+
+jobs:
+  build-and-publish:
+    name: Build and publish plugin index (charts)
+    runs-on: ubuntu-latest
+    env:
+      IS_ACT: "false"
+    steps:
+      - name: Detect ACT environment
+        shell: bash
+        run: |
+          if [ -n "${ACT:-}" ]; then
+            echo "IS_ACT=true" >> "$GITHUB_ENV"
+          else
+            echo "IS_ACT=false" >> "$GITHUB_ENV"
+          fi
+
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
+
+      - name: Install jq
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y jq
+
+      - name: Generate charts plugin index
+        run: make gen-plugin-index
+
+      - name: Verify charts plugin index
+        run: make verify-plugin-index
+
+      - name: Enforce dual-engine coverage before publish
+        run: make dual-engine-verify
+
+      - name: Generate checksum (sha256)
+        run: |
+          set -euo pipefail
+          if command -v shasum >/dev/null 2>&1; then
+            shasum -a 256 dist/index.json | awk '{print $1}' > dist/index.json.sha256
+          elif command -v sha256sum >/dev/null 2>&1; then
+            sha256sum dist/index.json | awk '{print $1}' > dist/index.json.sha256
+          else
+            echo "No sha256 tool available" >&2; exit 1
+          fi
+          echo "Checksum:" $(cat dist/index.json.sha256)
+
+      - name: Upload artifact (charts plugin-index)
+        if: ${{ env.IS_ACT != 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: charts-plugin-index-dist
+          if-no-files-found: error
+          path: |
+            dist/index.json
+            dist/index.json.sha256
+
+      - name: Publish to gh-pages (plugin-index/)
+        if: ${{ env.IS_ACT != 'true' && github.ref == 'refs/heads/main' }}
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3f66b9c108549d475ec49e8ef4d45e
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          destination_dir: plugin-index
+          keep_files: true
+          commit_message: "ci(plugin-index-publish): update charts plugin-index artifacts"

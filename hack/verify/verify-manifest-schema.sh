@@ -61,37 +61,22 @@ fi
 dup_files=$(jq -r '.[].file' "$MANIFEST" | sort | uniq -d || true)
 [[ -n "$dup_files" ]] && { echo -e "Duplicate file entries:\n$dup_files" >&2; exit 1; }
 
-# Build id|framework -> set of normalized basenames
-mapfile -t lines < <(jq -r '.[] | [."rulehub.id", .framework, .file] | @tsv' "$MANIFEST")
-declare -A uniq_norms
-declare -A counts
-for line in "${lines[@]}"; do
-  IFS=$'\t' read -r id fw file <<<"$line"
-  base=$(basename "$file")
-  base=${base%.*}
-  norm=$(echo "$base" | tr '_' '-' | sed -E 's/-+/-/g')
-  key="${id}|${fw}"
-  counts["$key"]=$(( ${counts["$key"]:-0} + 1 ))
-  uniq_norms["$key|$norm"]=1
-done
+# Use jq to detect non-alias duplicates per id|framework without bash associative arrays (portable to bash 3)
+bad_keys=$(jq -r '
+  def normname($s): ($s | split("/") | last | split(".") | .[0] | gsub("_";"-") | gsub("-+"; "-"));
+  map({ key: (."rulehub.id" + "|" + .framework), norm: normname(.file) })
+  | group_by(.key)
+  | map(select((length > 1) and (([.[].norm] | unique | length) > 1)))
+  | map(.[0].key)
+  | .[]
+' "$MANIFEST" 2>/dev/null || true)
 
-bad_ids=()
-for k in "${!counts[@]}"; do
-  # count distinct norms for this id|framework
-  n=0
-  for kk in "${!uniq_norms[@]}"; do
-    [[ "$kk" == "$k|"* ]] || continue
-    n=$((n+1))
-  done
-  # If there are multiple entries and more than one distinct normalized basename, flag as bad
-  if (( ${counts["$k"]} > 1 && n > 1 )); then
-    bad_ids+=("$k")
-  fi
-done
-
-if ((${#bad_ids[@]})); then
+if [[ -n "$bad_keys" ]]; then
   echo "Duplicate rulehub.id entries within the same framework (non-alias):" >&2
-  for b in "${bad_ids[@]}"; do echo "  - $b" >&2; done
+  while IFS= read -r b; do
+    [[ -z "$b" ]] && continue
+    echo "  - $b" >&2
+  done <<< "$bad_keys"
   exit 1
 fi
 

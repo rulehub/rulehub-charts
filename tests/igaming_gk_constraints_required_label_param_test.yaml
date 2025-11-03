@@ -15,7 +15,7 @@ tests:
     documentSelector:
       apiVersion: constraints.gatekeeper.sh/v1beta1
       kind: BettingLicenseCheckUsNvNgcb
-      name: betting-license_check_us_nv_ngcb
+      name: betting-license-check-us-nv-ngcb
     asserts:
       - equal:
           path: spec.parameters.requiredLabel
@@ -30,7 +30,7 @@ tests:
     documentSelector:
       apiVersion: constraints.gatekeeper.sh/v1beta1
       kind: BettingLicenseCheckUsPaPgcb
-      name: betting-license_check_us_pa_pgcb
+      name: betting-license-check-us-pa-pgcb
     asserts:
       - equal:
           path: spec.parameters.requiredLabel
@@ -45,7 +45,7 @@ tests:
     documentSelector:
       apiVersion: constraints.gatekeeper.sh/v1beta1
       kind: BettingSelfExclusionUkGamstop
-      name: betting-self_exclusion_uk_gamstop
+      name: betting-self-exclusion-uk-gamstop
     asserts:
       - equal:
           path: spec.parameters.requiredLabel

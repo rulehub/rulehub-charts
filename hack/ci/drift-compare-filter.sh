@@ -41,6 +41,11 @@ if [[ -n "${DRIFT_ALLOWED_PREFIXES:-}" ]]; then
   ALLOWED="$DRIFT_ALLOWED_PREFIXES"
 fi
 
+# Normalize: if ALLOWED is empty or only whitespace, default to empty JSON array to keep jq happy
+if [[ -z "${ALLOWED//[[:space:]]/}" ]]; then
+  ALLOWED='[]'
+fi
+
 python tools/compare_charts_policies.py --charts-dir "$CHARTS_DIR" --json > charts-drift.json
 
 jq -r --argjson allowed "$ALLOWED" '

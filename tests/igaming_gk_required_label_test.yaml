@@ -11,7 +11,7 @@ tests:
         enabled: true
     documentSelector:
       kind: ConstraintTemplate
-      name: betting-ads_no_minors_targeting
+      name: betting-ads-no-minors-targeting
     asserts:
       - equal:
           path: spec.crd.spec.validation.openAPIV3Schema.properties.requiredLabel.type
@@ -22,7 +22,7 @@ tests:
         enabled: true
     documentSelector:
       kind: ConstraintTemplate
-      name: betting-kyc_on_withdrawal
+      name: betting-kyc-on-withdrawal
     asserts:
       - equal:
           path: spec.crd.spec.validation.openAPIV3Schema.properties.requiredLabel.type

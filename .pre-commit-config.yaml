@@ -56,7 +56,7 @@ repos:
 
       - id: verify-policy-annotations
         name: verify policy annotations schema
-        entry: hack/verify/verify-policy-annotations.sh
+        entry: bash hack/verify/verify-policy-annotations.sh
         language: system
         pass_filenames: false
 
@@ -125,16 +125,15 @@ repos:
 
       - id: schema-coverage
         name: schema coverage of values.yaml
-        entry: hack/tools/schema-coverage.sh
+        entry: bash hack/tools/schema-coverage.sh
         language: system
         pass_filenames: false
 
       - id: schema-compare
         name: schema compare (values vs values.schema.json)
-        entry: hack/tools/compare-values-schema.sh
+        entry: bash hack/tools/compare-values-schema.sh
         language: system
         pass_filenames: false
-
       - id: size-verify
         name: verify rendered manifest size
         entry: hack/verify/verify-size.sh
@@ -156,7 +155,7 @@ repos:
 
       - id: manifest-verify
         name: verify manifest.json schema
-        entry: hack/verify/verify-manifest-schema.sh
+        entry: bash hack/verify/verify-manifest-schema.sh
         language: system
         pass_filenames: false
 

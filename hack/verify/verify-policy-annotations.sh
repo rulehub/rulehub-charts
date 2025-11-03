@@ -8,7 +8,12 @@ set -euo pipefail
 REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/../.." &>/dev/null && pwd)"
 
 shopt -s nullglob
-mapfile -t FILES < <(find "$REPO_ROOT/files" -maxdepth 2 -type f -name '*.yaml' | sort)
+if [[ ${BASH_VERSINFO[0]:-3} -ge 4 ]]; then
+  mapfile -t FILES < <(find "$REPO_ROOT/files" -maxdepth 2 -type f -name '*.yaml' | sort)
+else
+  FILES=()
+  while IFS= read -r line; do FILES+=("$line"); done < <(find "$REPO_ROOT/files" -maxdepth 2 -type f -name '*.yaml' | sort)
+fi
 
 issues=()
 
@@ -65,7 +70,12 @@ alias_key_for_file() {
 IDS_SEEN_FILE="/tmp/rulehub_ids.$$.txt"
 
 for f in "${FILES[@]}"; do
-  mapfile -t ann_lines < <(extract_block_annotations "$f") || true
+  if [[ ${BASH_VERSINFO[0]:-3} -ge 4 ]]; then
+    mapfile -t ann_lines < <(extract_block_annotations "$f") || true
+  else
+    ann_lines=()
+    while IFS= read -r line; do ann_lines+=("$line"); done < <(extract_block_annotations "$f")
+  fi
   id="" title="" links_count=0
   for line in "${ann_lines[@]}"; do
     # normalize
