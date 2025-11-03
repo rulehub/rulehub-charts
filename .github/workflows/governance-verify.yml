@@ -171,7 +171,7 @@ jobs:
             echo 'Skipping size verification under ACT.'
             exit 0
           fi
-          THRESHOLD=300000 bash hack/verify/verify-size.sh
+          THRESHOLD=300000 bash hack/verify/verify-size.sh --values ext-values-profiles-only.yaml
 
   freeze:
     name: Freeze (label or manual)
