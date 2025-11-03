@@ -14,18 +14,6 @@
       "industry": "Platform"
     },
     {
-      "gatekeeperPath": "files/gatekeeper-templates/ban-hostnetwork.yaml",
-      "id": "ban.hostnetwork.template",
-      "name": "Ban — Hostnetwork",
-      "repoPath": "files/gatekeeper-templates/ban-hostnetwork.yaml",
-      "standard": "N/A",
-      "version": "0.0.0",
-      "jurisdiction": "",
-      "coverage": [],
-      "severity": "medium",
-      "industry": "Platform"
-    },
-    {
       "gatekeeperPath": "files/gatekeeper-templates/betting-adr_provider_listed_uk-constrainttemplate.yaml",
       "id": "betting.adr_provider_listed_uk",
       "kyvernoPath": "files/kyverno/betting-adr_provider_listed_uk-policy.yaml",
@@ -97,30 +85,6 @@
       "kyvernoPath": "files/kyverno/betting-complaints_process_published-policy.yaml",
       "name": "Betting — Complaints Process Published",
       "repoPath": "files/kyverno/betting-complaints_process_published-policy.yaml"
-    },
-    {
-      "gatekeeperPath": "files/gatekeeper/betting-constraint-placeholder.yaml",
-      "id": "betting.constraint.placeholder",
-      "name": "Betting — Constraint",
-      "repoPath": "files/gatekeeper/betting-constraint-placeholder.yaml",
-      "standard": "N/A",
-      "version": "0.0.0",
-      "jurisdiction": "",
-      "coverage": [],
-      "severity": "medium",
-      "industry": "Gambling"
-    },
-    {
-      "gatekeeperPath": "files/gatekeeper-templates/betting-constrainttemplate-placeholder.yaml",
-      "id": "betting.constraint.template.placeholder",
-      "name": "Betting — Constraint",
-      "repoPath": "files/gatekeeper-templates/betting-constrainttemplate-placeholder.yaml",
-      "standard": "N/A",
-      "version": "0.0.0",
-      "jurisdiction": "",
-      "coverage": [],
-      "severity": "medium",
-      "industry": "Gambling"
     },
     {
       "gatekeeperPath": "files/gatekeeper-templates/betting-credit_card_gambling_ban_uk-constrainttemplate.yaml",
@@ -343,18 +307,6 @@
       "repoPath": "files/kyverno/betting-player_funds_segregation-policy.yaml"
     },
     {
-      "id": "betting.policy.placeholder",
-      "kyvernoPath": "files/kyverno/betting-policy-placeholder.yaml",
-      "name": "Betting — Policy",
-      "repoPath": "files/kyverno/betting-policy-placeholder.yaml",
-      "standard": "N/A",
-      "version": "0.0.0",
-      "jurisdiction": "",
-      "coverage": [],
-      "severity": "medium",
-      "industry": "Gambling"
-    },
-    {
       "gatekeeperPath": "files/gatekeeper-templates/betting-reality_checks_elapsed_time-constrainttemplate.yaml",
       "id": "betting.reality_checks_elapsed_time",
       "kyvernoPath": "files/kyverno/betting-reality_checks_elapsed_time-policy.yaml",
@@ -535,12 +487,6 @@
       "industry": "Platform"
     },
     {
-      "gatekeeperPath": "files/gatekeeper-templates/block-hostpath.yaml",
-      "id": "block.hostpath.template",
-      "name": "Block — Hostpath",
-      "repoPath": "files/gatekeeper-templates/block-hostpath.yaml"
-    },
-    {
       "gatekeeperPath": "files/gatekeeper/disallow-latest.yaml",
       "id": "disallow.latest",
       "kyvernoPath": "files/kyverno/disallow-latest.yaml",
@@ -552,12 +498,6 @@
       "coverage": [],
       "severity": "medium",
       "industry": "Platform"
-    },
-    {
-      "gatekeeperPath": "files/gatekeeper-templates/disallow-latest.yaml",
-      "id": "disallow.latest.template",
-      "name": "Disallow — Latest",
-      "repoPath": "files/gatekeeper-templates/disallow-latest.yaml"
     },
     {
       "gatekeeperPath": "files/gatekeeper-templates/edtech-au_app_11_security_edtech-constrainttemplate.yaml",
@@ -867,18 +807,6 @@
       "industry": "Platform"
     },
     {
-      "gatekeeperPath": "files/gatekeeper-templates/limit-capabilities.yaml",
-      "id": "limit.capabilities.template",
-      "name": "Limit — Capabilities",
-      "repoPath": "files/gatekeeper-templates/limit-capabilities.yaml",
-      "standard": "other",
-      "version": "current",
-      "jurisdiction": "Global",
-      "coverage": [],
-      "severity": "medium",
-      "industry": "Platform"
-    },
-    {
       "gatekeeperPath": "files/gatekeeper-templates/medtech-au_myr_health_privacy-constrainttemplate.yaml",
       "id": "medtech.au_myr_health_privacy",
       "kyvernoPath": "files/kyverno/medtech-au_myr_health_privacy-policy.yaml",
@@ -1158,29 +1086,11 @@
       "industry": "Platform"
     },
     {
-      "gatekeeperPath": "files/gatekeeper-templates/no-privileged.yaml",
-      "id": "no.privileged.template",
-      "name": "No — Privileged",
-      "repoPath": "files/gatekeeper-templates/no-privileged.yaml"
-    },
-    {
       "gatekeeperPath": "files/gatekeeper/no-run-as-root.yaml",
       "id": "no.run.as.root",
       "kyvernoPath": "files/kyverno/no-run-as-root.yaml",
       "name": "No — Run",
       "repoPath": "files/kyverno/no-run-as-root.yaml",
-      "standard": "other",
-      "version": "current",
-      "jurisdiction": "Global",
-      "coverage": [],
-      "severity": "medium",
-      "industry": "Platform"
-    },
-    {
-      "gatekeeperPath": "files/gatekeeper-templates/no-run-as-root.yaml",
-      "id": "no.run.as.root.template",
-      "name": "No — Run",
-      "repoPath": "files/gatekeeper-templates/no-run-as-root.yaml",
       "standard": "other",
       "version": "current",
       "jurisdiction": "Global",
@@ -1202,18 +1112,6 @@
       "industry": "Platform"
     },
     {
-      "gatekeeperPath": "files/gatekeeper-templates/require-imagepullpolicy-always.yaml",
-      "id": "require.imagepullpolicy.always.template",
-      "name": "Require — Imagepullpolicy",
-      "repoPath": "files/gatekeeper-templates/require-imagepullpolicy-always.yaml",
-      "standard": "other",
-      "version": "current",
-      "jurisdiction": "Global",
-      "coverage": [],
-      "severity": "medium",
-      "industry": "Platform"
-    },
-    {
       "gatekeeperPath": "files/gatekeeper/require-resources.yaml",
       "id": "require.resources",
       "kyvernoPath": "files/kyverno/require-resources.yaml",
@@ -1225,12 +1123,6 @@
       "coverage": [],
       "severity": "medium",
       "industry": "Platform"
-    },
-    {
-      "gatekeeperPath": "files/gatekeeper-templates/require-resources.yaml",
-      "id": "require.resources.template",
-      "name": "Require — Resources",
-      "repoPath": "files/gatekeeper-templates/require-resources.yaml"
     }
   ]
 }
