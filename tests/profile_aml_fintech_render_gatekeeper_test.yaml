@@ -6,13 +6,15 @@ templates:
 
 tests:
   - it: renders AMLIntegrationRequired Constraint
-    documentIndex: 0
     set:
       gatekeeper:
         enabled: true
         useProfilesOnly: true
       activeProfiles:
         - aml-fintech
+    documentSelector:
+      kind: AMLIntegrationRequired
+      name: fintech-aml-integration-required
     asserts:
       - isKind:
           of: AMLIntegrationRequired

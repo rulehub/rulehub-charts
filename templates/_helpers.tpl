@@ -171,10 +171,23 @@ data:
 	{{- if $pdef -}}
 		{{- /* policies list -> auto-enabled */ -}}
 		{{- range $k := (get $pdef "policies" | default list) -}}
+			{{- /* Register the key as-is and underscore variant */ -}}
 			{{- if not (hasKey $auto $k) -}}{{- $_ := set $auto $k true -}}{{- end -}}
-			{{- /* For Gatekeeper also register underscore variant for backward compat */ -}}
 			{{- $underscore := replace $k "-" "_" -}}
 			{{- if not (hasKey $auto $underscore) -}}{{- $_ := set $auto $underscore true -}}{{- end -}}
+			{{- /* If profile lists Kyverno key ("-policy" suffix), auto-enable corresponding Gatekeeper names */ -}}
+			{{- if hasSuffix "-policy" $k -}}
+				{{- $base := trimSuffix "-policy" $k -}}
+				{{- $gkc := printf "%s-constraint" $base -}}
+				{{- $gkt := printf "%s-constrainttemplate" $base -}}
+				{{- if not (hasKey $auto $gkc) -}}{{- $_ := set $auto $gkc true -}}{{- end -}}
+				{{- if not (hasKey $auto $gkt) -}}{{- $_ := set $auto $gkt true -}}{{- end -}}
+				{{- /* underscore variants for backward compatibility */ -}}
+				{{- $gkc_u := replace $gkc "-" "_" -}}
+				{{- $gkt_u := replace $gkt "-" "_" -}}
+				{{- if not (hasKey $auto $gkc_u) -}}{{- $_ := set $auto $gkc_u true -}}{{- end -}}
+				{{- if not (hasKey $auto $gkt_u) -}}{{- $_ := set $auto $gkt_u true -}}{{- end -}}
+			{{- end -}}
 		{{- end -}}
 		{{- /* overrides map: key -> partial config (enabled optional) */ -}}
 		{{- $ov := (get $pdef "overrides" | default dict) -}}
@@ -197,6 +210,17 @@ data:
 				{{- else if hasKey $pol $underscore -}}
 						{{- $cfg = get $pol $underscore -}}
 						{{- $deprecated = true -}}
+				{{- end -}}
+				{{- /* For ConstraintTemplates, also look up corresponding -constraint key in policies map */ -}}
+				{{- if and (or (not $cfg) (eq (len $cfg) 0)) (hasSuffix "-constrainttemplate" $name) -}}
+					{{- $cname := trimSuffix "-constrainttemplate" $name | printf "%s-constraint" -}}
+					{{- $cname_u := replace "-" "_" $cname -}}
+					{{- if hasKey $pol $cname -}}
+						{{- $cfg = get $pol $cname -}}
+					{{- else if hasKey $pol $cname_u -}}
+						{{- $cfg = get $pol $cname_u -}}
+						{{- $deprecated = true -}}
+					{{- end -}}
 				{{- end -}}
 		{{- end -}}
 		{{- /* Default disabled; enable if explicitly true or listed in active profile(s) */ -}}

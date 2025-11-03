@@ -2,17 +2,19 @@
 suite: Profile aml-fintech renders Gatekeeper ConstraintTemplate
 
 templates:
-  - templates/gatekeeper-templates.yaml
+  - templates/gatekeeper.yaml
 
 tests:
   - it: renders AMLIntegrationRequired ConstraintTemplate
-    documentIndex: 0
     set:
       gatekeeper:
         enabled: true
         useProfilesOnly: true
       activeProfiles:
         - aml-fintech
+    documentSelector:
+      kind: ConstraintTemplate
+      name: fintech-aml-integration-required
     asserts:
       - isKind:
           of: ConstraintTemplate
