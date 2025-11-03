@@ -1,0 +1,1236 @@
+{
+  "packages": [
+    {
+      "gatekeeperPath": "files/gatekeeper/ban-hostnetwork.yaml",
+      "id": "ban.hostnetwork",
+      "kyvernoPath": "files/kyverno/ban-hostnetwork.yaml",
+      "name": "Ban — Hostnetwork",
+      "repoPath": "files/kyverno/ban-hostnetwork.yaml",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/ban-hostnetwork.yaml",
+      "id": "ban.hostnetwork.template",
+      "name": "Ban — Hostnetwork",
+      "repoPath": "files/gatekeeper-templates/ban-hostnetwork.yaml",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-adr_provider_listed_uk-constrainttemplate.yaml",
+      "id": "betting.adr_provider_listed_uk",
+      "kyvernoPath": "files/kyverno/betting-adr_provider_listed_uk-policy.yaml",
+      "name": "Betting — Adr Provider Listed UK",
+      "repoPath": "files/kyverno/betting-adr_provider_listed_uk-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-ads_bonus_terms_fair_clear-constrainttemplate.yaml",
+      "id": "betting.ads_bonus_terms_fair_clear",
+      "kyvernoPath": "files/kyverno/betting-ads_bonus_terms_fair_clear-policy.yaml",
+      "name": "Betting — Ads Bonus Terms Fair Clear",
+      "repoPath": "files/kyverno/betting-ads_bonus_terms_fair_clear-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-ads_no_minors_targeting-constrainttemplate.yaml",
+      "id": "betting.ads_no_minors_targeting",
+      "kyvernoPath": "files/kyverno/betting-ads_no_minors_targeting-policy.yaml",
+      "name": "Betting — Ads No Minors Targeting",
+      "repoPath": "files/kyverno/betting-ads_no_minors_targeting-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-affordability-checks-uk-constrainttemplate.yaml",
+      "id": "betting.affordability_checks_uk",
+      "kyvernoPath": "files/kyverno/betting-affordability_checks_uk-policy.yaml",
+      "name": "Betting — Affordability Checks UK",
+      "repoPath": "files/kyverno/betting-affordability_checks_uk-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-age_verification_before_gambling_uk-constrainttemplate.yaml",
+      "id": "betting.age_verification_before_gambling_uk",
+      "kyvernoPath": "files/kyverno/betting-age_verification_before_gambling_uk-policy.yaml",
+      "name": "Betting — Age Verification Before Gambling UK",
+      "repoPath": "files/kyverno/betting-age_verification_before_gambling_uk-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-aml_high_risk_country_restrictions-constrainttemplate.yaml",
+      "id": "betting.aml_high_risk_country_restrictions",
+      "kyvernoPath": "files/kyverno/betting-aml_high_risk_country_restrictions-policy.yaml",
+      "name": "Betting — AML High Risk Country Restrictions",
+      "repoPath": "files/kyverno/betting-aml_high_risk_country_restrictions-policy.yaml",
+      "industry": [
+        "Gambling",
+        "FinTech",
+        "Banking"
+      ]
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-aml_sar_reporting_uk-constrainttemplate.yaml",
+      "id": "betting.aml_sar_reporting_uk",
+      "kyvernoPath": "files/kyverno/betting-aml_sar_reporting_uk-policy.yaml",
+      "name": "Betting — AML Sar Reporting UK",
+      "repoPath": "files/kyverno/betting-aml_sar_reporting_uk-policy.yaml",
+      "industry": [
+        "Gambling",
+        "FinTech",
+        "Banking"
+      ]
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-au_iga_no_prohibited_services-constrainttemplate.yaml",
+      "id": "betting.au_iga_no_prohibited_services",
+      "kyvernoPath": "files/kyverno/betting-au_iga_no_prohibited_services-policy.yaml",
+      "name": "Betting — Au Iga No Prohibited Services",
+      "repoPath": "files/kyverno/betting-au_iga_no_prohibited_services-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-complaints_process_published-constrainttemplate.yaml",
+      "id": "betting.complaints_process_published",
+      "kyvernoPath": "files/kyverno/betting-complaints_process_published-policy.yaml",
+      "name": "Betting — Complaints Process Published",
+      "repoPath": "files/kyverno/betting-complaints_process_published-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-constraint-placeholder.yaml",
+      "id": "betting.constraint.placeholder",
+      "name": "Betting — Constraint",
+      "repoPath": "files/gatekeeper/betting-constraint-placeholder.yaml",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Gambling"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-constrainttemplate-placeholder.yaml",
+      "id": "betting.constraint.template.placeholder",
+      "name": "Betting — Constraint",
+      "repoPath": "files/gatekeeper-templates/betting-constrainttemplate-placeholder.yaml",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Gambling"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-credit_card_gambling_ban_uk-constrainttemplate.yaml",
+      "id": "betting.credit_card_gambling_ban_uk",
+      "kyvernoPath": "files/kyverno/betting-credit_card_gambling_ban_uk-policy.yaml",
+      "name": "Betting — Credit Card Gambling Ban UK",
+      "repoPath": "files/kyverno/betting-credit_card_gambling_ban_uk-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-data-integrity-audits-constrainttemplate.yaml",
+      "id": "betting.data_integrity_audits",
+      "kyvernoPath": "files/kyverno/betting-data_integrity_audits-policy.yaml",
+      "name": "Betting — Data Integrity Audits",
+      "repoPath": "files/kyverno/betting-data_integrity_audits-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-deposit-limit-controls-constrainttemplate.yaml",
+      "id": "betting.deposit_limit_controls",
+      "kyvernoPath": "files/kyverno/betting-deposit_limit_controls-policy.yaml",
+      "name": "Betting — Deposit Limit Controls",
+      "repoPath": "files/kyverno/betting-deposit_limit_controls-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-game_rules_visible_before_play-constrainttemplate.yaml",
+      "id": "betting.game_rules_visible_before_play",
+      "kyvernoPath": "files/kyverno/betting-game_rules_visible_before_play-policy.yaml",
+      "name": "Betting — Game Rules Visible Before Play",
+      "repoPath": "files/kyverno/betting-game_rules_visible_before_play-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-geofencing-regulated-markets-constrainttemplate.yaml",
+      "id": "betting.geofencing_regulated_markets",
+      "kyvernoPath": "files/kyverno/betting-geofencing_regulated_markets-policy.yaml",
+      "name": "Betting — Geofencing Regulated Markets",
+      "repoPath": "files/kyverno/betting-geofencing_regulated_markets-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-in-play-delay-controls-constrainttemplate.yaml",
+      "id": "betting.in_play_delay_controls",
+      "kyvernoPath": "files/kyverno/betting-in_play_delay_controls-policy.yaml",
+      "name": "Betting — In Play Delay Controls",
+      "repoPath": "files/kyverno/betting-in_play_delay_controls-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-kyc_on_withdrawal-constrainttemplate.yaml",
+      "id": "betting.kyc_on_withdrawal",
+      "kyvernoPath": "files/kyverno/betting-kyc_on_withdrawal-policy.yaml",
+      "name": "Betting — KYC On Withdrawal",
+      "repoPath": "files/kyverno/betting-kyc_on_withdrawal-policy.yaml",
+      "industry": [
+        "Gambling",
+        "FinTech",
+        "Banking"
+      ]
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-kyc-onboarding-constrainttemplate.yaml",
+      "id": "betting.kyc_onboarding",
+      "kyvernoPath": "files/kyverno/betting-kyc_onboarding-policy.yaml",
+      "name": "Betting — KYC Onboarding",
+      "repoPath": "files/kyverno/betting-kyc_onboarding-policy.yaml",
+      "industry": [
+        "Gambling",
+        "FinTech",
+        "Banking"
+      ]
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license-check-adm-it-constrainttemplate.yaml",
+      "id": "betting.license_check_adm_it",
+      "kyvernoPath": "files/kyverno/betting-license_check_adm_it-policy.yaml",
+      "name": "Betting — License Check Adm It",
+      "repoPath": "files/kyverno/betting-license_check_adm_it-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license_check_agco_on-constrainttemplate.yaml",
+      "id": "betting.license_check_agco_on",
+      "kyvernoPath": "files/kyverno/betting-license_check_agco_on-policy.yaml",
+      "name": "Betting — License Check Agco On",
+      "repoPath": "files/kyverno/betting-license_check_agco_on-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license-check-anj-fr-constrainttemplate.yaml",
+      "id": "betting.license_check_anj_fr",
+      "kyvernoPath": "files/kyverno/betting-license_check_anj_fr-policy.yaml",
+      "name": "Betting — License Check Anj Fr",
+      "repoPath": "files/kyverno/betting-license_check_anj_fr-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license_check_ca_on_igaming-constrainttemplate.yaml",
+      "id": "betting.license_check_ca_on_igaming",
+      "kyvernoPath": "files/kyverno/betting-license_check_ca_on_igaming-policy.yaml",
+      "name": "Betting — License Check Ca On Igaming",
+      "repoPath": "files/kyverno/betting-license_check_ca_on_igaming-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license-check-dgoj-es-constrainttemplate.yaml",
+      "id": "betting.license_check_dgoj_es",
+      "kyvernoPath": "files/kyverno/betting-license_check_dgoj_es-policy.yaml",
+      "name": "Betting — License Check Dgoj Es",
+      "repoPath": "files/kyverno/betting-license_check_dgoj_es-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license_check_ggl_de-constrainttemplate.yaml",
+      "id": "betting.license_check_ggl_de",
+      "kyvernoPath": "files/kyverno/betting-license_check_ggl_de-policy.yaml",
+      "name": "Betting — License Check Ggl De",
+      "repoPath": "files/kyverno/betting-license_check_ggl_de-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license_check_ksa_nl-constrainttemplate.yaml",
+      "id": "betting.license_check_ksa_nl",
+      "kyvernoPath": "files/kyverno/betting-license_check_ksa_nl-policy.yaml",
+      "name": "Betting — License Check Ksa Nl",
+      "repoPath": "files/kyverno/betting-license_check_ksa_nl-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license_check_mga-constrainttemplate.yaml",
+      "id": "betting.license_check_mga",
+      "kyvernoPath": "files/kyverno/betting-license_check_mga-policy.yaml",
+      "name": "Betting — License Check Mga",
+      "repoPath": "files/kyverno/betting-license_check_mga-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license_check_spelinspektionen_se-constrainttemplate.yaml",
+      "id": "betting.license_check_spelinspektionen_se",
+      "kyvernoPath": "files/kyverno/betting-license_check_spelinspektionen_se-policy.yaml",
+      "name": "Betting — License Check Spelinspektionen Se",
+      "repoPath": "files/kyverno/betting-license_check_spelinspektionen_se-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license_check_spillemyndigheden_dk-constrainttemplate.yaml",
+      "id": "betting.license_check_spillemyndigheden_dk",
+      "kyvernoPath": "files/kyverno/betting-license_check_spillemyndigheden_dk-policy.yaml",
+      "name": "Betting — License Check Spillemyndigheden Dk",
+      "repoPath": "files/kyverno/betting-license_check_spillemyndigheden_dk-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license-check-ukgc-constrainttemplate.yaml",
+      "id": "betting.license_check_ukgc",
+      "kyvernoPath": "files/kyverno/betting-license_check_ukgc-policy.yaml",
+      "name": "Betting — License Check Ukgc",
+      "repoPath": "files/kyverno/betting-license_check_ukgc-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license-check-us-co-division-constrainttemplate.yaml",
+      "id": "betting.license_check_us_co_division",
+      "kyvernoPath": "files/kyverno/betting-license_check_us_co_division-policy.yaml",
+      "name": "Betting — License Check US Co Division",
+      "repoPath": "files/kyverno/betting-license_check_us_co_division-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license-check-us-nj-dge-constrainttemplate.yaml",
+      "id": "betting.license_check_us_nj_dge",
+      "kyvernoPath": "files/kyverno/betting-license_check_us_nj_dge-policy.yaml",
+      "name": "Betting — License Check US Nj Dge",
+      "repoPath": "files/kyverno/betting-license_check_us_nj_dge-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license-check-us-nv-ngcb-constrainttemplate.yaml",
+      "id": "betting.license_check_us_nv_ngcb",
+      "kyvernoPath": "files/kyverno/betting-license_check_us_nv_ngcb-policy.yaml",
+      "name": "Betting — License Check US Nv Ngcb",
+      "repoPath": "files/kyverno/betting-license_check_us_nv_ngcb-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-license-check-us-pa-pgcb-constrainttemplate.yaml",
+      "id": "betting.license_check_us_pa_pgcb",
+      "kyvernoPath": "files/kyverno/betting-license_check_us_pa_pgcb-policy.yaml",
+      "name": "Betting — License Check US Pa Pgcb",
+      "repoPath": "files/kyverno/betting-license_check_us_pa_pgcb-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-loss_limit_controls-constrainttemplate.yaml",
+      "id": "betting.loss_limit_controls",
+      "kyvernoPath": "files/kyverno/betting-loss_limit_controls-policy.yaml",
+      "name": "Betting — Loss Limit Controls",
+      "repoPath": "files/kyverno/betting-loss_limit_controls-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-market-restrictions-youth-constrainttemplate.yaml",
+      "id": "betting.market_restrictions_youth",
+      "kyvernoPath": "files/kyverno/betting-market_restrictions_youth-policy.yaml",
+      "name": "Betting — Market Restrictions Youth",
+      "repoPath": "files/kyverno/betting-market_restrictions_youth-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-match-fixing-monitoring-constrainttemplate.yaml",
+      "id": "betting.match_fixing_monitoring",
+      "kyvernoPath": "files/kyverno/betting-match_fixing_monitoring-policy.yaml",
+      "name": "Betting — Match Fixing Monitoring",
+      "repoPath": "files/kyverno/betting-match_fixing_monitoring-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-no-bets-by-participants-constrainttemplate.yaml",
+      "id": "betting.no_bets_by_participants",
+      "kyvernoPath": "files/kyverno/betting-no_bets_by_participants-policy.yaml",
+      "name": "Betting — No Bets By Participants",
+      "repoPath": "files/kyverno/betting-no_bets_by_participants-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-official-data-only-constrainttemplate.yaml",
+      "id": "betting.official_data_only",
+      "kyvernoPath": "files/kyverno/betting-official_data_only-policy.yaml",
+      "name": "Betting — Official Data Only",
+      "repoPath": "files/kyverno/betting-official_data_only-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-ongoing_aml_monitoring-constrainttemplate.yaml",
+      "id": "betting.ongoing_aml_monitoring",
+      "kyvernoPath": "files/kyverno/betting-ongoing_aml_monitoring-policy.yaml",
+      "name": "Betting — Ongoing AML Monitoring",
+      "repoPath": "files/kyverno/betting-ongoing_aml_monitoring-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-player_funds_segregation-constrainttemplate.yaml",
+      "id": "betting.player_funds_segregation",
+      "kyvernoPath": "files/kyverno/betting-player_funds_segregation-policy.yaml",
+      "name": "Betting — Player Funds Segregation",
+      "repoPath": "files/kyverno/betting-player_funds_segregation-policy.yaml"
+    },
+    {
+      "id": "betting.policy.placeholder",
+      "kyvernoPath": "files/kyverno/betting-policy-placeholder.yaml",
+      "name": "Betting — Policy",
+      "repoPath": "files/kyverno/betting-policy-placeholder.yaml",
+      "standard": "N/A",
+      "version": "0.0.0",
+      "jurisdiction": "",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Gambling"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-reality_checks_elapsed_time-constrainttemplate.yaml",
+      "id": "betting.reality_checks_elapsed_time",
+      "kyvernoPath": "files/kyverno/betting-reality_checks_elapsed_time-policy.yaml",
+      "name": "Betting — Reality Checks Elapsed Time",
+      "repoPath": "files/kyverno/betting-reality_checks_elapsed_time-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-reverse_withdrawal_ban_uk-constrainttemplate.yaml",
+      "id": "betting.reverse_withdrawal_ban_uk",
+      "kyvernoPath": "files/kyverno/betting-reverse_withdrawal_ban_uk-policy.yaml",
+      "name": "Betting — Reverse Withdrawal Ban UK",
+      "repoPath": "files/kyverno/betting-reverse_withdrawal_ban_uk-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-rng_certification_gli11-constrainttemplate.yaml",
+      "id": "betting.rng_certification_gli11",
+      "kyvernoPath": "files/kyverno/betting-rng_certification_gli11-policy.yaml",
+      "name": "Betting — Rng Certification Gli11",
+      "repoPath": "files/kyverno/betting-rng_certification_gli11-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-rtp_disclosure_to_players-constrainttemplate.yaml",
+      "id": "betting.rtp_disclosure_to_players",
+      "kyvernoPath": "files/kyverno/betting-rtp_disclosure_to_players-policy.yaml",
+      "name": "Betting — Rtp Disclosure To Players",
+      "repoPath": "files/kyverno/betting-rtp_disclosure_to_players-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-safer_gambling_interactions-constrainttemplate.yaml",
+      "id": "betting.safer_gambling_interactions",
+      "kyvernoPath": "files/kyverno/betting-safer_gambling_interactions-policy.yaml",
+      "name": "Betting — Safer Gambling Interactions",
+      "repoPath": "files/kyverno/betting-safer_gambling_interactions-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-sanctions_screening_global-constrainttemplate.yaml",
+      "id": "betting.sanctions_screening_global",
+      "kyvernoPath": "files/kyverno/betting-sanctions_screening_global-policy.yaml",
+      "name": "Betting — Sanctions Screening Global",
+      "repoPath": "files/kyverno/betting-sanctions_screening_global-policy.yaml",
+      "industry": [
+        "Gambling",
+        "FinTech",
+        "Banking"
+      ]
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-self_exclusion_de_oasis-constrainttemplate.yaml",
+      "id": "betting.self_exclusion_de_oasis",
+      "kyvernoPath": "files/kyverno/betting-self_exclusion_de_oasis-policy.yaml",
+      "name": "Betting — Self Exclusion De OASIS",
+      "repoPath": "files/kyverno/betting-self_exclusion_de_oasis-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-self_exclusion_dk_rofus-constrainttemplate.yaml",
+      "id": "betting.self_exclusion_dk_rofus",
+      "kyvernoPath": "files/kyverno/betting-self_exclusion_dk_rofus-policy.yaml",
+      "name": "Betting — Self Exclusion Dk Rofus",
+      "repoPath": "files/kyverno/betting-self_exclusion_dk_rofus-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-self_exclusion_es_rgiaj-constrainttemplate.yaml",
+      "id": "betting.self_exclusion_es_rgiaj",
+      "kyvernoPath": "files/kyverno/betting-self_exclusion_es_rgiaj-policy.yaml",
+      "name": "Betting — Self Exclusion Es Rgiaj",
+      "repoPath": "files/kyverno/betting-self_exclusion_es_rgiaj-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-self_exclusion_nl_cruks-constrainttemplate.yaml",
+      "id": "betting.self_exclusion_nl_cruks",
+      "kyvernoPath": "files/kyverno/betting-self_exclusion_nl_cruks-policy.yaml",
+      "name": "Betting — Self Exclusion Nl Cruks",
+      "repoPath": "files/kyverno/betting-self_exclusion_nl_cruks-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-self_exclusion_on_igaming-constrainttemplate.yaml",
+      "id": "betting.self_exclusion_on_igaming",
+      "kyvernoPath": "files/kyverno/betting-self_exclusion_on_igaming-policy.yaml",
+      "name": "Betting — Self Exclusion On Igaming",
+      "repoPath": "files/kyverno/betting-self_exclusion_on_igaming-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-self_exclusion_se_spelpaus-constrainttemplate.yaml",
+      "id": "betting.self_exclusion_se_spelpaus",
+      "kyvernoPath": "files/kyverno/betting-self_exclusion_se_spelpaus-policy.yaml",
+      "name": "Betting — Self Exclusion Se Spelpaus",
+      "repoPath": "files/kyverno/betting-self_exclusion_se_spelpaus-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-self-exclusion-uk-gamstop-constrainttemplate.yaml",
+      "id": "betting.self_exclusion_uk_gamstop",
+      "kyvernoPath": "files/kyverno/betting-self_exclusion_uk_gamstop-policy.yaml",
+      "name": "Betting — Self Exclusion UK Gamstop",
+      "repoPath": "files/kyverno/betting-self_exclusion_uk_gamstop-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-session_time_limits_controls-constrainttemplate.yaml",
+      "id": "betting.session_time_limits_controls",
+      "kyvernoPath": "files/kyverno/betting-session_time_limits_controls-policy.yaml",
+      "name": "Betting — Session Time Limits Controls",
+      "repoPath": "files/kyverno/betting-session_time_limits_controls-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-slots_min_spin_speed_uk-constrainttemplate.yaml",
+      "id": "betting.slots_min_spin_speed_uk",
+      "kyvernoPath": "files/kyverno/betting-slots_min_spin_speed_uk-policy.yaml",
+      "name": "Betting — Slots Min Spin Speed UK",
+      "repoPath": "files/kyverno/betting-slots_min_spin_speed_uk-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-slots_no_autoplay_uk-constrainttemplate.yaml",
+      "id": "betting.slots_no_autoplay_uk",
+      "kyvernoPath": "files/kyverno/betting-slots_no_autoplay_uk-policy.yaml",
+      "name": "Betting — Slots No Autoplay UK",
+      "repoPath": "files/kyverno/betting-slots_no_autoplay_uk-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-slots_no_losses_disguised_as_wins-constrainttemplate.yaml",
+      "id": "betting.slots_no_losses_disguised_as_wins",
+      "kyvernoPath": "files/kyverno/betting-slots_no_losses_disguised_as_wins-policy.yaml",
+      "name": "Betting — Slots No Losses Disguised As Wins",
+      "repoPath": "files/kyverno/betting-slots_no_losses_disguised_as_wins-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-source_of_funds_checks-constrainttemplate.yaml",
+      "id": "betting.source_of_funds_checks",
+      "kyvernoPath": "files/kyverno/betting-source_of_funds_checks-policy.yaml",
+      "name": "Betting — Source Of Funds Checks",
+      "repoPath": "files/kyverno/betting-source_of_funds_checks-policy.yaml",
+      "industry": [
+        "Gambling",
+        "FinTech",
+        "Banking"
+      ]
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-source-of-funds-thresholds-constrainttemplate.yaml",
+      "id": "betting.source_of_funds_thresholds",
+      "kyvernoPath": "files/kyverno/betting-source_of_funds_thresholds-policy.yaml",
+      "name": "Betting — Source Of Funds Thresholds",
+      "repoPath": "files/kyverno/betting-source_of_funds_thresholds-policy.yaml",
+      "industry": [
+        "Gambling",
+        "FinTech",
+        "Banking"
+      ]
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-suspicious-betting-reporting-uk-constrainttemplate.yaml",
+      "id": "betting.suspicious_betting_reporting_uk",
+      "kyvernoPath": "files/kyverno/betting-suspicious_betting_reporting_uk-policy.yaml",
+      "name": "Betting — Suspicious Betting Reporting UK",
+      "repoPath": "files/kyverno/betting-suspicious_betting_reporting_uk-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/betting-txn-monitoring-anomalies-constrainttemplate.yaml",
+      "id": "betting.txn_monitoring_anomalies",
+      "kyvernoPath": "files/kyverno/betting-txn_monitoring_anomalies-policy.yaml",
+      "name": "Betting — Txn Monitoring Anomalies",
+      "repoPath": "files/kyverno/betting-txn_monitoring_anomalies-policy.yaml",
+      "industry": [
+        "Gambling",
+        "FinTech",
+        "Banking"
+      ]
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/block-hostpath.yaml",
+      "id": "block.hostpath",
+      "kyvernoPath": "files/kyverno/block-hostpath.yaml",
+      "name": "Block — Hostpath",
+      "repoPath": "files/kyverno/block-hostpath.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/block-hostpath.yaml",
+      "id": "block.hostpath.template",
+      "name": "Block — Hostpath",
+      "repoPath": "files/gatekeeper-templates/block-hostpath.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/disallow-latest.yaml",
+      "id": "disallow.latest",
+      "kyvernoPath": "files/kyverno/disallow-latest.yaml",
+      "name": "Disallow — Latest",
+      "repoPath": "files/kyverno/disallow-latest.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/disallow-latest.yaml",
+      "id": "disallow.latest.template",
+      "name": "Disallow — Latest",
+      "repoPath": "files/gatekeeper-templates/disallow-latest.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-au_app_11_security_edtech-constrainttemplate.yaml",
+      "id": "edtech.au_app_11_security_edtech",
+      "kyvernoPath": "files/kyverno/edtech-au_app_11_security_edtech-policy.yaml",
+      "name": "Edtech — Au App 11 Security Edtech",
+      "repoPath": "files/kyverno/edtech-au_app_11_security_edtech-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-au_app_5_notice_edtech-constrainttemplate.yaml",
+      "id": "edtech.au_app_5_notice_edtech",
+      "kyvernoPath": "files/kyverno/edtech-au_app_5_notice_edtech-policy.yaml",
+      "name": "Edtech — Au App 5 Notice Edtech",
+      "repoPath": "files/kyverno/edtech-au_app_5_notice_edtech-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-au_ndb_breach_notification_edtech-constrainttemplate.yaml",
+      "id": "edtech.au_ndb_breach_notification_edtech",
+      "kyvernoPath": "files/kyverno/edtech-au_ndb_breach_notification_edtech-policy.yaml",
+      "name": "Edtech — Au Ndb Breach Notification Edtech",
+      "repoPath": "files/kyverno/edtech-au_ndb_breach_notification_edtech-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-br_lgpd_children_consent_best_interest-constrainttemplate.yaml",
+      "id": "edtech.br_lgpd_children_consent_best_interest",
+      "kyvernoPath": "files/kyverno/edtech-br_lgpd_children_consent_best_interest-policy.yaml",
+      "name": "Edtech — Br Lgpd Children Consent Best Interest",
+      "repoPath": "files/kyverno/edtech-br_lgpd_children_consent_best_interest-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-ca_pipeda_consent_edtech-constrainttemplate.yaml",
+      "id": "edtech.ca_pipeda_consent_edtech",
+      "kyvernoPath": "files/kyverno/edtech-ca_pipeda_consent_edtech-policy.yaml",
+      "name": "Edtech — Ca Pipeda Consent Edtech",
+      "repoPath": "files/kyverno/edtech-ca_pipeda_consent_edtech-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-ca_sopipa_no_sale_of_student_data-constrainttemplate.yaml",
+      "id": "edtech.ca_sopipa_no_sale_of_student_data",
+      "kyvernoPath": "files/kyverno/edtech-ca_sopipa_no_sale_of_student_data-policy.yaml",
+      "name": "Edtech — Ca Sopipa No Sale Of Student Data",
+      "repoPath": "files/kyverno/edtech-ca_sopipa_no_sale_of_student_data-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-ca_sopipa_no_targeted_advertising-constrainttemplate.yaml",
+      "id": "edtech.ca_sopipa_no_targeted_advertising",
+      "kyvernoPath": "files/kyverno/edtech-ca_sopipa_no_targeted_advertising-policy.yaml",
+      "name": "Edtech — Ca Sopipa No Targeted Advertising",
+      "repoPath": "files/kyverno/edtech-ca_sopipa_no_targeted_advertising-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-co_student_data_transparency-constrainttemplate.yaml",
+      "id": "edtech.co_student_data_transparency",
+      "kyvernoPath": "files/kyverno/edtech-co_student_data_transparency-policy.yaml",
+      "name": "Edtech — Co Student Data Transparency",
+      "repoPath": "files/kyverno/edtech-co_student_data_transparency-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-coppa_data_minimization-constrainttemplate.yaml",
+      "id": "edtech.coppa_data_minimization",
+      "kyvernoPath": "files/kyverno/edtech-coppa_data_minimization-policy.yaml",
+      "name": "Edtech — Coppa Data Minimization",
+      "repoPath": "files/kyverno/edtech-coppa_data_minimization-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-coppa_delete_on_parent_request-constrainttemplate.yaml",
+      "id": "edtech.coppa_delete_on_parent_request",
+      "kyvernoPath": "files/kyverno/edtech-coppa_delete_on_parent_request-policy.yaml",
+      "name": "Edtech — Coppa Delete On Parent Request",
+      "repoPath": "files/kyverno/edtech-coppa_delete_on_parent_request-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-coppa_parental_consent_under_13-constrainttemplate.yaml",
+      "id": "edtech.coppa_parental_consent_under_13",
+      "kyvernoPath": "files/kyverno/edtech-coppa_parental_consent_under_13-policy.yaml",
+      "name": "Edtech — Coppa Parental Consent Under 13",
+      "repoPath": "files/kyverno/edtech-coppa_parental_consent_under_13-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-ct_student_data_privacy-constrainttemplate.yaml",
+      "id": "edtech.ct_student_data_privacy",
+      "kyvernoPath": "files/kyverno/edtech-ct_student_data_privacy-policy.yaml",
+      "name": "Edtech — Ct Student Data Privacy",
+      "repoPath": "files/kyverno/edtech-ct_student_data_privacy-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-edtech_access_least_privilege-constrainttemplate.yaml",
+      "id": "edtech.edtech_access_least_privilege",
+      "kyvernoPath": "files/kyverno/edtech-edtech_access_least_privilege-policy.yaml",
+      "name": "Edtech — Edtech Access Least Privilege",
+      "repoPath": "files/kyverno/edtech-edtech_access_least_privilege-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-edtech_audit_logs_student_record_access-constrainttemplate.yaml",
+      "id": "edtech.edtech_audit_logs_student_record_access",
+      "kyvernoPath": "files/kyverno/edtech-edtech_audit_logs_student_record_access-policy.yaml",
+      "name": "Edtech — Edtech Audit Logs Student Record Access",
+      "repoPath": "files/kyverno/edtech-edtech_audit_logs_student_record_access-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-edtech_encryption_at_rest-constrainttemplate.yaml",
+      "id": "edtech.edtech_encryption_at_rest",
+      "kyvernoPath": "files/kyverno/edtech-edtech_encryption_at_rest-policy.yaml",
+      "name": "Edtech — Edtech Encryption At Rest",
+      "repoPath": "files/kyverno/edtech-edtech_encryption_at_rest-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-edtech_encryption_in_transit-constrainttemplate.yaml",
+      "id": "edtech.edtech_encryption_in_transit",
+      "kyvernoPath": "files/kyverno/edtech-edtech_encryption_in_transit-policy.yaml",
+      "name": "Edtech — Edtech Encryption In Transit",
+      "repoPath": "files/kyverno/edtech-edtech_encryption_in_transit-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-edtech_retention_after_course_completion-constrainttemplate.yaml",
+      "id": "edtech.edtech_retention_after_course_completion",
+      "kyvernoPath": "files/kyverno/edtech-edtech_retention_after_course_completion-policy.yaml",
+      "name": "Edtech — Edtech Retention After Course Completion",
+      "repoPath": "files/kyverno/edtech-edtech_retention_after_course_completion-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-eu_dpia_high_risk_edtech-constrainttemplate.yaml",
+      "id": "edtech.eu_dpia_high_risk_edtech",
+      "kyvernoPath": "files/kyverno/edtech-eu_dpia_high_risk_edtech-policy.yaml",
+      "name": "Edtech — EU Dpia High Risk Edtech",
+      "repoPath": "files/kyverno/edtech-eu_dpia_high_risk_edtech-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-eu_eprivacy_cookie_consent_edtech-constrainttemplate.yaml",
+      "id": "edtech.eu_eprivacy_cookie_consent_edtech",
+      "kyvernoPath": "files/kyverno/edtech-eu_eprivacy_cookie_consent_edtech-policy.yaml",
+      "name": "Edtech — EU Eprivacy Cookie Consent Edtech",
+      "repoPath": "files/kyverno/edtech-eu_eprivacy_cookie_consent_edtech-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-eu_gdpr_minors_consent_education-constrainttemplate.yaml",
+      "id": "edtech.eu_gdpr_minors_consent_education",
+      "kyvernoPath": "files/kyverno/edtech-eu_gdpr_minors_consent_education-policy.yaml",
+      "name": "Edtech — EU GDPR Minors Consent Education",
+      "repoPath": "files/kyverno/edtech-eu_gdpr_minors_consent_education-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-eu_scc_transfers_edplatform-constrainttemplate.yaml",
+      "id": "edtech.eu_scc_transfers_edplatform",
+      "kyvernoPath": "files/kyverno/edtech-eu_scc_transfers_edplatform-policy.yaml",
+      "name": "Edtech — EU Scc Transfers Edplatform",
+      "repoPath": "files/kyverno/edtech-eu_scc_transfers_edplatform-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-ferpa_consent_or_exception_for_disclosure-constrainttemplate.yaml",
+      "id": "edtech.ferpa_consent_or_exception_for_disclosure",
+      "kyvernoPath": "files/kyverno/edtech-ferpa_consent_or_exception_for_disclosure-policy.yaml",
+      "name": "Edtech — Ferpa Consent Or Exception For Disclosure",
+      "repoPath": "files/kyverno/edtech-ferpa_consent_or_exception_for_disclosure-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-ferpa_directory_info_optout_respected-constrainttemplate.yaml",
+      "id": "edtech.ferpa_directory_info_optout_respected",
+      "kyvernoPath": "files/kyverno/edtech-ferpa_directory_info_optout_respected-policy.yaml",
+      "name": "Edtech — Ferpa Directory Info Optout Respected",
+      "repoPath": "files/kyverno/edtech-ferpa_directory_info_optout_respected-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-ferpa_parent_access_rights-constrainttemplate.yaml",
+      "id": "edtech.ferpa_parent_access_rights",
+      "kyvernoPath": "files/kyverno/edtech-ferpa_parent_access_rights-policy.yaml",
+      "name": "Edtech — Ferpa Parent Access Rights",
+      "repoPath": "files/kyverno/edtech-ferpa_parent_access_rights-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-il_soppa_breach_notification-constrainttemplate.yaml",
+      "id": "edtech.il_soppa_breach_notification",
+      "kyvernoPath": "files/kyverno/edtech-il_soppa_breach_notification-policy.yaml",
+      "name": "Edtech — Il Soppa Breach Notification",
+      "repoPath": "files/kyverno/edtech-il_soppa_breach_notification-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-in_dpdpa_children_verifiable_consent-constrainttemplate.yaml",
+      "id": "edtech.in_dpdpa_children_verifiable_consent",
+      "kyvernoPath": "files/kyverno/edtech-in_dpdpa_children_verifiable_consent-policy.yaml",
+      "name": "Edtech — In Dpdpa Children Verifiable Consent",
+      "repoPath": "files/kyverno/edtech-in_dpdpa_children_verifiable_consent-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-kr_pipa_guardian_consent_under_14-constrainttemplate.yaml",
+      "id": "edtech.kr_pipa_guardian_consent_under_14",
+      "kyvernoPath": "files/kyverno/edtech-kr_pipa_guardian_consent_under_14-policy.yaml",
+      "name": "Edtech — Kr Pipa Guardian Consent Under 14",
+      "repoPath": "files/kyverno/edtech-kr_pipa_guardian_consent_under_14-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-ny_edlaw2d_encryption_and_contracts-constrainttemplate.yaml",
+      "id": "edtech.ny_edlaw2d_encryption_and_contracts",
+      "kyvernoPath": "files/kyverno/edtech-ny_edlaw2d_encryption_and_contracts-policy.yaml",
+      "name": "Edtech — Ny Edlaw2d Encryption And Contracts",
+      "repoPath": "files/kyverno/edtech-ny_edlaw2d_encryption_and_contracts-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-nz_notice_at_collection_edtech-constrainttemplate.yaml",
+      "id": "edtech.nz_notice_at_collection_edtech",
+      "kyvernoPath": "files/kyverno/edtech-nz_notice_at_collection_edtech-policy.yaml",
+      "name": "Edtech — Nz Notice At Collection Edtech",
+      "repoPath": "files/kyverno/edtech-nz_notice_at_collection_edtech-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-ppra_parental_consent_sensitive_surveys-constrainttemplate.yaml",
+      "id": "edtech.ppra_parental_consent_sensitive_surveys",
+      "kyvernoPath": "files/kyverno/edtech-ppra_parental_consent_sensitive_surveys-policy.yaml",
+      "name": "Edtech — Ppra Parental Consent Sensitive Surveys",
+      "repoPath": "files/kyverno/edtech-ppra_parental_consent_sensitive_surveys-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-uk_aadc_privacy_by_default-constrainttemplate.yaml",
+      "id": "edtech.uk_aadc_privacy_by_default",
+      "kyvernoPath": "files/kyverno/edtech-uk_aadc_privacy_by_default-policy.yaml",
+      "name": "Edtech — UK Aadc Privacy By Default",
+      "repoPath": "files/kyverno/edtech-uk_aadc_privacy_by_default-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/edtech-uk_aadc_profiling_and_geolocation_off-constrainttemplate.yaml",
+      "id": "edtech.uk_aadc_profiling_and_geolocation_off",
+      "kyvernoPath": "files/kyverno/edtech-uk_aadc_profiling_and_geolocation_off-policy.yaml",
+      "name": "Edtech — UK Aadc Profiling And Geolocation Off",
+      "repoPath": "files/kyverno/edtech-uk_aadc_profiling_and_geolocation_off-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-deposit_limit_controls-constraint.yaml",
+      "id": "igaming.deposit_limit_controls",
+      "kyvernoPath": "files/kyverno/igaming-deposit_limit_controls-policy.yaml",
+      "name": "Igaming — Deposit Limit Controls",
+      "repoPath": "files/kyverno/igaming-deposit_limit_controls-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-geofencing_regulated_markets-constraint.yaml",
+      "id": "igaming.geofencing_regulated_markets",
+      "kyvernoPath": "files/kyverno/igaming-geofencing_regulated_markets-policy.yaml",
+      "name": "Igaming — Geofencing Regulated Markets",
+      "repoPath": "files/kyverno/igaming-geofencing_regulated_markets-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-license_check_adm_it-constraint.yaml",
+      "id": "igaming.license_check_adm_it",
+      "kyvernoPath": "files/kyverno/igaming-license_check_adm_it-policy.yaml",
+      "name": "Igaming — License Check Adm It",
+      "repoPath": "files/kyverno/igaming-license_check_adm_it-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-license_check_anj_fr-constraint.yaml",
+      "id": "igaming.license_check_anj_fr",
+      "kyvernoPath": "files/kyverno/igaming-license_check_anj_fr-policy.yaml",
+      "name": "Igaming — License Check Anj Fr",
+      "repoPath": "files/kyverno/igaming-license_check_anj_fr-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-license_check_dgoj_es-constraint.yaml",
+      "id": "igaming.license_check_dgoj_es",
+      "kyvernoPath": "files/kyverno/igaming-license_check_dgoj_es-policy.yaml",
+      "name": "Igaming — License Check Dgoj Es",
+      "repoPath": "files/kyverno/igaming-license_check_dgoj_es-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-license_check_ukgc-constraint.yaml",
+      "id": "igaming.license_check_ukgc",
+      "kyvernoPath": "files/kyverno/igaming-license_check_ukgc-policy.yaml",
+      "name": "Igaming — License Check Ukgc",
+      "repoPath": "files/kyverno/igaming-license_check_ukgc-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-license_check_us_nj_dge-constraint.yaml",
+      "id": "igaming.license_check_us_nj_dge",
+      "kyvernoPath": "files/kyverno/igaming-license_check_us_nj_dge-policy.yaml",
+      "name": "Igaming — License Check US Nj Dge",
+      "repoPath": "files/kyverno/igaming-license_check_us_nj_dge-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-license_check_us_nv_ngcb-constraint.yaml",
+      "id": "igaming.license_check_us_nv_ngcb",
+      "kyvernoPath": "files/kyverno/igaming-license_check_us_nv_ngcb-policy.yaml",
+      "name": "Igaming — License Check US Nv Ngcb",
+      "repoPath": "files/kyverno/igaming-license_check_us_nv_ngcb-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-license_check_us_pa_pgcb-constraint.yaml",
+      "id": "igaming.license_check_us_pa_pgcb",
+      "kyvernoPath": "files/kyverno/igaming-license_check_us_pa_pgcb-policy.yaml",
+      "name": "Igaming — License Check US Pa Pgcb",
+      "repoPath": "files/kyverno/igaming-license_check_us_pa_pgcb-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/betting-self_exclusion_uk_gamstop-constraint.yaml",
+      "id": "igaming.self_exclusion_uk_gamstop",
+      "kyvernoPath": "files/kyverno/igaming-self_exclusion_uk_gamstop-policy.yaml",
+      "name": "Igaming — Self Exclusion UK Gamstop",
+      "repoPath": "files/kyverno/igaming-self_exclusion_uk_gamstop-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/limit-capabilities.yaml",
+      "id": "limit.capabilities",
+      "kyvernoPath": "files/kyverno/limit-capabilities.yaml",
+      "name": "Limit — Capabilities",
+      "repoPath": "files/kyverno/limit-capabilities.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/limit-capabilities.yaml",
+      "id": "limit.capabilities.template",
+      "name": "Limit — Capabilities",
+      "repoPath": "files/gatekeeper-templates/limit-capabilities.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-au_myr_health_privacy-constrainttemplate.yaml",
+      "id": "medtech.au_myr_health_privacy",
+      "kyvernoPath": "files/kyverno/medtech-au_myr_health_privacy-policy.yaml",
+      "name": "Medtech — Au Myr Health Privacy",
+      "repoPath": "files/kyverno/medtech-au_myr_health_privacy-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-backup_and_recovery_rto_rpo-constrainttemplate.yaml",
+      "id": "medtech.backup_and_recovery_rto_rpo",
+      "kyvernoPath": "files/kyverno/medtech-backup_and_recovery_rto_rpo-policy.yaml",
+      "name": "Medtech — Backup And Recovery RTO RPO",
+      "repoPath": "files/kyverno/medtech-backup_and_recovery_rto_rpo-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-ca_phipa_health_data-constrainttemplate.yaml",
+      "id": "medtech.ca_phipa_health_data",
+      "kyvernoPath": "files/kyverno/medtech-ca_phipa_health_data-policy.yaml",
+      "name": "Medtech — Ca Phipa Health Data",
+      "repoPath": "files/kyverno/medtech-ca_phipa_health_data-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-device_data_integrity_hashing-constrainttemplate.yaml",
+      "id": "medtech.device_data_integrity_hashing",
+      "kyvernoPath": "files/kyverno/medtech-device_data_integrity_hashing-policy.yaml",
+      "name": "Medtech — Device Data Integrity Hashing",
+      "repoPath": "files/kyverno/medtech-device_data_integrity_hashing-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-dicom_network_security_basic-constrainttemplate.yaml",
+      "id": "medtech.dicom_network_security_basic",
+      "kyvernoPath": "files/kyverno/medtech-dicom_network_security_basic-policy.yaml",
+      "name": "Medtech — Dicom Network Security Basic",
+      "repoPath": "files/kyverno/medtech-dicom_network_security_basic-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-eu_ivdr_clinical_performance-constrainttemplate.yaml",
+      "id": "medtech.eu_ivdr_clinical_performance",
+      "kyvernoPath": "files/kyverno/medtech-eu_ivdr_clinical_performance-policy.yaml",
+      "name": "Medtech — EU IVDR Clinical Performance",
+      "repoPath": "files/kyverno/medtech-eu_ivdr_clinical_performance-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-eu_mdr_ce_marking_and_udi-constrainttemplate.yaml",
+      "id": "medtech.eu_mdr_ce_marking_and_udi",
+      "kyvernoPath": "files/kyverno/medtech-eu_mdr_ce_marking_and_udi-policy.yaml",
+      "name": "Medtech — EU MDR Ce Marking And Udi",
+      "repoPath": "files/kyverno/medtech-eu_mdr_ce_marking_and_udi-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-eu_mdr_clinical_evaluation-constrainttemplate.yaml",
+      "id": "medtech.eu_mdr_clinical_evaluation",
+      "kyvernoPath": "files/kyverno/medtech-eu_mdr_clinical_evaluation-policy.yaml",
+      "name": "Medtech — EU MDR Clinical Evaluation",
+      "repoPath": "files/kyverno/medtech-eu_mdr_clinical_evaluation-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-eu_mdr_eudamed_registration-constrainttemplate.yaml",
+      "id": "medtech.eu_mdr_eudamed_registration",
+      "kyvernoPath": "files/kyverno/medtech-eu_mdr_eudamed_registration-policy.yaml",
+      "name": "Medtech — EU MDR Eudamed Registration",
+      "repoPath": "files/kyverno/medtech-eu_mdr_eudamed_registration-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-eu_mdr_pms_psur-constrainttemplate.yaml",
+      "id": "medtech.eu_mdr_pms_psur",
+      "kyvernoPath": "files/kyverno/medtech-eu_mdr_pms_psur-policy.yaml",
+      "name": "Medtech — EU MDR Pms Psur",
+      "repoPath": "files/kyverno/medtech-eu_mdr_pms_psur-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-eu_vigilance_incident_reporting-constrainttemplate.yaml",
+      "id": "medtech.eu_vigilance_incident_reporting",
+      "kyvernoPath": "files/kyverno/medtech-eu_vigilance_incident_reporting-policy.yaml",
+      "name": "Medtech — EU Vigilance Incident Reporting",
+      "repoPath": "files/kyverno/medtech-eu_vigilance_incident_reporting-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-fda_cybersecurity_524b_sbom-constrainttemplate.yaml",
+      "id": "medtech.fda_cybersecurity_524b_sbom",
+      "kyvernoPath": "files/kyverno/medtech-fda_cybersecurity_524b_sbom-policy.yaml",
+      "name": "Medtech — Fda Cybersecurity 524b SBOM",
+      "repoPath": "files/kyverno/medtech-fda_cybersecurity_524b_sbom-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-fda_mdr_event_reporting-constrainttemplate.yaml",
+      "id": "medtech.fda_mdr_event_reporting",
+      "kyvernoPath": "files/kyverno/medtech-fda_mdr_event_reporting-policy.yaml",
+      "name": "Medtech — Fda MDR Event Reporting",
+      "repoPath": "files/kyverno/medtech-fda_mdr_event_reporting-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-fda_part11_audit_trail-constrainttemplate.yaml",
+      "id": "medtech.fda_part11_audit_trail",
+      "kyvernoPath": "files/kyverno/medtech-fda_part11_audit_trail-policy.yaml",
+      "name": "Medtech — Fda Part11 Audit Trail",
+      "repoPath": "files/kyverno/medtech-fda_part11_audit_trail-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-fda_part11_esign_linkage-constrainttemplate.yaml",
+      "id": "medtech.fda_part11_esign_linkage",
+      "kyvernoPath": "files/kyverno/medtech-fda_part11_esign_linkage-policy.yaml",
+      "name": "Medtech — Fda Part11 Esign Linkage",
+      "repoPath": "files/kyverno/medtech-fda_part11_esign_linkage-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-fda_part11_system_validation-constrainttemplate.yaml",
+      "id": "medtech.fda_part11_system_validation",
+      "kyvernoPath": "files/kyverno/medtech-fda_part11_system_validation-policy.yaml",
+      "name": "Medtech — Fda Part11 System Validation",
+      "repoPath": "files/kyverno/medtech-fda_part11_system_validation-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-fhir_smart_app_authz-constrainttemplate.yaml",
+      "id": "medtech.fhir_smart_app_authz",
+      "kyvernoPath": "files/kyverno/medtech-fhir_smart_app_authz-policy.yaml",
+      "name": "Medtech — FHIR Smart App Authz",
+      "repoPath": "files/kyverno/medtech-fhir_smart_app_authz-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-gdpr_art9_special_category_safeguards-constrainttemplate.yaml",
+      "id": "medtech.gdpr_art9_special_category_safeguards",
+      "kyvernoPath": "files/kyverno/medtech-gdpr_art9_special_category_safeguards-policy.yaml",
+      "name": "Medtech — GDPR Art9 Special Category Safeguards",
+      "repoPath": "files/kyverno/medtech-gdpr_art9_special_category_safeguards-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-health_data_cross_border_controls-constrainttemplate.yaml",
+      "id": "medtech.health_data_cross_border_controls",
+      "kyvernoPath": "files/kyverno/medtech-health_data_cross_border_controls-policy.yaml",
+      "name": "Medtech — Health Data Cross Border Controls",
+      "repoPath": "files/kyverno/medtech-health_data_cross_border_controls-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-hipaa_access_audit_logging-constrainttemplate.yaml",
+      "id": "medtech.hipaa_access_audit_logging",
+      "kyvernoPath": "files/kyverno/medtech-hipaa_access_audit_logging-policy.yaml",
+      "name": "Medtech — HIPAA Access Audit Logging",
+      "repoPath": "files/kyverno/medtech-hipaa_access_audit_logging-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-hipaa_baa_with_vendors-constrainttemplate.yaml",
+      "id": "medtech.hipaa_baa_with_vendors",
+      "kyvernoPath": "files/kyverno/medtech-hipaa_baa_with_vendors-policy.yaml",
+      "name": "Medtech — HIPAA Baa With Vendors",
+      "repoPath": "files/kyverno/medtech-hipaa_baa_with_vendors-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-hipaa_mfa_privileged_access-constrainttemplate.yaml",
+      "id": "medtech.hipaa_mfa_privileged_access",
+      "kyvernoPath": "files/kyverno/medtech-hipaa_mfa_privileged_access-policy.yaml",
+      "name": "Medtech — HIPAA Mfa Privileged Access",
+      "repoPath": "files/kyverno/medtech-hipaa_mfa_privileged_access-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-hipaa_minimum_necessary-constrainttemplate.yaml",
+      "id": "medtech.hipaa_minimum_necessary",
+      "kyvernoPath": "files/kyverno/medtech-hipaa_minimum_necessary-policy.yaml",
+      "name": "Medtech — HIPAA Minimum Necessary",
+      "repoPath": "files/kyverno/medtech-hipaa_minimum_necessary-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-hipaa_security_admin_safeguards-constrainttemplate.yaml",
+      "id": "medtech.hipaa_security_admin_safeguards",
+      "kyvernoPath": "files/kyverno/medtech-hipaa_security_admin_safeguards-policy.yaml",
+      "name": "Medtech — HIPAA Security Admin Safeguards",
+      "repoPath": "files/kyverno/medtech-hipaa_security_admin_safeguards-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-hipaa_security_tech_encryption-constrainttemplate.yaml",
+      "id": "medtech.hipaa_security_tech_encryption",
+      "kyvernoPath": "files/kyverno/medtech-hipaa_security_tech_encryption-policy.yaml",
+      "name": "Medtech — HIPAA Security Tech Encryption",
+      "repoPath": "files/kyverno/medtech-hipaa_security_tech_encryption-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-hitech_breach_notification_60d-constrainttemplate.yaml",
+      "id": "medtech.hitech_breach_notification_60d",
+      "kyvernoPath": "files/kyverno/medtech-hitech_breach_notification_60d-policy.yaml",
+      "name": "Medtech — Hitech Breach Notification 60d",
+      "repoPath": "files/kyverno/medtech-hitech_breach_notification_60d-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-iec_62304_scm_prp_processes-constrainttemplate.yaml",
+      "id": "medtech.iec_62304_scm_prp_processes",
+      "kyvernoPath": "files/kyverno/medtech-iec_62304_scm_prp_processes-policy.yaml",
+      "name": "Medtech — Iec 62304 Scm Prp Processes",
+      "repoPath": "files/kyverno/medtech-iec_62304_scm_prp_processes-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-iec_62304_software_safety_class-constrainttemplate.yaml",
+      "id": "medtech.iec_62304_software_safety_class",
+      "kyvernoPath": "files/kyverno/medtech-iec_62304_software_safety_class-policy.yaml",
+      "name": "Medtech — Iec 62304 Software Safety Class",
+      "repoPath": "files/kyverno/medtech-iec_62304_software_safety_class-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-iec_62366_usability_summative_eval-constrainttemplate.yaml",
+      "id": "medtech.iec_62366_usability_summative_eval",
+      "kyvernoPath": "files/kyverno/medtech-iec_62366_usability_summative_eval-policy.yaml",
+      "name": "Medtech — Iec 62366 Usability Summative Eval",
+      "repoPath": "files/kyverno/medtech-iec_62366_usability_summative_eval-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-iso_13485_document_control-constrainttemplate.yaml",
+      "id": "medtech.iso_13485_document_control",
+      "kyvernoPath": "files/kyverno/medtech-iso_13485_document_control-policy.yaml",
+      "name": "Medtech — Iso 13485 Document Control",
+      "repoPath": "files/kyverno/medtech-iso_13485_document_control-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-iso_14971_risk_management_file-constrainttemplate.yaml",
+      "id": "medtech.iso_14971_risk_management_file",
+      "kyvernoPath": "files/kyverno/medtech-iso_14971_risk_management_file-policy.yaml",
+      "name": "Medtech — Iso 14971 Risk Management File",
+      "repoPath": "files/kyverno/medtech-iso_14971_risk_management_file-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-iso_27001_isms_scope_and_controls-constrainttemplate.yaml",
+      "id": "medtech.iso_27001_isms_scope_and_controls",
+      "kyvernoPath": "files/kyverno/medtech-iso_27001_isms_scope_and_controls-policy.yaml",
+      "name": "Medtech — Iso 27001 Isms Scope And Controls",
+      "repoPath": "files/kyverno/medtech-iso_27001_isms_scope_and_controls-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-log_retention_for_clinical_events-constrainttemplate.yaml",
+      "id": "medtech.log_retention_for_clinical_events",
+      "kyvernoPath": "files/kyverno/medtech-log_retention_for_clinical_events-policy.yaml",
+      "name": "Medtech — Log Retention For Clinical Events",
+      "repoPath": "files/kyverno/medtech-log_retention_for_clinical_events-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-onc_cures_api_fhir_r4-constrainttemplate.yaml",
+      "id": "medtech.onc_cures_api_fhir_r4",
+      "kyvernoPath": "files/kyverno/medtech-onc_cures_api_fhir_r4-policy.yaml",
+      "name": "Medtech — Onc Cures API FHIR R4",
+      "repoPath": "files/kyverno/medtech-onc_cures_api_fhir_r4-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-onc_information_blocking_prohibited-constrainttemplate.yaml",
+      "id": "medtech.onc_information_blocking_prohibited",
+      "kyvernoPath": "files/kyverno/medtech-onc_information_blocking_prohibited-policy.yaml",
+      "name": "Medtech — Onc Information Blocking Prohibited",
+      "repoPath": "files/kyverno/medtech-onc_information_blocking_prohibited-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-sg_hcsa_pdpa_health_data-constrainttemplate.yaml",
+      "id": "medtech.sg_hcsa_pdpa_health_data",
+      "kyvernoPath": "files/kyverno/medtech-sg_hcsa_pdpa_health_data-policy.yaml",
+      "name": "Medtech — Sg Hcsa Pdpa Health Data",
+      "repoPath": "files/kyverno/medtech-sg_hcsa_pdpa_health_data-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-uk_dtac_compliance-constrainttemplate.yaml",
+      "id": "medtech.uk_dtac_compliance",
+      "kyvernoPath": "files/kyverno/medtech-uk_dtac_compliance-policy.yaml",
+      "name": "Medtech — UK DTAC Compliance",
+      "repoPath": "files/kyverno/medtech-uk_dtac_compliance-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/medtech-uk_mhra_post_market_surveillance-constrainttemplate.yaml",
+      "id": "medtech.uk_mhra_post_market_surveillance",
+      "kyvernoPath": "files/kyverno/medtech-uk_mhra_post_market_surveillance-policy.yaml",
+      "name": "Medtech — UK Mhra Post Market Surveillance",
+      "repoPath": "files/kyverno/medtech-uk_mhra_post_market_surveillance-policy.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/no-privileged.yaml",
+      "id": "no.privileged",
+      "kyvernoPath": "files/kyverno/no-privileged.yaml",
+      "name": "No — Privileged",
+      "repoPath": "files/kyverno/no-privileged.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/no-privileged.yaml",
+      "id": "no.privileged.template",
+      "name": "No — Privileged",
+      "repoPath": "files/gatekeeper-templates/no-privileged.yaml"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/no-run-as-root.yaml",
+      "id": "no.run.as.root",
+      "kyvernoPath": "files/kyverno/no-run-as-root.yaml",
+      "name": "No — Run",
+      "repoPath": "files/kyverno/no-run-as-root.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/no-run-as-root.yaml",
+      "id": "no.run.as.root.template",
+      "name": "No — Run",
+      "repoPath": "files/gatekeeper-templates/no-run-as-root.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/require-imagepullpolicy-always.yaml",
+      "id": "require.imagepullpolicy.always",
+      "kyvernoPath": "files/kyverno/require-imagepullpolicy-always.yaml",
+      "name": "Require — Imagepullpolicy",
+      "repoPath": "files/kyverno/require-imagepullpolicy-always.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/require-imagepullpolicy-always.yaml",
+      "id": "require.imagepullpolicy.always.template",
+      "name": "Require — Imagepullpolicy",
+      "repoPath": "files/gatekeeper-templates/require-imagepullpolicy-always.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper/require-resources.yaml",
+      "id": "require.resources",
+      "kyvernoPath": "files/kyverno/require-resources.yaml",
+      "name": "Require — Resources",
+      "repoPath": "files/kyverno/require-resources.yaml",
+      "standard": "other",
+      "version": "current",
+      "jurisdiction": "Global",
+      "coverage": [],
+      "severity": "medium",
+      "industry": "Platform"
+    },
+    {
+      "gatekeeperPath": "files/gatekeeper-templates/require-resources.yaml",
+      "id": "require.resources.template",
+      "name": "Require — Resources",
+      "repoPath": "files/gatekeeper-templates/require-resources.yaml"
+    }
+  ]
+}
