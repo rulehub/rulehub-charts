@@ -32,7 +32,7 @@ syft "$REF" -o spdx-json=sbom.spdx.json
 echo "[sbom] SBOM size: $(wc -c < sbom.spdx.json)"
 
 echo "[vulns] Running vulnerability gate (CRITICAL=0)"
-bash hack/verify-vulns.sh --org "$ORG" --version "$VERSION" --severity CRITICAL --allow 0 --list 5
+bash hack/verify/verify-vulns.sh --org "$ORG" --version "$VERSION" --severity CRITICAL --allow 0 --list 5
 
 echo "[attest] Attesting SBOM"
 cosign attest --predicate sbom.spdx.json --type spdx "$REF"

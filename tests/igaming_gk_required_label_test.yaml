@@ -1,0 +1,29 @@
+---
+suite: Igaming Gatekeeper templates requiredLabel schema
+
+templates:
+  - templates/gatekeeper.yaml
+
+tests:
+  - it: betting-ads_no_minors_targeting has requiredLabel type string
+    set:
+      gatekeeper:
+        enabled: true
+    documentSelector:
+      kind: ConstraintTemplate
+      name: betting-ads_no_minors_targeting
+    asserts:
+      - equal:
+          path: spec.crd.spec.validation.openAPIV3Schema.properties.requiredLabel.type
+          value: string
+  - it: betting-kyc_on_withdrawal has requiredLabel type string
+    set:
+      gatekeeper:
+        enabled: true
+    documentSelector:
+      kind: ConstraintTemplate
+      name: betting-kyc_on_withdrawal
+    asserts:
+      - equal:
+          path: spec.crd.spec.validation.openAPIV3Schema.properties.requiredLabel.type
+          value: string

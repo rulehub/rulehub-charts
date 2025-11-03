@@ -19,11 +19,11 @@ if [[ "$EVENT_NAME" == "pull_request" ]]; then
   git fetch --depth=1 origin "$BASE_REF":origin-base || true
   cp values.yaml current-values.yaml
   if git show origin-base:values.yaml > old-values.yaml 2>/dev/null; then
-    bash hack/verify-deprecation-window.sh --old-values old-values.yaml
+  bash hack/verify/verify-deprecation-window.sh --old-values old-values.yaml
   else
     echo 'Base values.yaml not found; running without removal checks'
-    bash hack/verify-deprecation-window.sh
+  bash hack/verify/verify-deprecation-window.sh
   fi
 else
-  bash hack/verify-deprecation-window.sh
+  bash hack/verify/verify-deprecation-window.sh
 fi

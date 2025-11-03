@@ -66,7 +66,7 @@ jobs:
             VERSION=$(grep '^version:' Chart.yaml | awk '{print $2}')
             echo "[local] Using Chart.yaml version as fallback: ${VERSION}"
           fi
-          bash hack/generate-provenance.sh --version "$VERSION" --package --out slsa-provenance.json
+          bash hack/gen/gen-provenance.sh --version "$VERSION" --package --out slsa-provenance.json
       - name: Sign, SBOM, vulns, attest, verify (consolidated)
         if: ${{ env.IS_ACT != 'true' }}
         env:

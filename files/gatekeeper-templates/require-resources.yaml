@@ -1,0 +1,23 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8srequireresources
+  annotations:
+    rulehub.id: require.resources.template
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sRequireResources
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8srequireresources
+        missing_limits(c) { not c.resources } { not c.resources.limits }
+        missing_requests(c) { not c.resources } { not c.resources.requests }
+        deny[msg] {
+          some c
+          c := input.review.object.spec.containers[_]
+          missing_limits(c) or missing_requests(c)
+          msg := "container must set resources.requests and resources.limits"
+        }

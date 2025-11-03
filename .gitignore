@@ -10,6 +10,9 @@ cosign-verify.json
 slsa-provenance.json
 manifest.json.aggregate
 
+# Local reports and generated logs
+reports/
+
 # Temp workspace
 tmp/
 tmp-*.sh
@@ -81,3 +84,7 @@ node_modules/
 .github/act.env
 
 .cache/
+
+# Helm repo index and local packaging outputs
+index.yaml
+pack-result.json

@@ -1,3 +1,0 @@
-    140 gatekeeper-templates
-    130 kyverno
-     10 gatekeeper

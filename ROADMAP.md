@@ -8,14 +8,14 @@ Structured view of planned evolution. Buckets reflect intent rather than rigid t
   - Provenance & SBOM attestation automation (cosign `slsaprovenance`, SPDX) – automate via Make + CI.
   - Determinism gate finalized (double render hash compare in CI) – fail workflow on mismatch.
 - Tooling Hardening
-  - Kubeconform checksum verification script (`hack/verify-kubeconform-checksum.sh`) + `kubeconform-verify` make target.
+  - Kubeconform checksum verification script (`hack/verify/verify-kubeconform-checksum.sh`) + `kubeconform-verify` make target.
   - `integrity-all` meta target (manifest + aggregate + verify + README badge check).
 - Documentation & Governance
   - Normalization plan doc (`docs/normalization-plan.md`) & underscore → dash migration lifecycle references.
   - Security / SBOM & scan placeholder badges in `README.md` (non-blocking initially).
   - MIGRATION.md: pending dash normalization table population.
 - Automation
-  - Provenance generation script (`hack/generate-provenance.sh`).
+  - Provenance generation script (`hack/gen/gen-provenance.sh`).
   - Governance workflow (deprecation window, soft delete, underscore gate, freeze, size budget).
 - Quality Gates
   - Performance baseline enforcement (no >20% regression in total rendered size / time).

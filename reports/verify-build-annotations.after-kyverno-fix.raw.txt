@@ -1,2 +1,0 @@
-Missing build.integrity.sha256 in doc #208
-Build annotations verification FAILED

@@ -6,14 +6,30 @@ schemaVersion: 1
 gatekeeper:
   enabled: true
   policies:
+    block-hostpath:
+      enabled: true
+    # rationale: Enforced to block hostPath mounts that risk node filesystem escape and privilege escalation.
     ban-hostnetwork:
       enabled: true
+    # rationale: Enforced to prevent Pods from joining the host network namespace, reducing lateral movement risk.
+    disallow-latest:
+      enabled: true
+    # rationale: Enforced to prevent drifting image tags (latest) that hinder provenance and rollback.
     limit-capabilities:
       enabled: true
+    # rationale: Enforced to drop default capabilities and only allow minimal whitelisted ones.
+    no-privileged:
+      enabled: true
+    # rationale: Enforced to forbid privileged containers reducing attack surface and breakout vectors.
     no-run-as-root:
       enabled: true
+    # rationale: Enforced to require non-root user for containers to minimize impact of compromise.
+    require-resources:
+      enabled: true
+    # rationale: Enforced so every container specifies cpu/memory requests & limits for scheduling stability.
     require-imagepullpolicy-always:
       enabled: true
+    # rationale: Enforced to ensure images are always pulled, avoiding stale local images.
     betting-adr_provider_listed_uk-constraint:
       enabled: true
     betting-ads_bonus_terms_fair_clear-constraint:
@@ -349,6 +365,14 @@ kyverno:
     # rationale: Enforced to forbid privileged containers reducing attack surface and breakout vectors.
     # validationFailureAction: audit
     require-resources:
+      enabled: true
+    ban-hostnetwork:
+      enabled: true
+    limit-capabilities:
+      enabled: true
+    no-run-as-root:
+      enabled: true
+    require-imagepullpolicy-always:
       enabled: true
     # rationale: Enforced so every container specifies cpu/memory requests & limits for scheduling stability.
     # validationFailureAction: enforce

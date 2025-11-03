@@ -1,14 +1,13 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: <Kind>
+kind: BettingGeofencingRegulatedMarkets
 metadata:
   name: betting-geofencing_regulated_markets
   annotations:
-    rulehub.id: betting.geofencing_regulated_markets
+    rulehub.id: igaming.geofencing_regulated_markets
 spec:
   match:
     kinds:
-    - apiGroups: ["*"]
-      kinds: ["*"]
-    namespaces: ["*"]
+      - apiGroups: [""]
+        kinds: ["Namespace"]
   parameters:
-    <param1>: <value>
+    requiredLabel: jurisdiction

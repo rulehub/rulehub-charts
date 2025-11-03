@@ -1,14 +1,13 @@
 apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: <Kind>
+kind: BettingDepositLimitControls
 metadata:
   name: betting-deposit_limit_controls
   annotations:
-    rulehub.id: betting.deposit_limit_controls
+    rulehub.id: igaming.deposit_limit_controls
 spec:
   match:
     kinds:
-    - apiGroups: ["*"]
-      kinds: ["*"]
-    namespaces: ["*"]
+      - apiGroups: [""]
+        kinds: ["Namespace"]
   parameters:
-    <param1>: <value>
+    requiredLabel: jurisdiction

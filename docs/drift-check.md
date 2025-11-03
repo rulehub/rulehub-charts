@@ -46,7 +46,7 @@ These checks are skipped if REF is not provided.
 
 ## Under the hood
 
-- Entrypoint: `hack/verify-drift-index.sh`
+- Entrypoint: `hack/verify/verify-drift-index.sh`
   - Accepts file paths and http/https URLs.
   - Downloads URLs via curl to a temp file and validates JSON with `jq`.
   - Falls back to the default published URL if no input is supplied.

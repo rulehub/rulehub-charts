@@ -7,9 +7,13 @@
 | gatekeeper.enabled | boolean | true | Enable Gatekeeper engine |
 | kyverno.enabled | boolean | true | Enable Kyverno engine |
 | kyverno.validationFailureAction | string | "" | Global Kyverno override ("", audit, enforce) |
+| gatekeeper.policies.block-hostpath.enabled | boolean | true | - |
 | gatekeeper.policies.ban-hostnetwork.enabled | boolean | true | - |
+| gatekeeper.policies.disallow-latest.enabled | boolean | true | - |
 | gatekeeper.policies.limit-capabilities.enabled | boolean | true | - |
+| gatekeeper.policies.no-privileged.enabled | boolean | true | - |
 | gatekeeper.policies.no-run-as-root.enabled | boolean | true | - |
+| gatekeeper.policies.require-resources.enabled | boolean | true | - |
 | gatekeeper.policies.require-imagepullpolicy-always.enabled | boolean | true | - |
 | gatekeeper.policies.betting-adr_provider_listed_uk-constraint.enabled | boolean | true | - |
 | gatekeeper.policies.betting-ads_bonus_terms_fair_clear-constraint.enabled | boolean | true | - |
@@ -146,6 +150,10 @@
 | kyverno.policies.disallow-latest.enabled | boolean | true | - |
 | kyverno.policies.no-privileged.enabled | boolean | true | - |
 | kyverno.policies.require-resources.enabled | boolean | true | - |
+| kyverno.policies.ban-hostnetwork.enabled | boolean | true | - |
+| kyverno.policies.limit-capabilities.enabled | boolean | true | - |
+| kyverno.policies.no-run-as-root.enabled | boolean | true | - |
+| kyverno.policies.require-imagepullpolicy-always.enabled | boolean | true | - |
 | kyverno.policies.betting-adr_provider_listed_uk-policy.enabled | boolean | true | - |
 | kyverno.policies.betting-ads_bonus_terms_fair_clear-policy.enabled | boolean | true | - |
 | kyverno.policies.betting-ads_no_minors_targeting-policy.enabled | boolean | true | - |

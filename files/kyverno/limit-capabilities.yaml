@@ -1,0 +1,23 @@
+# NOTE: placeholders quoted for Helm parse stability
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: limit-capabilities
+  annotations:
+    rulehub.id: limit.capabilities
+spec:
+  validationFailureAction: enforce
+  background: true
+  rules:
+    - name: require-drop-all
+      match:
+        resources:
+          kinds: ["Pod"]
+      validate:
+        message: "Must drop ALL capabilities"
+        pattern:
+          spec:
+            containers:
+              - =(securityContext):
+                  =(capabilities):
+                    drop: ["ALL"]

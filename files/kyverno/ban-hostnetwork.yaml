@@ -1,0 +1,20 @@
+# NOTE: placeholders quoted for Helm parse stability
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: ban-hostnetwork
+  annotations:
+    rulehub.id: ban.hostnetwork
+spec:
+  validationFailureAction: enforce
+  background: true
+  rules:
+    - name: forbid-hostnetwork
+      match:
+        resources:
+          kinds: ["Pod"]
+      validate:
+        message: "hostNetwork is not allowed"
+        pattern:
+          spec:
+            =(hostNetwork): "false"

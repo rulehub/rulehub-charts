@@ -16,6 +16,10 @@ This directory groups conceptual and process documentation for the chart.
 - Normalization plan (dash aliases, underscore removal lifecycle): `normalization-plan.md`
 - Drift check vs core index: `drift-check.md`
 
+### Developer scripts
+
+See `../hack/README.md` for the organized script layout (gen/verify/tools/release/test). Top-level wrappers under `hack/*.sh` have been removed; use the subfolder entrypoints directly.
+
 ### Still at Repository Root
 
 Core, frequently edited or auto-generated docs kept at repo root:

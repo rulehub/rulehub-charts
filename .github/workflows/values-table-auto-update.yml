@@ -5,7 +5,8 @@ on:
     paths:
       - "values.yaml"
       - "values.schema.json"
-      - "hack/gen-values-table.sh"
+      - "hack/gen/gen-values-table.sh"
+      - "hack/ci/**"
       - "VALUES_TABLE.md"
       - ".github/workflows/values-table-auto-update.yml"
   # Temporary: also run on push to main for visibility; auto-update remains PR/label-gated
@@ -14,7 +15,8 @@ on:
     paths:
       - "values.yaml"
       - "values.schema.json"
-      - "hack/gen-values-table.sh"
+      - "hack/gen/gen-values-table.sh"
+      - "hack/ci/**"
       - "VALUES_TABLE.md"
       - ".github/workflows/values-table-auto-update.yml"
   workflow_dispatch:
@@ -58,7 +60,7 @@ jobs:
         id: ctag
         env:
           CI_IMAGE_TAG: ${{ vars.CI_IMAGE_TAG }}
-        run: bash hack/ci-tag-resolve.sh '${{ inputs.ci_image_tag }}'
+        run: bash hack/ci/ci-tag-resolve.sh '${{ inputs.ci_image_tag }}'
 
   auto-update:
     needs: [check-tag]
@@ -94,7 +96,7 @@ jobs:
         run: |
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
       - name: Generate VALUES_TABLE.md
-        run: bash hack/gen-values-table.sh
+        run: bash hack/gen/gen-values-table.sh
       - name: Commit changes if any (GitHub-hosted)
         if: ${{ env.IS_ACT != 'true' }}
         shell: bash

@@ -5,8 +5,9 @@ on:
     paths:
       - "manifest.json"
       - "files/**"
-      - "hack/generate-plugin-index.sh"
-      - "hack/verify-plugin-index.sh"
+      - "hack/gen/gen-plugin-index.sh"
+      - "hack/verify/verify-plugin-index.sh"
+      - "hack/ci/**"
       - "Makefile"
   # Temporary: also run on push to main for visibility
   push:
@@ -14,8 +15,9 @@ on:
     paths:
       - "manifest.json"
       - "files/**"
-      - "hack/generate-plugin-index.sh"
-      - "hack/verify-plugin-index.sh"
+      - "hack/gen/gen-plugin-index.sh"
+      - "hack/verify/verify-plugin-index.sh"
+      - "hack/ci/**"
       - "Makefile"
   workflow_dispatch:
     inputs:
@@ -23,6 +25,10 @@ on:
         description: "CI image tag for RuleHub charts image (e.g., 2025.10.03-<sha> or vX.Y.Z). Falls back to repo var CI_IMAGE_TAG or latest."
         required: false
         default: ""
+      dual_engine_strict:
+        description: "Require dual-engine coverage (true/false). Defaults to repo var DUAL_ENGINE_STRICT or false."
+        required: false
+        default: "true"
 
 jobs:
   guard:
@@ -43,6 +49,8 @@ jobs:
     container:
       image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ inputs.ci_image_tag != '' && inputs.ci_image_tag || (vars.CI_IMAGE_TAG != '' && vars.CI_IMAGE_TAG || 'latest') }}"
       options: --user 0:0
+    env:
+      DUAL_ENGINE_STRICT: ${{ inputs.dual_engine_strict != '' && inputs.dual_engine_strict || (vars.DUAL_ENGINE_STRICT != '' && vars.DUAL_ENGINE_STRICT || 'true') }}
     steps:
       - name: Checkout
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
@@ -50,6 +58,15 @@ jobs:
         run: |
           command -v jq >/dev/null 2>&1 || { echo 'jq not found in ci-charts image'; exit 1; }
       - name: Generate plugin index
-        run: make generate-plugin-index
+        run: make gen-plugin-index
       - name: Verify plugin index
         run: make verify-plugin-index
+      - name: Dual-engine coverage
+        run: |
+          if [ "${DUAL_ENGINE_STRICT}" = "true" ]; then
+            echo "[CI] Enforcing dual-engine coverage (strict)"
+            make dual-engine-verify
+          else
+            echo "[CI] Dual-engine coverage (soft)"
+            make dual-engine-verify ALLOW=1
+          fi

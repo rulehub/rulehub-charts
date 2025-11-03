@@ -1,0 +1,21 @@
+# NOTE: placeholders quoted for Helm parse stability
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: require-imagepullpolicy-always
+  annotations:
+    rulehub.id: require.imagepullpolicy.always
+spec:
+  validationFailureAction: enforce
+  background: true
+  rules:
+    - name: require-always
+      match:
+        resources:
+          kinds: ["Pod"]
+      validate:
+        message: "imagePullPolicy must be Always"
+        pattern:
+          spec:
+            containers:
+              - =(imagePullPolicy): "Always"

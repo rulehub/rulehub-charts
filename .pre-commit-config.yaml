@@ -25,19 +25,19 @@ repos:
 
       - id: validate-values-schema
         name: values schema validate
-        entry: hack/verify-values-schema.sh
+        entry: hack/verify/verify-values-schema.sh
         language: system
         pass_filenames: false
 
       - id: verify-policies-sync
         name: verify policies sync (values <-> files)
-        entry: hack/verify-policies-sync.sh
+        entry: hack/verify/verify-policies-sync.sh
         language: system
         pass_filenames: false
 
       - id: verify-id-name-alignment
         name: verify id <-> name alignment
-        entry: hack/verify-id-name-alignment.sh
+        entry: hack/verify/verify-id-name-alignment.sh
         language: system
         pass_filenames: false
 
@@ -50,49 +50,49 @@ repos:
 
       - id: verify-id-annotation
         name: verify rulehub.id annotations
-        entry: hack/verify-id-annotation.sh
+        entry: hack/verify/verify-id-annotation.sh
         language: system
         pass_filenames: false
 
       - id: verify-policy-annotations
         name: verify policy annotations schema
-        entry: hack/verify-policy-annotations.sh
+        entry: hack/verify/verify-policy-annotations.sh
         language: system
         pass_filenames: false
 
       - id: values-table-up-to-date
         name: values table up-to-date
-        entry: hack/verify-values-table.sh
+        entry: hack/verify/verify-values-table.sh
         language: system
         pass_filenames: false
 
       - id: verify-chart-version-label
         name: verify chart/version label on rendered resources
-        entry: hack/verify-chart-version-label.sh
+        entry: hack/verify/verify-chart-version-label.sh
         language: system
         pass_filenames: false
 
       - id: render-verify
         name: verify rendered manifest naming
-        entry: bash -c './hack/verify-render.sh .'
+        entry: bash -c './hack/verify/verify-render.sh .'
         language: system
         pass_filenames: false
 
       - id: verify-deterministic
         name: verify deterministic template render
-        entry: hack/verify-deterministic.sh
+        entry: hack/verify/verify-deterministic.sh
         language: system
         pass_filenames: false
 
       - id: schema-version-verify
         name: verify values schemaVersion const
-        entry: hack/verify-schema-version.sh
+        entry: hack/verify/verify-schema-version.sh
         language: system
         pass_filenames: false
 
       - id: build-annotations-verify
         name: verify build annotations present when configured
-        entry: hack/verify-build-annotations.sh
+        entry: hack/verify/verify-build-annotations.sh
         language: system
         pass_filenames: false
 
@@ -107,122 +107,122 @@ repos:
 
       - id: verify-profiles
         name: verify profiles render declared policies
-        entry: hack/verify-profiles.sh
+        entry: hack/verify/verify-profiles.sh
         language: system
         pass_filenames: false
 
       - id: verify-profile-consistency
         name: verify profiles internal consistency
-        entry: hack/verify-profile-consistency.sh
+        entry: hack/verify/verify-profile-consistency.sh
         language: system
         pass_filenames: false
 
       - id: enforce-rationale
         name: verify Kyverno enforce rationale present
-        entry: hack/verify-enforce-rationale.sh
+        entry: hack/verify/verify-enforce-rationale.sh
         language: system
         pass_filenames: false
 
       - id: schema-coverage
         name: schema coverage of values.yaml
-        entry: hack/schema-coverage.sh
+        entry: hack/tools/schema-coverage.sh
         language: system
         pass_filenames: false
 
       - id: schema-compare
         name: schema compare (values vs values.schema.json)
-        entry: hack/compare-values-schema.sh
+        entry: hack/tools/compare-values-schema.sh
         language: system
         pass_filenames: false
 
       - id: size-verify
         name: verify rendered manifest size
-        entry: hack/verify-size.sh
+        entry: hack/verify/verify-size.sh
         language: system
         pass_filenames: false
         args: ["--threshold", "320000"]
 
       - id: integrity-verify
         name: verify policy YAML integrity (manifest + hashes)
-        entry: hack/verify-integrity.sh
+        entry: hack/verify/verify-integrity.sh
         language: system
         pass_filenames: false
 
       - id: integrity-configmap-verify
         name: verify integrity ConfigMap exported when enabled
-        entry: hack/verify-integrity-configmap.sh
+        entry: hack/verify/verify-integrity-configmap.sh
         language: system
         pass_filenames: false
 
       - id: manifest-verify
         name: verify manifest.json schema
-        entry: hack/verify-manifest-schema.sh
+        entry: hack/verify/verify-manifest-schema.sh
         language: system
         pass_filenames: false
 
       - id: kubeconform-verify
         name: verify kubeconform checksum (tooling integrity)
-        entry: hack/verify-kubeconform-checksum.sh
+        entry: hack/verify/verify-kubeconform-checksum.sh
         language: system
         pass_filenames: false
 
       - id: stub-not-enforce-verify
         name: verify deprecated stub policies are not enforced
-        entry: hack/verify-stub-not-enforce.sh
+        entry: hack/verify/verify-stub-not-enforce.sh
         language: system
         pass_filenames: false
 
       - id: soft-deletion-verify
         name: verify deprecated stubs removed after soft deletion window
-        entry: hack/verify-soft-deletion.sh
+        entry: hack/verify/verify-soft-deletion.sh
         language: system
         pass_filenames: false
 
       - id: underscore-gate
         name: underscore gate for new policy keys (diff vs base)
-        entry: hack/verify-underscore-gate.sh
+        entry: hack/verify/verify-underscore-gate.sh
         language: system
         pass_filenames: false
         stages: [manual]
 
       - id: deprecation-verify
         name: verify deprecation window
-        entry: hack/verify-deprecation-window.sh
+        entry: hack/verify/verify-deprecation-window.sh
         language: system
         pass_filenames: false
         stages: [manual]
 
       - id: freeze-verify
         name: verify release freeze window
-        entry: hack/verify-freeze.sh
+        entry: hack/verify/verify-freeze.sh
         language: system
         pass_filenames: false
         stages: [manual]
 
       - id: removed-without-deprecation-verify
         name: verify removed policy files were previously deprecated
-        entry: hack/verify-removed-without-deprecation.sh
+        entry: hack/verify/verify-removed-without-deprecation.sh
         language: system
         pass_filenames: false
         stages: [manual]
 
       - id: drift-index-verify
         name: verify drift vs core index.json
-        entry: hack/verify-drift-index.sh
+        entry: hack/verify/verify-drift-index.sh
         language: system
         pass_filenames: false
         stages: [manual]
 
       - id: performance-verify
         name: verify template performance regression within threshold
-        entry: hack/verify-performance.sh
+        entry: hack/verify/verify-performance.sh
         language: system
         pass_filenames: false
         stages: [manual]
 
       - id: plugin-index-verify
         name: verify generated plugin index
-        entry: hack/verify-plugin-index.sh
+        entry: hack/verify/verify-plugin-index.sh
         language: system
         pass_filenames: false
         stages: [manual]

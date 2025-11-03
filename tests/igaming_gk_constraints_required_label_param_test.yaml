@@ -1,0 +1,52 @@
+---
+suite: Igaming Gatekeeper constraints requiredLabel parameter
+
+templates:
+  - templates/gatekeeper.yaml
+
+tests:
+  - it: betting-license_check_us_nv_ngcb constraint uses parameters.requiredLabel=jurisdiction
+    set:
+      gatekeeper:
+        enabled: true
+        policies:
+          betting-license_check_us_nv_ngcb-constraint:
+            enabled: true
+    documentSelector:
+      apiVersion: constraints.gatekeeper.sh/v1beta1
+      kind: BettingLicenseCheckUsNvNgcb
+      name: betting-license_check_us_nv_ngcb
+    asserts:
+      - equal:
+          path: spec.parameters.requiredLabel
+          value: jurisdiction
+  - it: betting-license_check_us_pa_pgcb constraint uses parameters.requiredLabel=jurisdiction
+    set:
+      gatekeeper:
+        enabled: true
+        policies:
+          betting-license_check_us_pa_pgcb-constraint:
+            enabled: true
+    documentSelector:
+      apiVersion: constraints.gatekeeper.sh/v1beta1
+      kind: BettingLicenseCheckUsPaPgcb
+      name: betting-license_check_us_pa_pgcb
+    asserts:
+      - equal:
+          path: spec.parameters.requiredLabel
+          value: jurisdiction
+  - it: betting-self_exclusion_uk_gamstop constraint uses parameters.requiredLabel=jurisdiction
+    set:
+      gatekeeper:
+        enabled: true
+        policies:
+          betting-self_exclusion_uk_gamstop-constraint:
+            enabled: true
+    documentSelector:
+      apiVersion: constraints.gatekeeper.sh/v1beta1
+      kind: BettingSelfExclusionUkGamstop
+      name: betting-self_exclusion_uk_gamstop
+    asserts:
+      - equal:
+          path: spec.parameters.requiredLabel
+          value: jurisdiction

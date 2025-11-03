@@ -5,6 +5,7 @@ on:
     paths:
       - "files/**"
       - "hack/drift/**"
+      - "hack/ci/**"
       - ".github/workflows/drift-check.yml"
   # Temporary: also run on push to main for visibility; may adjust to tag-based in future
   push:
@@ -12,6 +13,7 @@ on:
     paths:
       - "files/**"
       - "hack/drift/**"
+      - "hack/ci/**"
       - ".github/workflows/drift-check.yml"
   workflow_dispatch:
     inputs:

@@ -1,0 +1,22 @@
+# NOTE: placeholders quoted for Helm parse stability
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: no-run-as-root
+  annotations:
+    rulehub.id: no.run.as.root
+spec:
+  validationFailureAction: enforce
+  background: true
+  rules:
+    - name: require-non-root
+      match:
+        resources:
+          kinds: ["Pod"]
+      validate:
+        message: "Containers must run as non-root"
+        pattern:
+          spec:
+            containers:
+              - =(securityContext):
+                  =(runAsNonRoot): "true"

@@ -10,7 +10,7 @@ on:
       - values.schema.json
       - templates/**
       - files/**
-      - hack/verify-deterministic.sh
+      - hack/verify/verify-deterministic.sh
       - .github/workflows/helm-validate.yml
   push:
     branches: [main]
@@ -22,7 +22,7 @@ on:
       - values.schema.json
       - templates/**
       - files/**
-      - hack/verify-deterministic.sh
+      - hack/verify/verify-deterministic.sh
       - .github/workflows/helm-validate.yml
   workflow_dispatch:
     inputs:
@@ -280,7 +280,7 @@ jobs:
           rm -rf .github/_actions || true
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
       - name: Verify deterministic rendering (default values)
-        run: bash hack/verify-deterministic.sh values.yaml
+        run: bash hack/verify/verify-deterministic.sh values.yaml
       - name: Summary
         if: always()
         run: |

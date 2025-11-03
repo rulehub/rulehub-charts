@@ -77,6 +77,8 @@ RuleHub curated Gatekeeper & Kyverno policy collection for Kubernetes clusters
 | gatekeeper.policies.betting-source_of_funds_checks-constraint.enabled | bool | `false` |  |
 | gatekeeper.policies.betting-suspicious-betting-reporting-uk-constraint.enabled | bool | `false` |  |
 | gatekeeper.policies.betting-txn-monitoring-anomalies-constraint.enabled | bool | `false` |  |
+| gatekeeper.policies.block-hostpath.enabled | bool | `true` |  |
+| gatekeeper.policies.disallow-latest.enabled | bool | `true` |  |
 | gatekeeper.policies.edtech-au_app_11_security_edtech-constraint.enabled | bool | `true` |  |
 | gatekeeper.policies.edtech-au_app_5_notice_edtech-constraint.enabled | bool | `true` |  |
 | gatekeeper.policies.edtech-au_ndb_breach_notification_edtech-constraint.enabled | bool | `true` |  |
@@ -148,9 +150,12 @@ RuleHub curated Gatekeeper & Kyverno policy collection for Kubernetes clusters
 | gatekeeper.policies.medtech-sg_hcsa_pdpa_health_data-constraint.enabled | bool | `true` |  |
 | gatekeeper.policies.medtech-uk_dtac_compliance-constraint.enabled | bool | `true` |  |
 | gatekeeper.policies.medtech-uk_mhra_post_market_surveillance-constraint.enabled | bool | `true` |  |
+| gatekeeper.policies.no-privileged.enabled | bool | `true` |  |
 | gatekeeper.policies.no-run-as-root.enabled | bool | `true` |  |
 | gatekeeper.policies.require-imagepullpolicy-always.enabled | bool | `true` |  |
+| gatekeeper.policies.require-resources.enabled | bool | `true` |  |
 | kyverno.enabled | bool | `true` |  |
+| kyverno.policies.ban-hostnetwork.enabled | bool | `true` |  |
 | kyverno.policies.betting-adr_provider_listed_uk-policy.enabled | bool | `true` |  |
 | kyverno.policies.betting-ads_bonus_terms_fair_clear-policy.enabled | bool | `true` |  |
 | kyverno.policies.betting-ads_no_minors_targeting-policy.enabled | bool | `true` |  |
@@ -256,6 +261,7 @@ RuleHub curated Gatekeeper & Kyverno policy collection for Kubernetes clusters
 | kyverno.policies.igaming-license_check_us_nv_ngcb-policy.enabled | bool | `true` |  |
 | kyverno.policies.igaming-license_check_us_pa_pgcb-policy.enabled | bool | `true` |  |
 | kyverno.policies.igaming-self_exclusion_uk_gamstop-policy.enabled | bool | `true` |  |
+| kyverno.policies.limit-capabilities.enabled | bool | `true` |  |
 | kyverno.policies.medtech-au_myr_health_privacy-policy.enabled | bool | `true` |  |
 | kyverno.policies.medtech-backup_and_recovery_rto_rpo-policy.enabled | bool | `true` |  |
 | kyverno.policies.medtech-ca_phipa_health_data-policy.enabled | bool | `true` |  |
@@ -295,6 +301,8 @@ RuleHub curated Gatekeeper & Kyverno policy collection for Kubernetes clusters
 | kyverno.policies.medtech-uk_dtac_compliance-policy.enabled | bool | `true` |  |
 | kyverno.policies.medtech-uk_mhra_post_market_surveillance-policy.enabled | bool | `true` |  |
 | kyverno.policies.no-privileged.enabled | bool | `true` |  |
+| kyverno.policies.no-run-as-root.enabled | bool | `true` |  |
+| kyverno.policies.require-imagepullpolicy-always.enabled | bool | `true` |  |
 | kyverno.policies.require-resources.enabled | bool | `true` |  |
 | kyverno.validationFailureAction | string | `""` |  |
 | opentelemetryCollector.enabled | bool | `false` |  |

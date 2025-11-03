@@ -1,0 +1,21 @@
+apiVersion: templates.gatekeeper.sh/v1beta1
+kind: ConstraintTemplate
+metadata:
+  name: k8sblockhostpath
+  annotations:
+    rulehub.id: block.hostpath.template
+spec:
+  crd:
+    spec:
+      names:
+        kind: K8sBlockHostPath
+  targets:
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package k8sblockhostpath
+        deny[msg] {
+          some v
+          v := input.review.object.spec.volumes[_]
+          v.hostPath
+          msg := "hostPath volumes are not allowed"
+        }

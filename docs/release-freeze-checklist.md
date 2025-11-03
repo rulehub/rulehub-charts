@@ -5,7 +5,7 @@ This checklist is used once a release version is cut (e.g. tag candidate or bran
 ## 1. Preconditions
 
 - [ ] Target version determined (Chart.yaml bumped appropriately)
-- [ ] CHANGELOG draft section generated (make changelog-generate ...)
+- [ ] CHANGELOG draft section generated (make gen-changelog ...)
 - [ ] SemVer suggestion reviewed (make semver-analyze)
 - [ ] Deprecation window verification clean (make deprecation-verify OLD_VALUES=prev/values.yaml) — note: if this is the first public release, no deprecation window checks are required
 

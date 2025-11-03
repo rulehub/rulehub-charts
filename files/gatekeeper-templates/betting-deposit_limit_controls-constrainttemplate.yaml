@@ -18,18 +18,18 @@ spec:
           type: object
           properties:
             # add schema for parameters
-            <param1>:
+            requiredLabel:
               type: string
   targets:
-  - target: admission.k8s.gatekeeper.sh
-    rego: |
-      package rulehub.betting.deposit_limit_controls
-      import future.keywords.if
+    - target: admission.k8s.gatekeeper.sh
+      rego: |
+        package rulehub.betting.deposit_limit_controls
+        import future.keywords.if
 
-      default deny = []
+        default deny = []
 
-      # Example: deny with a message
-      deny[msg] {
-        input.review.kind.kind == "Deployment"
-        msg := "betting.deposit_limit_controls: example violation"
-      }
+        # Example: deny with a message
+        deny[msg] {
+          input.review.kind.kind == "Deployment"
+          msg := "igaming.deposit_limit_controls: example violation"
+        }

@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template to propose deprecating one or more legacy (underscore) policy keys. A generator script exists: `hack/gen-deprecation-issue.sh`.
+        Use this template to propose deprecating one or more legacy (underscore) policy keys. A generator script exists: `hack/gen/gen-deprecation-issue.sh`.
   - type: input
     id: keys
     attributes:

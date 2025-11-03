@@ -14,14 +14,14 @@ Use this checklist for every release. Automate sequentially; keep manual notes f
 
 - [ ] Update `Chart.yaml` `version:` (SemVer) and `appVersion:` if meaningful
 - [ ] Update any referenced version in `README.md` examples
-- [ ] Run `./hack/version-check.sh` (should pass after edit)
+- [ ] Run `./hack/verify/version-check.sh` (should pass after edit)
 
 ## Policy Assets Regeneration
 
-- [ ] (If sources changed) Run policy generation pipeline (`make generate-policies` or manual steps)
+- [ ] (If sources changed) Run policy generation pipeline (`make gen-policies` or manual steps)
 - [ ] (pre-release) Generated values/report tables are not maintained before the first public release; skip regenerating `VALUES_TABLE.md` for now.
-- [ ] Run `hack/verify-values-table.sh` (should pass)
-- [ ] Optional: regenerate manifest/integrity (future) `make manifest`
+- [ ] Run `hack/verify/verify-values-table.sh` (should pass)
+- [ ] Optional: regenerate manifest/integrity (future) `make gen-manifest`
 
 ## Validation
 
@@ -32,10 +32,10 @@ Use this checklist for every release. Automate sequentially; keep manual notes f
   - [ ] `kubeconform -strict -ignore-missing-schemas rendered.yaml`
 - [ ] ct lint (chart-testing): `ct lint --config ct-lint.yaml`
 - [ ] Custom verify scripts:
-  - [ ] `hack/verify-render.sh`
-  - [ ] `hack/verify-id-name-alignment.sh`
-  - [ ] `hack/verify-policies-sync.sh`
-  - [ ] `hack/list-underscore-duplicates.sh` review deprecations
+  - [ ] `hack/verify/verify-render.sh`
+  - [ ] `hack/verify/verify-id-name-alignment.sh`
+  - [ ] `hack/verify/verify-policies-sync.sh`
+  - [ ] `hack/tools/list-underscore-duplicates.sh` review deprecations
 
 ## Enforcement & Risk Review
 

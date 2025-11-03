@@ -11,7 +11,7 @@ inputs produce identical packaged artifacts and `helm template` output.
 | Non-deterministic timestamps | `build.timestamp` would differ per run | Default `values.yaml` leaves `build.timestamp` empty. Verification script can be extended to fail if non-empty during deterministic mode. |
 | File ordering (glob) | Random order produces different concatenation | All loops explicitly sort via Helm's deterministic `.Files.Glob` enumeration; integrity aggregation sorts paths using `find ... \| sort`. |
 | Random / generated names | Hash / UUID names change | No random names used in templates. Helpers derive names from filenames or annotations. |
-| Placeholder policy inclusion variability | Different sets change integrity hash | Placeholders excluded by default for provenance unless `--include-placeholders` flag passed. Pre-pack hook removes them (`hack/prepack-remove-placeholders.sh`). |
+| Placeholder policy inclusion variability | Different sets change integrity hash | Placeholders excluded by default for provenance unless `--include-placeholders` flag passed. Pre-pack hook removes them (`hack/release/prepack-remove-placeholders.sh`). |
 | Floating external dependencies | Upstream changes alter outputs | No external network fetch performed during render. All content vendored in `files/`. |
 | Unstable whitespace or map key order | Diff noise, hash changes | YAML emitted via Helm `toYaml` on parsed objects; Go template map iteration is stable for constructed maps here (Helm's `toYaml` preserves key insertion order; we build maps deterministically). |
 | Git dirty working tree | Uncommitted changes not tracked | Provenance captures `workspaceState` (`dirty` if diffs present). |
@@ -21,7 +21,7 @@ inputs produce identical packaged artifacts and `helm template` output.
 
 1. Deterministic template: `make verify-deterministic` → reports `Determinism OK`.
 2. All rendered resources labeled: `make labels-verify`.
-3. Repro build heuristic: `bash hack/reproducible-build-check.sh`.
+3. Repro build heuristic: `bash hack/verify/reproducible-build-check.sh`.
 4. (Optional) Package diff across two runs: automatically done inside reproducible build check.
 
 ## Developer Guidance
