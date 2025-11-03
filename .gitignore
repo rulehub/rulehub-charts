@@ -88,3 +88,6 @@ node_modules/
 # Helm repo index and local packaging outputs
 index.yaml
 pack-result.json
+
+# Local debug artifacts
+.debug/
