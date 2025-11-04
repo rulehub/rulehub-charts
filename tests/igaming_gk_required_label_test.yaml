@@ -9,9 +9,12 @@ tests:
     set:
       gatekeeper:
         enabled: true
+        policies:
+          betting-ads_no_minors_targeting-constraint:
+            enabled: true
     documentSelector:
-      kind: ConstraintTemplate
-      name: betting-ads-no-minors-targeting
+      path: metadata.name
+      value: betting-ads-no-minors-targeting
     asserts:
       - equal:
           path: spec.crd.spec.validation.openAPIV3Schema.properties.requiredLabel.type
@@ -20,9 +23,12 @@ tests:
     set:
       gatekeeper:
         enabled: true
+        policies:
+          betting-kyc_on_withdrawal-constraint:
+            enabled: true
     documentSelector:
-      kind: ConstraintTemplate
-      name: betting-kyc-on-withdrawal
+      path: metadata.name
+      value: betting-kyc-on-withdrawal
     asserts:
       - equal:
           path: spec.crd.spec.validation.openAPIV3Schema.properties.requiredLabel.type

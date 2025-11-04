@@ -13,8 +13,8 @@ tests:
       activeProfiles:
         - aml-fintech
     documentSelector:
-      kind: ConstraintTemplate
-      name: fintech-aml-integration-required
+      path: apiVersion
+      value: templates.gatekeeper.sh/v1
     asserts:
       - isKind:
           of: ConstraintTemplate

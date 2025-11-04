@@ -2,6 +2,7 @@
 # Treat "enabled" as true ONLY when it's a boolean true. Strings like "true" are not accepted.
 {{ $kyEnabled := and (kindIs "bool" .Values.kyverno.enabled) .Values.kyverno.enabled -}}
 {{ $gkEnabled := and (kindIs "bool" .Values.gatekeeper.enabled) .Values.gatekeeper.enabled -}}
+{{- $root := . -}}
 
 {{- /* Collect only explicitly boolean-true policy toggles (skip when useProfilesOnly=true to mirror render loop) */ -}}
 {{- $kyPolicies := dict -}}
@@ -17,6 +18,37 @@
     {{- $pEnabled := and $c (hasKey $c "enabled") (kindIs "bool" (get $c "enabled")) (get $c "enabled") -}}
     {{- if $pEnabled -}}{{- $_ := set $gkPolicies $n (dict) -}}{{- end -}}
   {{- end -}}
+{{- end -}}
+
+{{- /* Also reflect profile-based auto-enabled keys, mirroring the render loops */ -}}
+{{- $autoKy := dict -}}
+{{- $autoGk := dict -}}
+{{- range $p := ($root.Values.activeProfiles | default list) -}}
+  {{- $pdef := (get ($root.Values.profiles | default dict) $p) -}}
+  {{- if $pdef -}}
+    {{- range $k := (get $pdef "policies" | default list) -}}
+      {{- /* Kyverno: ensure -policy suffix present */ -}}
+      {{- $kKy := $k -}}
+      {{- if not (hasSuffix "-policy" $kKy) -}}{{- $kKy = printf "%s-policy" $kKy -}}{{- end -}}
+      {{- if not (hasKey $autoKy $kKy) -}}{{- $_ := set $autoKy $kKy true -}}{{- end -}}
+      {{- /* Gatekeeper: when profile lists a Kyverno key, imply corresponding GK keys */ -}}
+      {{- if hasSuffix "-policy" $kKy -}}
+        {{- $base := trimSuffix "-policy" $kKy -}}
+        {{- $gkc := printf "%s-constraint" $base -}}
+        {{- $gkt := printf "%s-constrainttemplate" $base -}}
+        {{- if not (hasKey $autoGk $gkc) -}}{{- $_ := set $autoGk $gkc true -}}{{- end -}}
+        {{- if not (hasKey $autoGk $gkt) -}}{{- $_ := set $autoGk $gkt true -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Merge auto-enabled from profiles into policy maps (keys only) */ -}}
+{{- range $k, $_ := $autoKy -}}
+  {{- if not (hasKey $kyPolicies $k) -}}{{- $_ := set $kyPolicies $k (dict) -}}{{- end -}}
+{{- end -}}
+{{- range $k, $_ := $autoGk -}}
+  {{- if not (hasKey $gkPolicies $k) -}}{{- $_ := set $gkPolicies $k (dict) -}}{{- end -}}
 {{- end -}}
 
 {{- /* Build spec conditionally: include kyverno/gatekeeper sections only when top-level enabled is true (do not include sections merely because policies are present when disabled) */ -}}

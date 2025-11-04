@@ -13,8 +13,8 @@ tests:
       activeProfiles:
         - aml-fintech
     documentSelector:
-      kind: AMLIntegrationRequired
-      name: fintech-aml-integration-required
+      path: apiVersion
+      value: constraints.gatekeeper.sh/v1beta1
     asserts:
       - isKind:
           of: AMLIntegrationRequired

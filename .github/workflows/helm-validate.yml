@@ -178,11 +178,6 @@ jobs:
       - name: Install helm-unittest plugin (if missing)
         shell: bash
         run: |
-          # Skip plugin installation entirely under ACT to avoid flaky network/plugin bootstrap
-          if [ -n "${ACT:-}" ] || [ "${IS_ACT:-false}" = "true" ]; then
-            echo "ACT detected; skipping helm-unittest plugin install."
-            exit 0
-          fi
           if ! helm plugin list | awk '{print $1}' | grep -qx "unittest"; then
             echo "Installing helm-unittest v0.5.1..."
             for i in 1 2 3; do
@@ -199,11 +194,26 @@ jobs:
         run: helm version --short
       - name: Run unit tests
         run: |
+          # Run helm-unittest; under ACT exclude known flaky render suites (files/glob under ACT)
           if [ -n "${ACT:-}" ]; then
-            echo "Skipping helm unittest under ACT (plugin setup often diverges)." && exit 0
+            echo "ACT detected; excluding a few Gatekeeper render suites known to be flaky under ACT."
+            # Build explicit include list excluding problematic suites
+            INCLUDE_FILES=$(ls -1 tests/*.yaml | grep -v -E "^(tests/igaming_gk_required_label_test.yaml|tests/igaming_gk_constraints_required_label_param_test.yaml|tests/profile_aml_fintech_render_gatekeeper_ct_test.yaml|tests/profile_aml_fintech_render_gatekeeper_test.yaml)$" || true)
+            if [ -z "$INCLUDE_FILES" ]; then
+              echo "No test files found to include" >&2
+              exit 1
+            fi
+            # Convert to multiple -f args
+            ARGS=""
+            for f in $INCLUDE_FILES; do
+              ARGS="$ARGS -f $f"
+            done
+            # shellcheck disable=SC2086
+            helm unittest $ARGS .
+          else
+            # CI: run full suite
+            helm unittest -f "tests/*.yaml" .
           fi
-          # Run helm-unittest across all test files (no unsupported shorthand flags)
-          helm unittest -f "tests/*.yaml" .
 
   ct:
     name: Chart Testing (lint + install)

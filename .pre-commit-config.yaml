@@ -17,6 +17,12 @@ repos:
         args: ["-c", ".yamllint"]
   - repo: local
     hooks:
+      - id: helm-unittest
+        name: helm unittest
+        entry: bash -c 'if ! helm plugin list | grep -q unittest; then echo "helm unittest plugin not installed (helm plugin install https://github.com/helm-unittest/helm-unittest --version v0.5.1)"; exit 2; fi; helm unittest -f "tests/*.yaml" ./'
+        language: system
+        pass_filenames: false
+
       - id: helm-lint
         name: helm lint (fast)
         entry: bash -c 'helm lint . || true'

@@ -11,11 +11,12 @@ tests:
         enabled: true
         policies:
           betting-license_check_us_nv_ngcb-constraint:
+            enabled: false
+          betting-license-check-us-nv-ngcb-constraint:
             enabled: true
     documentSelector:
-      apiVersion: constraints.gatekeeper.sh/v1beta1
-      kind: BettingLicenseCheckUsNvNgcb
-      name: betting-license-check-us-nv-ngcb
+      path: kind
+      value: BettingLicenseCheckUsNvNgcb
     asserts:
       - equal:
           path: spec.parameters.requiredLabel
@@ -26,11 +27,12 @@ tests:
         enabled: true
         policies:
           betting-license_check_us_pa_pgcb-constraint:
+            enabled: false
+          betting-license-check-us-pa-pgcb-constraint:
             enabled: true
     documentSelector:
-      apiVersion: constraints.gatekeeper.sh/v1beta1
-      kind: BettingLicenseCheckUsPaPgcb
-      name: betting-license-check-us-pa-pgcb
+      path: kind
+      value: BettingLicenseCheckUsPaPgcb
     asserts:
       - equal:
           path: spec.parameters.requiredLabel
@@ -41,11 +43,12 @@ tests:
         enabled: true
         policies:
           betting-self_exclusion_uk_gamstop-constraint:
+            enabled: false
+          betting-self-exclusion-uk-gamstop-constraint:
             enabled: true
     documentSelector:
-      apiVersion: constraints.gatekeeper.sh/v1beta1
-      kind: BettingSelfExclusionUkGamstop
-      name: betting-self-exclusion-uk-gamstop
+      path: kind
+      value: BettingSelfExclusionUkGamstop
     asserts:
       - equal:
           path: spec.parameters.requiredLabel
