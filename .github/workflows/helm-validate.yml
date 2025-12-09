@@ -248,7 +248,7 @@ jobs:
           command -v ct >/dev/null 2>&1 || { echo 'ct not found in PATH after setup'; exit 1; }
       - name: Create kind cluster (${{ matrix.kubeVersion }})
         if: ${{ env.IS_ACT != 'true' }}
-        uses: helm/kind-action@a1b0e391336a6ee6713a0583f8c6240d70863de3
+        uses: helm/kind-action@92086f6be054225fa813e0a4b13787fc9088faab
         with:
           version: v0.22.0
           node_image: kindest/node:v${{ matrix.kubeVersion }}
