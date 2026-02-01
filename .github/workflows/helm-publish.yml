@@ -39,7 +39,7 @@ jobs:
           # Workaround for intermittent lstat errors under act due to stale cached actions
           rm -rf .github/_actions || true
       - name: Checkout
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v5.0.0 pinned
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v5.0.0 pinned
       - name: Verify tag matches Chart.yaml version & appVersion
         run: bash hack/ci/verify-tag-version.sh
       - name: Login to GHCR

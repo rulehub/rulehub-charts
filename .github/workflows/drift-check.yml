@@ -53,7 +53,7 @@ jobs:
           # Remove stale cached actions injected under the repo path by act to avoid lstat failures during checkout
           rm -rf .github/_actions || true
       - name: Checkout
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Enforce pinned CI image tag
         shell: bash
         env:
@@ -90,7 +90,7 @@ jobs:
           # Remove stale cached actions injected under the repo path by act to avoid lstat failures during checkout
           rm -rf .github/_actions || true
       - name: Checkout charts
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Cleanup stale clone dir (ACT)
         if: ${{ env.IS_ACT == 'true' }}
         shell: bash

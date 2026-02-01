@@ -72,7 +72,7 @@ jobs:
         run: |
           # Workaround for intermittent lstat errors under act due to stale cached actions
           rm -rf .github/_actions || true
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Detect ACT environment
         shell: bash
         run: |
@@ -129,7 +129,7 @@ jobs:
         run: |
           # Workaround for intermittent lstat errors under act due to stale cached actions
           rm -rf .github/_actions || true
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Detect ACT environment
         shell: bash
         run: |
@@ -167,7 +167,7 @@ jobs:
         run: |
           # Workaround for intermittent lstat errors under act due to stale cached actions
           rm -rf .github/_actions || true
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Detect ACT environment
         shell: bash
         run: |
@@ -231,7 +231,7 @@ jobs:
         run: |
           # Workaround for intermittent lstat errors under act due to stale cached actions
           rm -rf .github/_actions || true
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Detect ACT environment
         shell: bash
         run: |
@@ -288,7 +288,7 @@ jobs:
         run: |
           # Workaround for intermittent lstat errors under act due to stale cached actions
           rm -rf .github/_actions || true
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Verify deterministic rendering (default values)
         run: bash hack/verify/verify-deterministic.sh values.yaml
       - name: Summary
