@@ -48,7 +48,7 @@ jobs:
       resolved_tag: ${{ steps.ctag.outputs.resolved_tag }}
     steps:
       - name: Checkout repository (required for local actions)
-        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Resolve CI image tag
         id: ctag
         env:
@@ -62,7 +62,7 @@ jobs:
       image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ needs.check-tag.outputs.resolved_tag }}"
       options: --user 0:0
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Verify igaming Gatekeeper hygiene
         run: bash hack/verify/verify-igaming-gk-hygiene.sh
   underscore-gate:
@@ -75,7 +75,7 @@ jobs:
     # act schema is strict; simplify condition: run on PRs and pushes; actor-based skip handled per-job if needed
     if: ${{ always() }}
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Run underscore gate (diff vs base)
         run: |
           bash hack/verify/verify-underscore-gate.sh --base origin/${{ github.base_ref || 'main' }} || exit 1
@@ -90,7 +90,7 @@ jobs:
     env:
       IS_ACT: "false"
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Detect ACT environment
         run: bash hack/ci/act-detect.sh
       - name: Ensure jq and yq present
@@ -119,7 +119,7 @@ jobs:
     env:
       IS_ACT: "false"
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Detect ACT environment
         run: bash hack/ci/act-detect.sh
       - name: Ensure yq present
@@ -142,7 +142,7 @@ jobs:
       image: "ghcr.io/${{ github.repository_owner }}/ci-charts:${{ needs.check-tag.outputs.resolved_tag }}"
       options: --user 0:0
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Verify rulehub.id annotations
         run: bash hack/verify/verify-id-annotation.sh
 
@@ -156,7 +156,7 @@ jobs:
     env:
       IS_ACT: "false"
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
       - name: Detect ACT environment
         shell: bash
         run: |
@@ -179,7 +179,7 @@ jobs:
     # act-compatible: skip under act; GitHub semantics enforced inside step logic
     if: ${{ github.actor != 'nektos/act' }}
     steps:
-      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           fetch-depth: 0
       - name: Determine freeze ref
